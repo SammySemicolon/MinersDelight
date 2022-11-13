@@ -30,7 +30,7 @@ public class CopperPotScreen extends AbstractContainerScreen<CopperPotMenu> impl
 	private static final ResourceLocation RECIPE_BUTTON_LOCATION = new ResourceLocation("textures/gui/recipe_button.png");
 	private static final ResourceLocation BACKGROUND_TEXTURE = MinersDelightMod.path("textures/gui/copper_pot.png");
 	private static final Rectangle HEAT_ICON = new Rectangle(49, 57, 17, 15);
-	private static final Rectangle PROGRESS_ARROW = new Rectangle(78, 28, 0, 17);
+	private static final Rectangle PROGRESS_ARROW = new Rectangle(78, 27, 0, 17);
 
 	private final CopperPotRecipeBookComponent recipeBookComponent = new CopperPotRecipeBookComponent();
 	private boolean widthTooNarrow;

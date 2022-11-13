@@ -157,7 +157,7 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper>
 	public int getCookProgressionScaled() {
 		int i = this.cookingPotData.get(0);
 		int j = this.cookingPotData.get(1);
-		return j != 0 && i != 0 ? i * 24 / j : 0;
+		return j != 0 && i != 0 ? i * 29 / j : 0;
 	}
 
 	@OnlyIn(Dist.CLIENT)
