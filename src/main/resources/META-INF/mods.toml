@@ -1,0 +1,24 @@
+modLoader = "javafml"
+loaderVersion = "[39,)"
+license = "All rights reserved"
+[[mods]]
+logoFile = "miners_delight.png"
+modId = "miners_delight"
+version = "${file.jarVersion}"
+displayName = "Miner's Delight"
+authors = "Sammy;"
+description = '''
+A cool mod for making pebbles.
+'''
+[[dependencies.miners_delight]]
+modId = "forge"
+mandatory = true
+versionRange = "[39,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.miners_delight]]
+modId="lodestone"
+mandatory=true
+versionRange="[FORGE-1.18.2-1.2,)"
+ordering="AFTER"
+side="BOTH"

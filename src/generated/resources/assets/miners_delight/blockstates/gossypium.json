@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "miners_delight:block/gossypium"
+    }
+  }
+}

@@ -1,0 +1,202 @@
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        maven { url = 'https://maven.parchmentmc.org' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+        classpath 'org.parchmentmc:librarian:1.+'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
+
+jarJar.enable()
+
+version = "${project.minecraftVersion}-${project.modVersion}"
+if (System.getenv('BUILD_NUMBER') != null) {
+    version += "-" + System.getenv('BUILD_NUMBER')
+}
+group = 'com.sammy.${project.modId}'
+archivesBaseName = project.modId
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+sourceSets {
+    main.resources.srcDirs += 'src/generated/resources'
+}
+
+mixin {
+    add sourceSets.main, "${project.modId}.refmap.json"
+}
+
+minecraft {
+    mappings channel: 'parchment', version: "${parchmentVersion}-${minecraftVersion}"
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            arg "-mixin.config=" + archivesBaseName + ".mixins.json"
+
+            mods {
+                self {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            arg "-mixin.config=" + archivesBaseName + ".mixins.json"
+
+            mods {
+                self {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            arg "-mixin.config=" + archivesBaseName + ".mixins.json"
+
+            args '--mod', "${project.modId}", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            mods {
+                self {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'JEI maven'
+        url = "https://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        name 'tterrag maven'
+        url "https://maven.tterrag.com/"
+    }
+    maven { url = 'https://maven.blamejared.com/' }
+    maven {
+        name = "Curse Maven"
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${project.minecraftVersion}-${project.forgeVersion}"
+
+    // Use this to make sure it functions in the intellij environment
+    if (System.getProperty("idea.sync.active") != "true") {
+        annotationProcessor "org.spongepowered:mixin:${mixinVersion}:processor"
+    }
+
+    runtimeOnly fg.deobf("curse.maven:stfu-407174:3759881")
+    runtimeOnly fg.deobf("curse.maven:spark-361579:3824951")
+
+    // JEI Dependency
+    compileOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jeiVersion}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraftVersion}:${jeiVersion}")
+
+    // Registrate dependency
+    jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: '[MC1.18-1.1.1,)') {
+        jarJar.pin(it, project.registrateVersion)
+    }
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrateVersion}")
+
+    // Use local lodestone when in multiproject
+    implementation fg.deobf("team.lodestar.lodestone:lodestone:${minecraftVersion}-${project.lodestoneVersion}")
+
+    // CurseMaven Deps
+    implementation fg.deobf("curse.maven:farmers_delight-398521:3999153")
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title": "Miner's Delight",
+                "Specification-Vendor": "Sammy Semicolon",
+                "Specification-Version": "1",
+                "Implementation-Title": project.name,
+                "Implementation-Version": "${version}",
+                "Implementation-Vendor" :"Sammy Semicolon",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs" :"${project.modId}.mixins.json"
+        ])
+    }
+}
+
+//afterEvaluate {
+//    tasks.configureReobfTaskForReobfJar.mustRunAfter(tasks.compileJava)
+//    tasks.configureReobfTaskForReobfJarJar.mustRunAfter(tasks.compileJava)
+//}
+
+tasks.withType(GenerateModuleMetadata) {
+    enabled = false
+}
+
+task jarJarRelease {
+    doLast {
+        tasks.jarJar {
+            classifier = ''
+        }
+    }
+    finalizedBy tasks.jarJar
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+jar.finalizedBy('reobfJar')
+tasks.jarJar.finalizedBy('reobfJarJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId project.group
+            artifactId project.archivesBaseName
+            version project.version
+            artifact jar
+
+            pom.withXml {
+
+                // Go through all the dependencies.
+                asNode().dependencies.dependency.each { dep ->
+
+                    println 'Surpressing artifact ' + dep.artifactId.last().value().last() + ' from maven dependencies.'
+                    assert dep.parent().remove(dep)
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            url = uri("file://${System.getenv("local_maven")}")
+        }
+    }
+}
