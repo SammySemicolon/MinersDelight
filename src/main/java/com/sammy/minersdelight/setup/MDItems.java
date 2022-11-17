@@ -32,7 +32,7 @@ public class MDItems {
     public static final ItemEntry<MilkCupItem> MILK_CUP = setupItem("milk_cup", MilkCupItem::new).properties(p -> p.stacksTo(1).craftRemainder(COPPER_CUP.get())).register();
     public static final ItemEntry<SolidCupItem> POWDERED_SNOW_CUP = setupItem("powder_snow_cup", (p) -> new SolidCupItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, p.stacksTo(1).craftRemainder(COPPER_CUP.get()))).register();
 
-    public static final ItemEntry<Item> CAVE_CARROT = setupItem("cave_carrot", MDFoodValues.CAVE_CARROT).register();
+    public static final ItemEntry<ItemNameBlockItem> CAVE_CARROT = setupItem("cave_carrot", MDFoodValues.CAVE_CARROT, p -> new ItemNameBlockItem(MDBlocks.CAVE_CARROTS.get(), p)).register();
     public static final ItemEntry<Item> BAKED_CAVE_CARROT = setupItem("baked_cave_carrot", MDFoodValues.BAKED_CAVE_CARROT).register();
 
     public static final ItemEntry<Item> BAT_WING = setupItem("bat_wing", MDFoodValues.BAT_WING).register();
@@ -78,6 +78,9 @@ public class MDItems {
         return ITEM_REGISTRATE.item(name, factory).properties((p) -> p.craftRemainder(Items.BOWL).stacksTo(16));
     }
 
+    public static <T extends Item> ItemBuilder<T, Registrate> setupItem(String name, FoodProperties foodProperties, NonNullFunction<Item.Properties, T> factory) {
+        return setupItem(name, factory).properties(p -> p.food(foodProperties));
+    }
     public static ItemBuilder<Item, Registrate> setupItem(String name, FoodProperties foodProperties) {
         return setupItem(name, Item::new).properties(p -> p.food(foodProperties));
     }
@@ -102,7 +105,7 @@ public class MDItems {
 
         @Override
         public @NotNull ItemStack makeIcon() {
-            return ITEM_REGISTRATE.get("cave_carrot", ForgeRegistries.ITEMS.getRegistryKey()).get().getDefaultInstance();
+            return ITEM_REGISTRATE.get("copper_pot", ForgeRegistries.ITEMS.getRegistryKey()).get().getDefaultInstance();
         }
     }
 }

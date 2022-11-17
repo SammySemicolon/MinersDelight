@@ -1,6 +1,7 @@
 package com.sammy.minersdelight.setup;
 
 import com.sammy.minersdelight.MinersDelightMod;
+import com.sammy.minersdelight.content.block.CaveCarrotBlock;
 import com.sammy.minersdelight.content.block.GossypiumFlowerBlock;
 import com.sammy.minersdelight.content.block.StuffedSquidFeastBlock;
 import com.sammy.minersdelight.content.block.WildCaveCarrotBlock;
@@ -15,6 +16,7 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -31,6 +33,7 @@ import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import org.spongepowered.asm.mixin.injection.selectors.ITargetSelector;
@@ -75,6 +78,16 @@ public class MDBlocks {
             .addLayer(()-> RenderType::cutout)
             .register();
 
+    public static final BlockEntry<CaveCarrotBlock> CAVE_CARROTS = setupBlock("cave_carrots", CaveCarrotBlock::new, BlockBehaviour.Properties.copy(Blocks.CARROTS))
+            .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
+                String name = Registry.BLOCK.getKey(ctx.get()).getPath()  + "_" + s.getValue(CaveCarrotBlock.AGE);
+                ModelFile crop = p.models().withExistingParent(name, new ResourceLocation("block/crop")).texture("crop", path("block/" + name));
+                return ConfiguredModel.builder().modelFile(crop).build();
+            }))
+            .loot(caveCarrotTable())
+            .addLayer(()-> RenderType::cutout)
+            .register();
+
     public static final BlockEntry<Block> CAVE_CARROT_CRATE = setupBlock("cave_carrot_crate", Block::new, BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD))
             .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
                 String name = Registry.BLOCK.getKey(ctx.get()).getPath();
@@ -93,6 +106,7 @@ public class MDBlocks {
             .addLayer(()-> RenderType::cutout)
             .register();
 
+
     public static <T extends Block> BlockBuilder<T, Registrate> setupBlock(String name, NonNullFunction<BlockBehaviour.Properties, T> factory, BlockBehaviour.Properties properties) {
         return BLOCK_REGISTRATE.block(name, factory).properties((x) -> properties);
     }
@@ -107,6 +121,19 @@ public class MDBlocks {
                     .when(InvertedLootItemCondition.invert(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StuffedSquidFeastBlock.SERVINGS, 5))))
                     .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
             l.add(b, builder.withPool(fullBlock).withPool(bowl));
+        };
+    }
+
+    public static <T extends CaveCarrotBlock> NonNullBiConsumer<RegistrateBlockLootTables, T> caveCarrotTable() {
+        return (l, b) -> {
+            LootTable.Builder builder = LootTable.lootTable();
+            LootPool.Builder fullyGrown = LootPool.lootPool().when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(MDItems.CAVE_CARROT.get())
+                    .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CaveCarrotBlock.AGE, 3)))
+                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))));
+            LootPool.Builder notFullyGrown = LootPool.lootPool().when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(MDItems.CAVE_CARROT.get())
+                    .when(InvertedLootItemCondition.invert(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CaveCarrotBlock.AGE, 3))))
+                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
+            l.add(b, builder.withPool(fullyGrown).withPool(notFullyGrown));
         };
     }
 

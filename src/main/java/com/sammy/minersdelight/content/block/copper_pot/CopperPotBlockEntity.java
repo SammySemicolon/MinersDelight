@@ -327,7 +327,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 		if (level == null) return false;
 
 		++cookTime;
-		cookTimeTotal = recipe.getCookTime();
+		cookTimeTotal = (int) (recipe.getCookTime()*0.8f);
 		if (cookTime < cookTimeTotal) {
 			return false;
 		}
