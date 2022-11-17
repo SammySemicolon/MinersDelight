@@ -20,7 +20,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class MDLangProvider extends LanguageProvider {
+public class MDLangMerger extends LanguageProvider {
 
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting()
             .disableHtmlEscaping()
@@ -28,7 +28,7 @@ public class MDLangProvider extends LanguageProvider {
 
     private final DataGenerator gen;
 
-    public MDLangProvider(DataGenerator gen) {
+    public MDLangMerger(DataGenerator gen) {
         super(gen, MinersDelightMod.MODID, "en_us");
         this.gen = gen;
     }

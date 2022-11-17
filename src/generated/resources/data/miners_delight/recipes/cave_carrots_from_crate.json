@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "miners_delight:cave_carrot_crate"
+    }
+  ],
+  "result": {
+    "item": "miners_delight:cave_carrot",
+    "count": 9
+  }
+}

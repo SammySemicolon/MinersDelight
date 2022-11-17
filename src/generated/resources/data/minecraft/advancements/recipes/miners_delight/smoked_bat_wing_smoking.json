@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:smoked_bat_wing_smoking"
+    ]
+  },
+  "criteria": {
+    "has_bat_wing": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:bat_wing"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:smoked_bat_wing_smoking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bat_wing",
+      "has_the_recipe"
+    ]
+  ]
+}

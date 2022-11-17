@@ -1,11 +1,11 @@
 package com.sammy.minersdelight;
 
-import com.sammy.minersdelight.data.MDLangProvider;
+import com.sammy.minersdelight.data.MDLangMerger;
+import com.sammy.minersdelight.data.MDRecipeProvider;
 import com.sammy.minersdelight.setup.*;
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -45,7 +45,8 @@ public class MinersDelightMod {
 	public static class DataOnly {
 		public static void gatherData(GatherDataEvent event) {
 			DataGenerator generator = event.getGenerator();
-			generator.addProvider(new MDLangProvider(generator));
+			generator.addProvider(new MDLangMerger(generator));
+			generator.addProvider(new MDRecipeProvider(generator));
 		}
 	}
 }

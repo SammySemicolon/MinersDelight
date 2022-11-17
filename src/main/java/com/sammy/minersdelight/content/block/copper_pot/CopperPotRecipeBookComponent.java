@@ -1,5 +1,7 @@
 package com.sammy.minersdelight.content.block.copper_pot;
 
+import com.sammy.minersdelight.setup.CupConversionHandler;
+import com.sammy.minersdelight.setup.MDItems;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -36,13 +38,19 @@ public class CopperPotRecipeBookComponent extends RecipeBookComponent
 	@Override
 	public void setupGhostRecipe(Recipe<?> recipe, List<Slot> slots) {
 		ItemStack resultStack = recipe.getResultItem();
+		boolean cupServed = CupConversionHandler.BOWL_TO_CUP.containsKey(resultStack.getItem());
+		if (cupServed) {
+			ItemStack cupResultStack = new ItemStack(CupConversionHandler.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
+			cupResultStack.setTag(resultStack.getTag());
+			resultStack = cupResultStack;
+		}
 		this.ghostRecipe.setRecipe(recipe);
 		if (slots.get(4).getItem().isEmpty()) {
 			this.ghostRecipe.addIngredient(Ingredient.of(resultStack), (slots.get(4)).x, (slots.get(4)).y);
 		}
 
 		if (recipe instanceof CookingPotRecipe cookingRecipe) {
-			ItemStack containerStack = cookingRecipe.getOutputContainer();
+			ItemStack containerStack = cupServed ? MDItems.COPPER_CUP.asStack() : cookingRecipe.getOutputContainer();
 			if (!containerStack.isEmpty()) {
 				this.ghostRecipe.addIngredient(Ingredient.of(containerStack), (slots.get(5)).x, (slots.get(5)).y);
 			}

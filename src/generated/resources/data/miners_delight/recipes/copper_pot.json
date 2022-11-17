@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " Y ",
+    "XZX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:ingots/copper"
+    },
+    "Y": {
+      "item": "minecraft:wooden_shovel"
+    },
+    "Z": [
+      {
+        "item": "minecraft:water_bucket"
+      },
+      {
+        "item": "miners_delight:water_cup"
+      }
+    ]
+  },
+  "result": {
+    "item": "miners_delight:copper_pot"
+  }
+}

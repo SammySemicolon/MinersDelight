@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:baked_squid"
+    ]
+  },
+  "criteria": {
+    "has_squid": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:squid"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:baked_squid"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_squid",
+      "has_the_recipe"
+    ]
+  ]
+}

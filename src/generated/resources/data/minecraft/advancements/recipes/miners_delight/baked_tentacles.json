@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:baked_tentacles"
+    ]
+  },
+  "criteria": {
+    "has_tentacles": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:tentacles"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:baked_tentacles"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tentacles",
+      "has_the_recipe"
+    ]
+  ]
+}
