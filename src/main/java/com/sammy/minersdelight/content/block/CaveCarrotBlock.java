@@ -31,7 +31,7 @@ public class CaveCarrotBlock extends CropBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return pState.is(ModBlocks.RICH_SOIL_FARMLAND.get());
+        return pState.is(ModBlocks.RICH_SOIL.get());
     }
 
     @Override
