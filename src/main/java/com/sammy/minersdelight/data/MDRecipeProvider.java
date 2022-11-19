@@ -11,6 +11,10 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
+import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
 import java.util.function.Consumer;
 
@@ -18,6 +22,7 @@ import static net.minecraft.data.recipes.ShapedRecipeBuilder.shaped;
 import static net.minecraft.data.recipes.ShapelessRecipeBuilder.shapeless;
 import static net.minecraft.data.recipes.SimpleCookingRecipeBuilder.smelting;
 import static net.minecraft.data.recipes.SimpleCookingRecipeBuilder.smoking;
+import static vectorwing.farmersdelight.data.recipe.CookingRecipes.*;
 
 public class MDRecipeProvider extends RecipeProvider {
     public MDRecipeProvider(DataGenerator pGenerator) {
@@ -93,5 +98,32 @@ public class MDRecipeProvider extends RecipeProvider {
         smoking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), MDItems.BAKED_SQUID.get(), 0.25f, 100)
                 .unlockedBy("has_squid", has(MDItems.SQUID.get()))
                 .save(consumer, "baked_squid_smoking");
+
+        CookingPotRecipeBuilder.cookingPotRecipe(MDItems.PASTA_WITH_VEGGIEBALLS.get(), 1, SLOW_COOKING, LARGE_EXP)
+                .addIngredient(MDItems.CAVE_CARROT.get())
+                .addIngredient(ModItems.RAW_PASTA.get())
+                .addIngredient(ModItems.TOMATO_SAUCE.get())
+                .unlockedByAnyIngredient(MDItems.CAVE_CARROT.get(), ModItems.RAW_PASTA.get(), ModItems.TOMATO_SAUCE.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer, "miners_delight:cooking/pasta_with_veggieballs");
+
+        CookingPotRecipeBuilder.cookingPotRecipe(MDItems.CAVE_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+                .addIngredient(MDItems.CAVE_CARROT.get())
+                .addIngredient(Items.RED_MUSHROOM)
+                .addIngredient(Items.BROWN_MUSHROOM, 2)
+                .unlockedByAnyIngredient(MDItems.CAVE_CARROT.get(), Items.RED_MUSHROOM, Items.BROWN_MUSHROOM)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer, "miners_delight:cooking/cave_soup");
+
+        CookingPotRecipeBuilder.cookingPotRecipe(MDBlocks.STUFFED_SQUID.get(), 1, SLOW_COOKING, LARGE_EXP)
+                .addIngredient(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get(), MDItems.BAKED_SQUID.get()))
+                .addIngredient(ModItems.RICE.get(), 2)
+                .addIngredient(Ingredient.of(MDItems.CAVE_CARROT.get(), Items.CARROT))
+                .addIngredient(Tags.Items.EGGS)
+                .addIngredient(ModItems.ONION.get())
+                .unlockedByAnyIngredient(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get(), MDItems.BAKED_SQUID.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer, "miners_delight:cooking/stuffed_squid");
+
     }
 }

@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "miners_delight:cooking/pasta_with_veggieballs"
+    ]
+  },
+  "criteria": {
+    "has_any_ingredient": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:cave_carrot",
+              "farmersdelight:raw_pasta",
+              "farmersdelight:tomato_sauce"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "miners_delight:cooking/pasta_with_veggieballs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_any_ingredient",
+      "has_the_recipe"
+    ]
+  ]
+}

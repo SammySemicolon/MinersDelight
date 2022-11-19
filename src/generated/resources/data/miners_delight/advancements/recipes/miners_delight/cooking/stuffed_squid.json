@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "miners_delight:cooking/stuffed_squid"
+    ]
+  },
+  "criteria": {
+    "has_any_ingredient": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:squid",
+              "miners_delight:glow_squid",
+              "miners_delight:baked_squid"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "miners_delight:cooking/stuffed_squid"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_any_ingredient",
+      "has_the_recipe"
+    ]
+  ]
+}
