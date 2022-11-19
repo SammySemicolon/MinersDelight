@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "miners_delight:wild_cave_carrots"
+    }
+  ],
+  "tool": {
+    "tag": "forge:shears"
+  },
+  "result": [
+    {
+      "item": "miners_delight:gossypium"
+    },
+    {
+      "item": "miners_delight:gossypium",
+      "chance": 0.5
+    },
+    {
+      "item": "miners_delight:cave_carrot"
+    },
+    {
+      "item": "miners_delight:cave_carrot",
+      "count": 2,
+      "chance": 0.5
+    }
+  ]
+}

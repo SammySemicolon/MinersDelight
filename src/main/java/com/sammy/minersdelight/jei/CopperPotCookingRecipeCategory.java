@@ -50,6 +50,7 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 		title = TextUtils.getTranslation("jei.cooking");
 		ResourceLocation backgroundImage = MinersDelightMod.path("textures/gui/copper_pot.png");
 		background = helper.createDrawable(backgroundImage, 29, 16, 117, 57);
+		//TODO: when porting, update the usage of the JEI api here.
 		icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(MDBlocks.COPPER_POT.get()));
 		heatIndicator = helper.createDrawable(backgroundImage, 176, 0, 17, 15);
 		arrow = helper.drawableBuilder(backgroundImage, 176, 15, 29, 17)

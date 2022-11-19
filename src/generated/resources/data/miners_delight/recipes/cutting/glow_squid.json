@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "miners_delight:glow_squid"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "item": "miners_delight:tentacles",
+      "count": 3
+    },
+    {
+      "item": "miners_delight:tentacles",
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:glow_ink_sac"
+    },
+    {
+      "item": "minecraft:glow_ink_sac",
+      "count": 2,
+      "chance": 0.5
+    }
+  ]
+}

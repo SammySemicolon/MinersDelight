@@ -15,6 +15,7 @@ import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
+import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.function.Consumer;
 
@@ -125,5 +126,27 @@ public class MDRecipeProvider extends RecipeProvider {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer, "miners_delight:cooking/stuffed_squid");
 
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(MDItems.BAT_WING.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.PHANTOM_MEMBRANE, 1)
+                .addResultWithChance(Items.PHANTOM_MEMBRANE, 0.5f, 2)
+                .build(consumer, "miners_delight:cutting/bat_wing");
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(MDItems.SQUID.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), MDItems.TENTACLES.get(), 3)
+                .addResultWithChance(MDItems.TENTACLES.get(), 0.5f)
+                .addResult(Items.INK_SAC)
+                .addResultWithChance(Items.INK_SAC, 0.5f, 2)
+                .build(consumer, "miners_delight:cutting/squid");
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(MDItems.GLOW_SQUID.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), MDItems.TENTACLES.get(), 3)
+                .addResultWithChance(MDItems.TENTACLES.get(), 0.5f)
+                .addResult(Items.GLOW_INK_SAC)
+                .addResultWithChance(Items.GLOW_INK_SAC, 0.5f, 2)
+                .build(consumer, "miners_delight:cutting/glow_squid");
+
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(MDBlocks.WILD_CAVE_CARROTS.get()), Ingredient.of(Tags.Items.SHEARS), MDBlocks.GOSSYPIUM.get(), 1)
+                .addResultWithChance(MDBlocks.GOSSYPIUM.get(), 0.5F, 1)
+                .addResult(MDItems.CAVE_CARROT.get())
+                .addResultWithChance(MDItems.CAVE_CARROT.get(), 0.5f, 2)
+                .build(consumer, "miners_delight:cutting/wild_cave_carrot");
     }
 }
