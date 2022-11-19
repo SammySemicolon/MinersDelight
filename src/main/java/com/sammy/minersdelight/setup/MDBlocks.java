@@ -51,6 +51,7 @@ public class MDBlocks {
             .blockstate((ctx, p) -> {
             })
             .simpleItem()
+            .addLayer(()-> RenderType::cutout)
             .register();
 
     public static final BlockEntry<StuffedSquidFeastBlock> STUFFED_SQUID = setupBlock("stuffed_squid", StuffedSquidFeastBlock::new, BlockBehaviour.Properties.copy(Blocks.PUMPKIN))
