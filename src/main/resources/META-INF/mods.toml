@@ -16,9 +16,3 @@ mandatory = true
 versionRange = "[39,)"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies.miners_delight]]
-modId="lodestone"
-mandatory=true
-versionRange="[FORGE-1.18.2-1.2,)"
-ordering="AFTER"
-side="BOTH"

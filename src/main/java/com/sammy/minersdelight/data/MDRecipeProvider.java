@@ -72,6 +72,11 @@ public class MDRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, MinersDelightMod.path("cave_carrots_from_crate"));
 
+        shapeless(Items.STRING, 2)
+                .requires(MDBlocks.GOSSYPIUM.get())
+                .unlockedBy("has_gossypium", has(MDBlocks.GOSSYPIUM.get()))
+                .save(consumer, MinersDelightMod.path("string_from_gossypium"));
+
         smelting(Ingredient.of(MDItems.CAVE_CARROT.get()), MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 200)
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, "baked_cave_carrot");

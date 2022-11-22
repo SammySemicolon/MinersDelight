@@ -15,9 +15,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class AddSeveralItemsModifier extends LootModifier
+public class ReplaceDroppedLootModifier extends LootModifier
 {
-
 	private final Item addedItem;
 	private final int min;
 	private final int max;
@@ -25,7 +24,7 @@ public class AddSeveralItemsModifier extends LootModifier
 	/**
 	 * This loot modifier adds an item to the loot table, given the conditions specified.
 	 */
-	protected AddSeveralItemsModifier(LootItemCondition[] conditionsIn, Item addedItemIn, int min, int max) {
+	protected ReplaceDroppedLootModifier(LootItemCondition[] conditionsIn, Item addedItemIn, int min, int max) {
 		super(conditionsIn);
 		this.addedItem = addedItemIn;
 		this.min = min;
@@ -35,6 +34,7 @@ public class AddSeveralItemsModifier extends LootModifier
 	@Nonnull
 	@Override
 	protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+		generatedLoot.clear();
 		ItemStack addedStack = new ItemStack(addedItem, Mth.nextInt(context.getRandom(), min, max));
 		if (addedStack.getCount() < addedStack.getMaxStackSize()) {
 			generatedLoot.add(addedStack);
@@ -52,18 +52,18 @@ public class AddSeveralItemsModifier extends LootModifier
 		return generatedLoot;
 	}
 
-	public static class Serializer extends GlobalLootModifierSerializer<AddSeveralItemsModifier>
+	public static class Serializer extends GlobalLootModifierSerializer<ReplaceDroppedLootModifier>
 	{
 		@Override
-		public AddSeveralItemsModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
+		public ReplaceDroppedLootModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
 			Item addedItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation((GsonHelper.getAsString(object, "item"))));
 			int min = GsonHelper.getAsInt(object, "min");
 			int max = GsonHelper.getAsInt(object, "max");
-			return new AddSeveralItemsModifier(ailootcondition, addedItem, min, max);
+			return new ReplaceDroppedLootModifier(ailootcondition, addedItem, min, max);
 		}
 
 		@Override
-		public JsonObject write(AddSeveralItemsModifier instance) {
+		public JsonObject write(ReplaceDroppedLootModifier instance) {
 			return new JsonObject();
 		}
 	}

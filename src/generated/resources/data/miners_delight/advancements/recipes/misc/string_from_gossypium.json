@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "miners_delight:string_from_gossypium"
+    ]
+  },
+  "criteria": {
+    "has_gossypium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:gossypium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "miners_delight:string_from_gossypium"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gossypium",
+      "has_the_recipe"
+    ]
+  ]
+}
