@@ -16,6 +16,7 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -50,11 +51,12 @@ public class MDBlocks {
     public static final BlockEntry<CopperPotBlock> COPPER_POT = setupBlock("copper_pot", CopperPotBlock::new, BlockBehaviour.Properties.of(Material.METAL).strength(0.5F, 6.0F).sound(SoundType.LANTERN))
             .blockstate((ctx, p) -> {
             })
-            .simpleItem()
+            .item().properties(p -> p.stacksTo(1)).build()
+            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
             .addLayer(()-> RenderType::cutout)
             .register();
 
-    public static final BlockEntry<StuffedSquidFeastBlock> STUFFED_SQUID = setupBlock("stuffed_squid", StuffedSquidFeastBlock::new, BlockBehaviour.Properties.copy(Blocks.PUMPKIN))
+    public static final BlockEntry<StuffedSquidFeastBlock> STUFFED_SQUID = setupBlock("stuffed_squid", StuffedSquidFeastBlock::new, BlockBehaviour.Properties.copy(Blocks.CAKE))
             .blockstate((ctx, p) -> {
                 Function<BlockState, ModelFile> modelFunc = s -> {
                     int servings = s.getValue(StuffedSquidFeastBlock.SERVINGS);
@@ -67,6 +69,7 @@ public class MDBlocks {
             })
             .loot(stuffedSquidTable())
             .item().defaultModel().properties(p -> p.stacksTo(1)).build()
+            .tag(BlockTags.MINEABLE_WITH_AXE)
             .register();
 
     public static final BlockEntry<WildCaveCarrotBlock> WILD_CAVE_CARROTS = setupBlock("wild_cave_carrots", WildCaveCarrotBlock::new, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS))
@@ -76,6 +79,7 @@ public class MDBlocks {
                 return ConfiguredModel.builder().modelFile(cross).build();
             }))
             .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).build()
+            .tag(BlockTags.SMALL_FLOWERS)
             .addLayer(()-> RenderType::cutout)
             .register();
 
@@ -95,6 +99,7 @@ public class MDBlocks {
                 return ConfiguredModel.builder().modelFile(p.models().getExistingFile(path("block/"+name))).build();
             }))
             .simpleItem()
+            .tag(BlockTags.MINEABLE_WITH_AXE)
             .register();
 
     public static final BlockEntry<GossypiumFlowerBlock> GOSSYPIUM = setupBlock("gossypium", GossypiumFlowerBlock::new, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS))

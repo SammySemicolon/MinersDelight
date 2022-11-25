@@ -44,7 +44,7 @@ public class MDItems {
     public static final ItemEntry<Item> TENTACLES = setupItem("tentacles", MDFoodValues.TENTACLES).register();
     public static final ItemEntry<Item> BAKED_TENTACLES = setupItem("baked_tentacles", MDFoodValues.BAKED_TENTACLES).register();
     public static final ItemEntry<Item> IMPROVISED_BARBECUE_STICK = setupItem("improvised_barbecue_stick", MDFoodValues.IMPROVISED_BARBECUE_STICK).register();
-    public static final ItemEntry<Item> PASTA_WITH_VEGGIEBALLS = setupItem("pasta_with_veggieballs", MDFoodValues.PASTA_WITH_VEGGIEBALLS).register();
+    public static final ItemEntry<Item> PASTA_WITH_VEGGIEBALLS = setupItem("pasta_with_veggieballs", MDFoodValues.PASTA_WITH_VEGGIEBALLS).properties(p -> p.stacksTo(16)).register();
     public static final ItemEntry<ConsumableItem> CAVE_SOUP = setupBowlFoodItem("cave_soup", MDFoodValues.CAVE_SOUP).register();
     public static final ItemEntry<ConsumableItem> BOWL_OF_STUFFED_SQUID = setupBowlFoodItem("bowl_of_stuffed_squid", MDFoodValues.BOWL_OF_STUFFED_SQUID).register();
 

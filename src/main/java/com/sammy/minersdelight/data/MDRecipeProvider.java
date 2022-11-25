@@ -21,8 +21,7 @@ import java.util.function.Consumer;
 
 import static net.minecraft.data.recipes.ShapedRecipeBuilder.shaped;
 import static net.minecraft.data.recipes.ShapelessRecipeBuilder.shapeless;
-import static net.minecraft.data.recipes.SimpleCookingRecipeBuilder.smelting;
-import static net.minecraft.data.recipes.SimpleCookingRecipeBuilder.smoking;
+import static net.minecraft.data.recipes.SimpleCookingRecipeBuilder.*;
 import static vectorwing.farmersdelight.data.recipe.CookingRecipes.*;
 
 public class MDRecipeProvider extends RecipeProvider {
@@ -83,6 +82,9 @@ public class MDRecipeProvider extends RecipeProvider {
         smoking(Ingredient.of(MDItems.CAVE_CARROT.get()), MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 100)
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, "baked_cave_carrot_smoking");
+        campfireCooking(Ingredient.of(MDItems.CAVE_CARROT.get()), MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 200)
+                .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
+                .save(consumer, "baked_cave_carrot_campfire");
 
         smelting(Ingredient.of(MDItems.BAT_WING.get()), MDItems.SMOKED_BAT_WING.get(), 0.25f, 200)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
@@ -90,6 +92,9 @@ public class MDRecipeProvider extends RecipeProvider {
         smoking(Ingredient.of(MDItems.BAT_WING.get()), MDItems.SMOKED_BAT_WING.get(), 0.25f, 100)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
                 .save(consumer, "smoked_bat_wing_smoking");
+        campfireCooking(Ingredient.of(MDItems.BAT_WING.get()), MDItems.SMOKED_BAT_WING.get(), 0.25f, 200)
+                .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
+                .save(consumer, "smoked_bat_wing_campfire");
 
         smelting(Ingredient.of(MDItems.TENTACLES.get()), MDItems.BAKED_TENTACLES.get(), 0.25f, 200)
                 .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
@@ -97,6 +102,9 @@ public class MDRecipeProvider extends RecipeProvider {
         smoking(Ingredient.of(MDItems.TENTACLES.get()), MDItems.BAKED_TENTACLES.get(), 0.25f, 100)
                 .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
                 .save(consumer, "baked_tentacles_smoking");
+        campfireCooking(Ingredient.of(MDItems.TENTACLES.get()), MDItems.BAKED_TENTACLES.get(), 0.25f, 200)
+                .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
+                .save(consumer, "baked_tentacles_campfire");
 
         smelting(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), MDItems.BAKED_SQUID.get(), 0.25f, 200)
                 .unlockedBy("has_squid", has(MDItems.SQUID.get()))
@@ -104,6 +112,9 @@ public class MDRecipeProvider extends RecipeProvider {
         smoking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), MDItems.BAKED_SQUID.get(), 0.25f, 100)
                 .unlockedBy("has_squid", has(MDItems.SQUID.get()))
                 .save(consumer, "baked_squid_smoking");
+        campfireCooking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), MDItems.BAKED_SQUID.get(), 0.25f, 200)
+                .unlockedBy("has_squid", has(MDItems.SQUID.get()))
+                .save(consumer, "baked_squid_campfire");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.PASTA_WITH_VEGGIEBALLS.get(), 1, SLOW_COOKING, LARGE_EXP)
                 .addIngredient(MDItems.CAVE_CARROT.get())

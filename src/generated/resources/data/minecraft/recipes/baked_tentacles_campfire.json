@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "miners_delight:tentacles"
+  },
+  "result": "miners_delight:baked_tentacles",
+  "experience": 0.25,
+  "cookingtime": 200
+}
