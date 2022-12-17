@@ -65,8 +65,9 @@ public class CopperCupItem extends Item implements DispensibleContainerItem {
       if (content.equals(Fluids.EMPTY)) {
          pPlayer.setItemInHand(pUsedHand, Items.BUCKET.getDefaultInstance());
          pInteractionTarget.interact(pPlayer, pUsedHand);
-         Item item = pPlayer.getItemInHand(pUsedHand).getItem();
-         pPlayer.setItemInHand(pUsedHand, BUCKET_TO_CUP.apply(item));
+         Item maybeFilledBucket = pPlayer.getItemInHand(pUsedHand).getItem();
+         ItemStack filledResult = ItemUtils.createFilledResult(pStack, pPlayer, BUCKET_TO_CUP.apply(maybeFilledBucket));
+         pPlayer.setItemInHand(pUsedHand, filledResult);
       }
       return super.interactLivingEntity(pStack, pPlayer, pInteractionTarget, pUsedHand);
    }
