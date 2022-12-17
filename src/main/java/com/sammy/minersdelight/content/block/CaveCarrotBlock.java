@@ -1,9 +1,11 @@
 package com.sammy.minersdelight.content.block;
 
 import com.sammy.minersdelight.setup.MDBlocks;
+import com.sammy.minersdelight.setup.MDItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CarrotBlock;
@@ -32,6 +34,11 @@ public class CaveCarrotBlock extends CropBlock {
     @Override
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return pState.is(ModBlocks.RICH_SOIL.get());
+    }
+
+    @Override
+    protected ItemLike getBaseSeedId() {
+        return MDItems.CAVE_CARROT.get();
     }
 
     @Override
