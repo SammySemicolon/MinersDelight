@@ -69,7 +69,7 @@ public class MDBlocks {
                         .rotationY((((int) s.getValue(FeastBlock.FACING).toYRot() + 180))).build());
             })
             .loot(stuffedSquidTable())
-            .item().defaultModel().properties(p -> p.stacksTo(1).craftRemainder(Items.BOWL)).build()
+            .item().defaultModel().properties(p -> p.stacksTo(1)).build()
             .tag(BlockTags.MINEABLE_WITH_AXE)
             .register();
 

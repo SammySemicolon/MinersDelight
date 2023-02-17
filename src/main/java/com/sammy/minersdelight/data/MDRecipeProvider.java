@@ -130,7 +130,7 @@ public class MDRecipeProvider extends RecipeProvider {
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer, "miners_delight:cooking/cave_soup");
 
-        CookingPotRecipeBuilder.cookingPotRecipe(MDBlocks.STUFFED_SQUID.get(), 1, SLOW_COOKING, LARGE_EXP)
+        CookingPotRecipeBuilder.cookingPotRecipe(MDBlocks.STUFFED_SQUID.get(), 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
                 .addIngredient(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get(), MDItems.BAKED_SQUID.get()))
                 .addIngredient(ModItems.RICE.get(), 2)
                 .addIngredient(Ingredient.of(MDItems.CAVE_CARROT.get(), Items.CARROT))
