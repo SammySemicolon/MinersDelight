@@ -2,7 +2,6 @@ package com.sammy.minersdelight.logic;
 
 import com.sammy.minersdelight.MinersDelightMod;
 import com.sammy.minersdelight.setup.MDWorldgen;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
