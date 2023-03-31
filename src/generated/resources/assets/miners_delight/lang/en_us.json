@@ -29,11 +29,13 @@
   "item.miners_delight.powder_snow_cup": "Powder Snow Cup",
   "item.miners_delight.pumpkin_soup_cup": "Pumpkin Soup Cup",
   "item.miners_delight.rabbit_stew_cup": "Rabbit Stew Cup",
+  "item.miners_delight.silverfish_eggs": "Silverfish Eggs",
   "item.miners_delight.smoked_bat_wing": "Smoked Bat Wing",
   "item.miners_delight.squid": "Squid",
   "item.miners_delight.tentacles": "Tentacles",
   "item.miners_delight.vegetable_soup_cup": "Vegetable Soup Cup",
   "item.miners_delight.water_cup": "Water Cup",
+  "item.miners_delight.weird_caviar": "Weird Caviar",
   "itemGroup.miners_delight": "Miner's Delight",
   "miners_delight.container.cooking_pot": "Copper Pot"
 }

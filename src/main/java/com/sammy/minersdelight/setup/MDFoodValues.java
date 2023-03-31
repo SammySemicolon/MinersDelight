@@ -1,17 +1,13 @@
 package com.sammy.minersdelight.setup;
 
-import com.mojang.datafixers.util.Pair;
-import com.sammy.minersdelight.mixin.FoodPropertiesMixin;
-import com.tterrag.registrate.util.nullness.NonNullFunction;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.data.loading.DatagenModLoader;
-import vectorwing.farmersdelight.common.registry.ModEffects;
+import com.mojang.datafixers.util.*;
+import com.sammy.minersdelight.mixin.*;
+import net.minecraft.world.effect.*;
+import net.minecraft.world.food.*;
+import net.minecraftforge.data.loading.*;
+import vectorwing.farmersdelight.common.registry.*;
 
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class MDFoodValues {
 
@@ -19,6 +15,8 @@ public class MDFoodValues {
     public static final FoodProperties BAKED_CAVE_CARROT = new FoodProperties.Builder().nutrition(5).saturationMod(0.45f).build();
     public static final FoodProperties BAT_WING = new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 600, 0), 0.4F).meat().fast().build();
     public static final FoodProperties SMOKED_BAT_WING = new FoodProperties.Builder().nutrition(3).saturationMod(0.15f).meat().fast().build();
+    public static final FoodProperties SILVERFISH_EGGS = new FoodProperties.Builder().nutrition(1).saturationMod(0.05f).build();
+    public static final FoodProperties WEIRD_CAVIAR = new FoodProperties.Builder().nutrition(5).saturationMod(0.15f).build();
     public static final FoodProperties SQUID = new FoodProperties.Builder().nutrition(3).saturationMod(0.15f).effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 600, 0), 0.4F).meat().build();
     public static final FoodProperties GLOW_SQUID = new FoodProperties.Builder().nutrition(3).saturationMod(0.15f).effect(() -> new MobEffectInstance(MobEffects.GLOWING, 600, 0), 1f).meat().build();
     public static final FoodProperties BAKED_SQUID = new FoodProperties.Builder().nutrition(6).saturationMod(0.4f).meat().build();

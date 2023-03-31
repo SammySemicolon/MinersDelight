@@ -29,9 +29,11 @@
   "item.miners_delight.powder_snow_cup": "dn\u0186 \u028DouS \u0279\u01DDp\u028Do\u0500",
   "item.miners_delight.pumpkin_soup_cup": "dn\u0186 dnoS u\u0131\u029Ed\u026Fn\u0500",
   "item.miners_delight.rabbit_stew_cup": "dn\u0186 \u028D\u01DD\u0287S \u0287\u0131qq\u0250\u1D1A",
+  "item.miners_delight.silverfish_eggs": "sbb\u018E \u0265s\u0131\u025F\u0279\u01DD\u028C\u05DF\u0131S",
   "item.miners_delight.smoked_bat_wing": "bu\u0131M \u0287\u0250\u15FA p\u01DD\u029Eo\u026FS",
   "item.miners_delight.squid": "p\u0131nbS",
   "item.miners_delight.tentacles": "s\u01DD\u05DF\u0254\u0250\u0287u\u01DD\u27D8",
   "item.miners_delight.vegetable_soup_cup": "dn\u0186 dnoS \u01DD\u05DFq\u0250\u0287\u01DDb\u01DD\u039B",
-  "item.miners_delight.water_cup": "dn\u0186 \u0279\u01DD\u0287\u0250M"
+  "item.miners_delight.water_cup": "dn\u0186 \u0279\u01DD\u0287\u0250M",
+  "item.miners_delight.weird_caviar": "\u0279\u0250\u0131\u028C\u0250\u0186 p\u0279\u0131\u01DDM"
 }

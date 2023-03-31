@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "miners_delight:weird_caviar"
+    ]
+  },
+  "criteria": {
+    "has_silverfish_eggs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:silverfish_eggs"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "miners_delight:weird_caviar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_silverfish_eggs",
+      "has_the_recipe"
+    ]
+  ]
+}

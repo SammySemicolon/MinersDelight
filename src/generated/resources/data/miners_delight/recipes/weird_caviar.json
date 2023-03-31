@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "miners_delight:silverfish_eggs"
+    },
+    {
+      "item": "miners_delight:silverfish_eggs"
+    },
+    {
+      "item": "miners_delight:silverfish_eggs"
+    }
+  ],
+  "result": {
+    "item": "miners_delight:weird_caviar"
+  }
+}

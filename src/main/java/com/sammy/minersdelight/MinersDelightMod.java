@@ -31,6 +31,7 @@ public class MinersDelightMod {
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		IEventBus forgeBus = MinecraftForge.EVENT_BUS;
 		MDLootModifiers.LOOT_MODIFIERS.register(modBus);
+		MDLootConditions.LOOT_CONDITIONS.register(modBus);
 		MDMenuTypes.MENU_TYPES.register(modBus);
 		MDBlocks.register();
 		MDItems.register();
