@@ -15,6 +15,7 @@ import net.minecraftforge.registries.*;
 import org.jetbrains.annotations.*;
 import vectorwing.farmersdelight.common.*;
 import vectorwing.farmersdelight.common.item.*;
+import vectorwing.farmersdelight.common.tag.*;
 
 import static com.sammy.minersdelight.MinersDelightMod.*;
 
@@ -23,7 +24,7 @@ public class MDItems {
 
     public static final ItemEntry<CopperCupItem> COPPER_CUP = setupItem("copper_cup", (p) -> new CopperCupItem(Fluids.EMPTY, p.stacksTo(16))).register();
     public static final ItemEntry<CopperCupItem> WATER_CUP = setupItem("water_cup", (p) -> new CopperCupItem(Fluids.WATER, p.stacksTo(1).craftRemainder(COPPER_CUP.get()))).register();
-    public static final ItemEntry<MilkCupItem> MILK_CUP = setupItem("milk_cup", MilkCupItem::new).properties(p -> p.stacksTo(1).craftRemainder(COPPER_CUP.get())).register();
+    public static final ItemEntry<MilkCupItem> MILK_CUP = setupItem("milk_cup", MilkCupItem::new).tag(ForgeTags.MILK).properties(p -> p.stacksTo(1).craftRemainder(COPPER_CUP.get())).register();
     public static final ItemEntry<SolidCupItem> POWDERED_SNOW_CUP = setupItem("powder_snow_cup", (p) -> new SolidCupItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, p.stacksTo(1).craftRemainder(COPPER_CUP.get()))).register();
 
     public static final ItemEntry<ItemNameBlockItem> CAVE_CARROT = setupItem("cave_carrot", MDFoodValues.CAVE_CARROT, p -> new ItemNameBlockItem(MDBlocks.CAVE_CARROTS.get(), p)).register();

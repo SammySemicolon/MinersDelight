@@ -2,18 +2,15 @@ package com.sammy.minersdelight.jei;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.sammy.minersdelight.MinersDelightMod;
-import com.sammy.minersdelight.setup.CupConversionHandler;
+import com.sammy.minersdelight.logic.*;
 import com.sammy.minersdelight.setup.MDBlocks;
 import com.sammy.minersdelight.setup.MDItems;
 import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableAnimated;
-import mezz.jei.api.gui.ingredient.IGuiItemStackGroup;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
@@ -24,16 +21,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
-import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.utility.TextUtils;
-import vectorwing.farmersdelight.integration.jei.FDRecipeTypes;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -101,10 +93,10 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 			}
 		}
 		ItemStack resultStack = recipe.getResultItem();
-		boolean cupServed = CupConversionHandler.BOWL_TO_CUP.containsKey(resultStack.getItem());
+		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		ItemStack mealContainerStack = cupServed ? MDItems.COPPER_CUP.asStack() : recipe.getOutputContainer();
 		if (cupServed) {
-			ItemStack cupResultStack = new ItemStack(CupConversionHandler.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
+			ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
 			cupResultStack.setTag(resultStack.getTag());
 			resultStack = cupResultStack;
 		}

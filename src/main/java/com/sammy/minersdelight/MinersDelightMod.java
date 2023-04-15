@@ -1,21 +1,19 @@
 package com.sammy.minersdelight;
 
-import com.sammy.minersdelight.data.MDLangMerger;
-import com.sammy.minersdelight.data.MDRecipeProvider;
+import com.sammy.minersdelight.data.*;
 import com.sammy.minersdelight.setup.*;
-import com.tterrag.registrate.Registrate;
-import com.tterrag.registrate.util.nullness.NonNullSupplier;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.tterrag.registrate.*;
+import com.tterrag.registrate.util.nullness.*;
+import net.minecraft.data.*;
+import net.minecraft.resources.*;
+import net.minecraftforge.common.*;
+import net.minecraftforge.eventbus.api.*;
+import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.javafmlmod.*;
+import net.minecraftforge.forge.event.lifecycle.*;
+import org.apache.logging.log4j.*;
 
-import java.util.Random;
+import java.util.*;
 
 @Mod(MinersDelightMod.MODID)
 public class MinersDelightMod {
@@ -27,6 +25,7 @@ public class MinersDelightMod {
 	public static Registrate registrate(){
 		return REGISTRATE.get();
 	}
+
 	public MinersDelightMod() {
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		IEventBus forgeBus = MinecraftForge.EVENT_BUS;
@@ -36,6 +35,7 @@ public class MinersDelightMod {
 		MDBlocks.register();
 		MDItems.register();
 		MDBlockEntities.register();
+		modBus.addListener(MDCauldronInteractions::addCauldronInteractions);
 		modBus.addListener(DataOnly::gatherData);
 	}
 

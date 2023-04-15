@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[39,)"
+loaderVersion = "[40,)"
 license = "All rights reserved"
 [[mods]]
 logoFile = "miners_delight.png"
@@ -13,6 +13,6 @@ A Farmer's Delight addon focused on adding more food variety to caves!
 [[dependencies.miners_delight]]
 modId = "forge"
 mandatory = true
-versionRange = "[39,)"
+versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"

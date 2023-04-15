@@ -26,7 +26,7 @@ public class MDFoodValues {
     public static final FoodProperties PASTA_WITH_VEGGIEBALLS = new FoodProperties.Builder().nutrition(12).saturationMod(1f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0F).build();
     public static final FoodProperties CAVE_SOUP = new FoodProperties.Builder().nutrition(10).saturationMod(0.4f).effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();
     public static final FoodProperties BOWL_OF_STUFFED_SQUID = new FoodProperties.Builder().nutrition(10).saturationMod(0.8f).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1.0F).build();
-    public static final FoodProperties HOT_COCOA = new FoodProperties.Builder().effect(()-> new MobEffectInstance(MobEffects.DIG_SPEED, 1800), 1).build();
+    public static final FoodProperties HOT_COCOA = new FoodProperties.Builder().effect(()-> new MobEffectInstance(MobEffects.DIG_SPEED, 1800), 1).alwaysEat().build();
 
     //Not really sure how to get the values for these with the comfort effect included
     public static final FoodProperties BEETROOT_SOUP = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1.0F).build();

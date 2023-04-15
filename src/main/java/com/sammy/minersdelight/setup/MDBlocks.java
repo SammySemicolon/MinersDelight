@@ -1,49 +1,34 @@
 package com.sammy.minersdelight.setup;
 
-import com.sammy.minersdelight.MinersDelightMod;
-import com.sammy.minersdelight.content.block.CaveCarrotBlock;
-import com.sammy.minersdelight.content.block.GossypiumFlowerBlock;
-import com.sammy.minersdelight.content.block.StuffedSquidFeastBlock;
-import com.sammy.minersdelight.content.block.WildCaveCarrotBlock;
-import com.sammy.minersdelight.content.block.copper_pot.CopperPotBlock;
-import com.tterrag.registrate.Registrate;
-import com.tterrag.registrate.builders.BlockBuilder;
-import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
-import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
-import com.tterrag.registrate.util.nullness.NonNullFunction;
-import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
-import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelector;
-import vectorwing.farmersdelight.common.block.FeastBlock;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
+import com.sammy.minersdelight.*;
+import com.sammy.minersdelight.content.block.*;
+import com.sammy.minersdelight.content.block.copper_pot.*;
+import com.sammy.minersdelight.content.block.sticky_basket.*;
+import com.tterrag.registrate.*;
+import com.tterrag.registrate.builders.*;
+import com.tterrag.registrate.providers.loot.*;
+import com.tterrag.registrate.util.entry.*;
+import com.tterrag.registrate.util.nullness.*;
+import net.minecraft.advancements.critereon.*;
+import net.minecraft.client.renderer.*;
+import net.minecraft.core.*;
+import net.minecraft.resources.*;
+import net.minecraft.tags.*;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.*;
+import net.minecraft.world.level.material.*;
+import net.minecraft.world.level.storage.loot.*;
+import net.minecraft.world.level.storage.loot.entries.*;
+import net.minecraft.world.level.storage.loot.functions.*;
+import net.minecraft.world.level.storage.loot.predicates.*;
+import net.minecraft.world.level.storage.loot.providers.number.*;
+import net.minecraftforge.client.model.generators.*;
+import vectorwing.farmersdelight.common.block.*;
 
-import java.util.function.Function;
+import java.util.function.*;
 
-import static com.sammy.minersdelight.MinersDelightMod.path;
+import static com.sammy.minersdelight.MinersDelightMod.*;
 
 public class MDBlocks {
     public static final Registrate BLOCK_REGISTRATE = MinersDelightMod.registrate().creativeModeTab(MDItems.MinersDelightTab::get);
@@ -53,6 +38,14 @@ public class MDBlocks {
             })
             .item().properties(p -> p.stacksTo(1)).build()
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .addLayer(()-> RenderType::cutout)
+            .register();
+
+    public static final BlockEntry<StickyBasketBlock> STICKY_BASKET = setupBlock("sticky_basket", StickyBasketBlock::new, BlockBehaviour.Properties.of(Material.WOOD).strength(1.5F).sound(SoundType.WOOD))
+            .blockstate((ctx, p) -> {
+            })
+            .item().build()
+            .tag(BlockTags.MINEABLE_WITH_AXE)
             .addLayer(()-> RenderType::cutout)
             .register();
 

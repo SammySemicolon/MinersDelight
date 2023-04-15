@@ -39,6 +39,13 @@ public class MDRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 .save(consumer, MinersDelightMod.path("copper_pot"));
 
+        shaped(MDBlocks.STICKY_BASKET.get())
+                .define('X', Tags.Items.RODS_WOODEN)
+                .define('Y', Items.COBWEB)
+                .pattern("X X").pattern("Y Y").pattern("XYX")
+                .unlockedBy("has_cobweb", has(Items.COBWEB))
+                .save(consumer, MinersDelightMod.path("sticky_basket"));
+
         shaped(MDItems.COPPER_CUP.get())
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .pattern("X X").pattern(" X ")

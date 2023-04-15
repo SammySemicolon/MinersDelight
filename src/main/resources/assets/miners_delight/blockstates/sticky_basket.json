@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "miners_delight:block/sticky_basket",
+      "x": 180
+    },
+    "facing=up": {
+      "model": "miners_delight:block/sticky_basket"
+    },
+    "facing=north": {
+      "model": "miners_delight:block/sticky_basket",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "miners_delight:block/sticky_basket",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "miners_delight:block/sticky_basket",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east": {
+      "model": "miners_delight:block/sticky_basket",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
