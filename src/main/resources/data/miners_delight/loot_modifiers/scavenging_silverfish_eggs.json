@@ -1,0 +1,28 @@
+{
+	"type": "farmersdelight:add_item",
+	"conditions": [
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "killer",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"tag": "farmersdelight:tools/knives"
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"type": "minecraft:silverfish"
+			}
+		},
+		{
+			"condition": "minecraft:random_chance",
+			"chance" : 0.10
+		}
+	],
+	"item": "miners_delight:silverfish_eggs"
+}

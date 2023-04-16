@@ -1,24 +1,21 @@
 package com.sammy.minersdelight.data;
 
-import com.sammy.minersdelight.MinersDelightMod;
-import com.sammy.minersdelight.setup.MDBlocks;
-import com.sammy.minersdelight.setup.MDItems;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
-import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
-import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
-import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
+import com.sammy.minersdelight.*;
+import com.sammy.minersdelight.setup.*;
+import net.minecraft.data.*;
+import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.*;
+import net.minecraftforge.common.*;
+import vectorwing.farmersdelight.client.recipebook.*;
+import vectorwing.farmersdelight.common.registry.*;
+import vectorwing.farmersdelight.common.tag.*;
+import vectorwing.farmersdelight.data.builder.*;
 
-import java.util.function.Consumer;
+import java.util.function.*;
 
-import static net.minecraft.data.recipes.ShapedRecipeBuilder.shaped;
-import static net.minecraft.data.recipes.ShapelessRecipeBuilder.shapeless;
+import static net.minecraft.data.recipes.ShapedRecipeBuilder.*;
+import static net.minecraft.data.recipes.ShapelessRecipeBuilder.*;
 import static net.minecraft.data.recipes.SimpleCookingRecipeBuilder.*;
 import static vectorwing.farmersdelight.data.recipe.CookingRecipes.*;
 
@@ -42,6 +39,13 @@ public class MDRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 .save(consumer, MinersDelightMod.path("copper_pot"));
 
+        shaped(MDBlocks.STICKY_BASKET.get())
+                .define('X', Tags.Items.RODS_WOODEN)
+                .define('Y', Items.COBWEB)
+                .pattern("X X").pattern("Y Y").pattern("XYX")
+                .unlockedBy("has_cobweb", has(Items.COBWEB))
+                .save(consumer, MinersDelightMod.path("sticky_basket"));
+
         shaped(MDItems.COPPER_CUP.get())
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .pattern("X X").pattern(" X ")
@@ -63,6 +67,12 @@ public class MDRecipeProvider extends RecipeProvider {
                 .requires(MDItems.SMOKED_BAT_WING.get())
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, MinersDelightMod.path("improvised_barbecue_stick"));
+
+        shapeless(MDItems.WEIRD_CAVIAR.get(), 1)
+                .requires(Items.BOWL)
+                .requires(MDItems.SILVERFISH_EGGS.get(), 3)
+                .unlockedBy("has_silverfish_eggs", has(MDItems.SILVERFISH_EGGS.get()))
+                .save(consumer, MinersDelightMod.path("weird_caviar"));
 
         shapeless(MDItems.CAVE_CARROT.get(), 9)
                 .requires(MDBlocks.CAVE_CARROT_CRATE.get())

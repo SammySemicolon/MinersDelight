@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "Y Y",
+    "XYX"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:rods/wooden"
+    },
+    "Y": {
+      "item": "minecraft:cobweb"
+    }
+  },
+  "result": {
+    "item": "miners_delight:sticky_basket"
+  }
+}

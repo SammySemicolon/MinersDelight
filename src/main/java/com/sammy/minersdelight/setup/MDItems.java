@@ -1,35 +1,30 @@
 package com.sammy.minersdelight.setup;
 
-import com.sammy.minersdelight.MinersDelightMod;
+import com.sammy.minersdelight.*;
 import com.sammy.minersdelight.content.item.*;
-import com.tterrag.registrate.Registrate;
-import com.tterrag.registrate.builders.ItemBuilder;
-import com.tterrag.registrate.util.entry.ItemEntry;
-import com.tterrag.registrate.util.nullness.NonNullFunction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.food.FoodProperties;
+import com.tterrag.registrate.*;
+import com.tterrag.registrate.builders.*;
+import com.tterrag.registrate.util.entry.*;
+import com.tterrag.registrate.util.nullness.*;
+import net.minecraft.sounds.*;
+import net.minecraft.world.food.*;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
-import vectorwing.farmersdelight.common.FoodValues;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.registry.ModItems;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.material.*;
+import net.minecraftforge.registries.*;
+import org.jetbrains.annotations.*;
+import vectorwing.farmersdelight.common.*;
+import vectorwing.farmersdelight.common.item.*;
+import vectorwing.farmersdelight.common.tag.*;
 
-import java.util.HashMap;
-import java.util.function.Function;
-import java.util.function.Supplier;
-
-import static com.sammy.minersdelight.MinersDelightMod.MODID;
+import static com.sammy.minersdelight.MinersDelightMod.*;
 
 public class MDItems {
     public static final Registrate ITEM_REGISTRATE = MinersDelightMod.registrate().creativeModeTab(MinersDelightTab::get);
 
     public static final ItemEntry<CopperCupItem> COPPER_CUP = setupItem("copper_cup", (p) -> new CopperCupItem(Fluids.EMPTY, p.stacksTo(16))).register();
     public static final ItemEntry<CopperCupItem> WATER_CUP = setupItem("water_cup", (p) -> new CopperCupItem(Fluids.WATER, p.stacksTo(1).craftRemainder(COPPER_CUP.get()))).register();
-    public static final ItemEntry<MilkCupItem> MILK_CUP = setupItem("milk_cup", MilkCupItem::new).properties(p -> p.stacksTo(1).craftRemainder(COPPER_CUP.get())).register();
+    public static final ItemEntry<MilkCupItem> MILK_CUP = setupItem("milk_cup", MilkCupItem::new).tag(ForgeTags.MILK).properties(p -> p.stacksTo(1).craftRemainder(COPPER_CUP.get())).register();
     public static final ItemEntry<SolidCupItem> POWDERED_SNOW_CUP = setupItem("powder_snow_cup", (p) -> new SolidCupItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, p.stacksTo(1).craftRemainder(COPPER_CUP.get()))).register();
 
     public static final ItemEntry<ItemNameBlockItem> CAVE_CARROT = setupItem("cave_carrot", MDFoodValues.CAVE_CARROT, p -> new ItemNameBlockItem(MDBlocks.CAVE_CARROTS.get(), p)).register();
@@ -37,6 +32,9 @@ public class MDItems {
 
     public static final ItemEntry<Item> BAT_WING = setupItem("bat_wing", MDFoodValues.BAT_WING).register();
     public static final ItemEntry<Item> SMOKED_BAT_WING = setupItem("smoked_bat_wing", MDFoodValues.SMOKED_BAT_WING).register();
+
+    public static final ItemEntry<SilverfishEggsItem> SILVERFISH_EGGS = setupItem("silverfish_eggs", MDFoodValues.SILVERFISH_EGGS, SilverfishEggsItem::new).register();
+    public static final ItemEntry<ConsumableItem> WEIRD_CAVIAR = setupBowlFoodItem("weird_caviar", MDFoodValues.WEIRD_CAVIAR).register();
 
     public static final ItemEntry<Item> SQUID = setupItem("squid", MDFoodValues.SQUID).register();
     public static final ItemEntry<Item> GLOW_SQUID = setupItem("glow_squid", MDFoodValues.GLOW_SQUID).register();

@@ -1,7 +1,7 @@
 package com.sammy.minersdelight.content.block.copper_pot;
 
 import com.google.common.collect.Lists;
-import com.sammy.minersdelight.setup.CupConversionHandler;
+import com.sammy.minersdelight.logic.*;
 import com.sammy.minersdelight.setup.MDBlocks;
 import com.sammy.minersdelight.setup.MDItems;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
@@ -37,7 +37,6 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.common.block.CookingPotBlock;
-import vectorwing.farmersdelight.common.block.entity.CookingPotBlockEntity;
 import vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity;
 import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
@@ -299,8 +298,8 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 	protected boolean canCook(CookingPotRecipe recipe) {
 		if (hasInput()) {
 			ItemStack resultStack = recipe.getResultItem();
-			if (CupConversionHandler.BOWL_TO_CUP.containsKey(resultStack.getItem())) {
-				ItemStack cupResultStack = new ItemStack(CupConversionHandler.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
+			if (CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem())) {
+				ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
 				cupResultStack.setTag(resultStack.getTag());
 				resultStack = cupResultStack;
 			}
@@ -334,10 +333,10 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 
 		cookTime = 0;
 		ItemStack resultStack = recipe.getResultItem();
-		boolean cupServed = CupConversionHandler.BOWL_TO_CUP.containsKey(resultStack.getItem());
+		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		mealContainerStack = cupServed ? MDItems.COPPER_CUP.asStack() : recipe.getOutputContainer();
 		if (cupServed) {
-			ItemStack cupResultStack = new ItemStack(CupConversionHandler.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
+			ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
 			cupResultStack.setTag(resultStack.getTag());
 			resultStack = cupResultStack;
 		}

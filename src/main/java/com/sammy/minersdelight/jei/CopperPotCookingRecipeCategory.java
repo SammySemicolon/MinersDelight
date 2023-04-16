@@ -2,7 +2,7 @@ package com.sammy.minersdelight.jei;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.sammy.minersdelight.MinersDelightMod;
-import com.sammy.minersdelight.setup.CupConversionHandler;
+import com.sammy.minersdelight.logic.*;
 import com.sammy.minersdelight.setup.MDBlocks;
 import com.sammy.minersdelight.setup.MDItems;
 import mezz.jei.api.constants.VanillaTypes;
@@ -94,10 +94,10 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 			}
 		}
 		ItemStack resultStack = recipe.getResultItem();
-		boolean cupServed = CupConversionHandler.BOWL_TO_CUP.containsKey(resultStack.getItem());
+		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		ItemStack mealContainerStack = cupServed ? MDItems.COPPER_CUP.asStack() : recipe.getOutputContainer();
 		if (cupServed) {
-			ItemStack cupResultStack = new ItemStack(CupConversionHandler.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
+			ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
 			cupResultStack.setTag(resultStack.getTag());
 			resultStack = cupResultStack;
 		}

@@ -131,9 +131,6 @@ dependencies {
     implementation fg.deobf(registrate)
     shade registrate
 
-    // Use local lodestone when in multiproject
-    implementation fg.deobf("team.lodestar.lodestone:lodestone:${minecraftVersion}-${project.lodestoneVersion}")
-
     // CurseMaven Deps
     implementation fg.deobf("curse.maven:farmers_delight-398521:3999153")
 }
