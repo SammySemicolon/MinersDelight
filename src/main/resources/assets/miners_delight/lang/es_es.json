@@ -3,6 +3,7 @@
   "block.miners_delight.cave_carrots": "Zanahoria cavernaria",
   "block.miners_delight.copper_pot": "Olla de cobre",
   "block.miners_delight.gossypium": "Gossypium",
+  "block.miners_delight.sticky_basket": "Canasta pegajosa",
   "block.miners_delight.stuffed_squid": "Calamar relleno",
   "block.miners_delight.wild_cave_carrots": "Zanahoria cavernaria silvestre",
   "item.miners_delight.baked_cave_carrot": "Zanahoria cavernaria cocida",
@@ -29,11 +30,13 @@
   "item.miners_delight.powder_snow_cup": "Taza con nieve polvo ",
   "item.miners_delight.pumpkin_soup_cup": "Sopa de calabaza en taza",
   "item.miners_delight.rabbit_stew_cup": "Estofado de conejo en taza",
+  "item.miners_delight.silverfish_eggs": "Huevecillos de pez de plata",
   "item.miners_delight.smoked_bat_wing": "Alas de murcielago ahumada",
   "item.miners_delight.squid": "Squid",
   "item.miners_delight.tentacles": "Tentaculos",
   "item.miners_delight.vegetable_soup_cup": "Sopa de verduras en taza",
   "item.miners_delight.water_cup": "Taza con agua",
+  "item.miners_delight.weird_caviar": "Caviar peculiar",
   "itemGroup.miners_delight": "Miner's Delight",
   "miners_delight.container.cooking_pot": "Olla de cobre"
 }
