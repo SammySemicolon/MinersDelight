@@ -67,7 +67,7 @@ public class MDBlocks {
 
     public static final BlockEntry<WildCaveCarrotBlock> WILD_CAVE_CARROTS = setupBlock("wild_cave_carrots", WildCaveCarrotBlock::new, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS))
             .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
-                String name = Registry.BLOCK.getKey(ctx.get()).getPath();
+                String name = ctx.getId().getPath();
                 ModelFile cross = p.models().withExistingParent(name, new ResourceLocation("block/cross")).texture("cross", path("block/" + name));
                 return ConfiguredModel.builder().modelFile(cross).build();
             }))
@@ -78,7 +78,7 @@ public class MDBlocks {
 
     public static final BlockEntry<CaveCarrotBlock> CAVE_CARROTS = setupBlock("cave_carrots", CaveCarrotBlock::new, BlockBehaviour.Properties.copy(Blocks.CARROTS))
             .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
-                String name = Registry.BLOCK.getKey(ctx.get()).getPath()  + "_" + s.getValue(CaveCarrotBlock.AGE);
+                String name = ctx.getId().getPath()  + "_" + s.getValue(CaveCarrotBlock.AGE);
                 ModelFile crop = p.models().withExistingParent(name, new ResourceLocation("block/crop")).texture("crop", path("block/" + name));
                 return ConfiguredModel.builder().modelFile(crop).build();
             }))
@@ -88,7 +88,7 @@ public class MDBlocks {
 
     public static final BlockEntry<Block> CAVE_CARROT_CRATE = setupBlock("cave_carrot_crate", Block::new, BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD))
             .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
-                String name = Registry.BLOCK.getKey(ctx.get()).getPath();
+                String name = ctx.getId().getPath();
                 return ConfiguredModel.builder().modelFile(p.models().getExistingFile(path("block/"+name))).build();
             }))
             .simpleItem()
@@ -97,7 +97,7 @@ public class MDBlocks {
 
     public static final BlockEntry<GossypiumFlowerBlock> GOSSYPIUM = setupBlock("gossypium", GossypiumFlowerBlock::new, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS))
             .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
-                String name = Registry.BLOCK.getKey(ctx.get()).getPath();
+                String name = ctx.getId().getPath();
                 ModelFile cross = p.models().withExistingParent(name, new ResourceLocation("block/cross")).texture("cross", path("block/" + name));
                 return ConfiguredModel.builder().modelFile(cross).build();
             }))

@@ -42,18 +42,19 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 		title = TextUtils.getTranslation("jei.cooking");
 		ResourceLocation backgroundImage = MinersDelightMod.path("textures/gui/copper_pot.png");
 		background = helper.createDrawable(backgroundImage, 29, 16, 117, 57);
-		//TODO: when porting, update the usage of the JEI api here.
-		icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(MDBlocks.COPPER_POT.get()));
+		icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(MDBlocks.COPPER_POT.get()));
 		heatIndicator = helper.createDrawable(backgroundImage, 176, 0, 17, 15);
 		arrow = helper.drawableBuilder(backgroundImage, 176, 15, 29, 17)
 				.buildAnimated(200, IDrawableAnimated.StartDirection.LEFT, false);
 	}
 
+	@SuppressWarnings("removal")
 	@Override
 	public ResourceLocation getUid() {
 		return this.getRecipeType().getUid();
 	}
-
+	
+	@SuppressWarnings("removal")
 	@Override
 	public Class<? extends CookingPotRecipe> getRecipeClass() {
 		return this.getRecipeType().getRecipeClass();
@@ -103,7 +104,8 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 86, 12).addItemStack(resultStack);
 
 		if (!mealContainerStack.isEmpty()) {
-			builder.addSlot(RecipeIngredientRole.INPUT, 54, 40).addItemStack(mealContainerStack);
+			//Containers must be recognized as OUTPUT for JEI's builtin transfer handler to work
+			builder.addSlot(RecipeIngredientRole.OUTPUT, 54, 40).addItemStack(mealContainerStack);
 		}
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 86, 40).addItemStack(resultStack);
 	}

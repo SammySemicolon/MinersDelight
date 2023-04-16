@@ -16,3 +16,10 @@ mandatory = true
 versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.miners_delight]]
+modId= "farmersdelight"
+mandatory= true
+versionRange= "[1.18.2-1.2.0,)"
+ordering= "NONE"
+side= "BOTH"

@@ -37,6 +37,9 @@
   "result": {
     "item": "miners_delight:stuffed_squid"
   },
+  "container": {
+    "item": "minecraft:bowl"
+  },
   "experience": 2.0,
   "cookingtime": 400
 }
