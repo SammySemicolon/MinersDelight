@@ -1,5 +1,7 @@
 {
   "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.25,
   "ingredient": [
     {
       "item": "miners_delight:squid"
@@ -8,7 +10,5 @@
       "item": "miners_delight:glow_squid"
     }
   ],
-  "result": "miners_delight:baked_squid",
-  "experience": 0.25,
-  "cookingtime": 100
+  "result": "miners_delight:baked_squid"
 }

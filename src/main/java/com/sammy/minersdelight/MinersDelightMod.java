@@ -7,10 +7,10 @@ import com.tterrag.registrate.util.nullness.*;
 import net.minecraft.data.*;
 import net.minecraft.resources.*;
 import net.minecraftforge.common.*;
+import net.minecraftforge.data.event.*;
 import net.minecraftforge.eventbus.api.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.javafmlmod.*;
-import net.minecraftforge.forge.event.lifecycle.*;
 import org.apache.logging.log4j.*;
 
 import java.util.*;
@@ -36,6 +36,7 @@ public class MinersDelightMod {
 		MDItems.register();
 		MDBlockEntities.register();
 		modBus.addListener(MDCauldronInteractions::addCauldronInteractions);
+		modBus.addListener(MDWorldgen::addWorldgen);
 		modBus.addListener(DataOnly::gatherData);
 	}
 
@@ -46,8 +47,8 @@ public class MinersDelightMod {
 	public static class DataOnly {
 		public static void gatherData(GatherDataEvent event) {
 			DataGenerator generator = event.getGenerator();
-			generator.addProvider(new MDLangMerger(generator));
-			generator.addProvider(new MDRecipeProvider(generator));
+			generator.addProvider(true, new MDLangMerger(generator));
+			generator.addProvider(true, new MDRecipeProvider(generator));
 		}
 	}
 }

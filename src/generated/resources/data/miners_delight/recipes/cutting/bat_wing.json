@@ -5,17 +5,17 @@
       "item": "miners_delight:bat_wing"
     }
   ],
-  "tool": {
-    "tag": "forge:tools/knives"
-  },
   "result": [
     {
       "item": "minecraft:phantom_membrane"
     },
     {
-      "item": "minecraft:phantom_membrane",
+      "chance": 0.5,
       "count": 2,
-      "chance": 0.5
+      "item": "minecraft:phantom_membrane"
     }
-  ]
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
 }

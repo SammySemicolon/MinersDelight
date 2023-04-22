@@ -1,55 +1,39 @@
 package com.sammy.minersdelight.content.block.copper_pot;
 
-import com.google.common.collect.Lists;
+import com.google.common.collect.*;
 import com.sammy.minersdelight.logic.*;
-import com.sammy.minersdelight.setup.MDBlocks;
-import com.sammy.minersdelight.setup.MDItems;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.NonNullList;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.Mth;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.Nameable;
-import net.minecraft.world.entity.ExperienceOrb;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.RecipeHolder;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.wrapper.RecipeWrapper;
-import vectorwing.farmersdelight.common.block.CookingPotBlock;
-import vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity;
-import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
-import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
-import vectorwing.farmersdelight.common.mixin.accessor.RecipeManagerAccessor;
-import vectorwing.farmersdelight.common.registry.ModParticleTypes;
-import vectorwing.farmersdelight.common.registry.ModRecipeTypes;
+import com.sammy.minersdelight.setup.*;
+import it.unimi.dsi.fastutil.objects.*;
+import net.minecraft.core.*;
+import net.minecraft.core.particles.*;
+import net.minecraft.nbt.*;
+import net.minecraft.network.chat.*;
+import net.minecraft.resources.*;
+import net.minecraft.server.level.*;
+import net.minecraft.util.*;
+import net.minecraft.world.*;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.player.*;
+import net.minecraft.world.inventory.*;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.entity.*;
+import net.minecraft.world.level.block.state.*;
+import net.minecraft.world.phys.*;
+import net.minecraftforge.common.capabilities.*;
+import net.minecraftforge.common.util.*;
+import net.minecraftforge.items.*;
+import net.minecraftforge.items.wrapper.*;
+import vectorwing.farmersdelight.common.block.*;
+import vectorwing.farmersdelight.common.block.entity.*;
+import vectorwing.farmersdelight.common.crafting.*;
+import vectorwing.farmersdelight.common.mixin.accessor.*;
+import vectorwing.farmersdelight.common.registry.*;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import javax.annotation.*;
+import java.util.*;
 
 public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvider, HeatableBlockEntity, Nameable, RecipeHolder {
 	public static final int MEAL_DISPLAY_SLOT = 4;
@@ -220,7 +204,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 
 	public static void animationTick(Level level, BlockPos pos, BlockState state, CopperPotBlockEntity cookingPot) {
 		if (cookingPot.isHeated(level, pos)) {
-			Random random = level.random;
+			RandomSource random = level.random;
 			if (random.nextFloat() < 0.2F) {
 				double x = (double) pos.getX() + 0.5D + (random.nextDouble() * 0.6D - 0.3D);
 				double y = (double) pos.getY() + 0.7D;
@@ -284,7 +268,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 		if (!mealContainerStack.isEmpty()) {
 			return mealContainerStack;
 		} else {
-			return getMeal().getContainerItem();
+			return getMeal().getCraftingRemainingItem();
 		}
 	}
 
@@ -350,12 +334,12 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 
 		for (int i = 0; i < MEAL_DISPLAY_SLOT; ++i) {
 			ItemStack slotStack = inventory.getStackInSlot(i);
-			if (slotStack.hasContainerItem()) {
+			if (slotStack.hasCraftingRemainingItem()) {
 				Direction direction = getBlockState().getValue(CookingPotBlock.FACING).getCounterClockWise();
 				double x = worldPosition.getX() + 0.5 + (direction.getStepX() * 0.25);
 				double y = worldPosition.getY() + 0.7;
 				double z = worldPosition.getZ() + 0.5 + (direction.getStepZ() * 0.25);
-				ItemUtils.spawnItemEntity(level, inventory.getStackInSlot(i).getContainerItem(), x, y, z,
+				ItemUtils.spawnItemEntity(level, inventory.getStackInSlot(i).getCraftingRemainingItem(), x, y, z,
 						direction.getStepX() * 0.08F, 0.25F, direction.getStepZ() * 0.08F);
 			}
 			if (!slotStack.isEmpty())
@@ -471,7 +455,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 	}
 
 	private boolean doesMealHaveContainer(ItemStack meal) {
-		return !mealContainerStack.isEmpty() || meal.hasContainerItem();
+		return !mealContainerStack.isEmpty() || meal.hasCraftingRemainingItem();
 	}
 
 	public boolean isContainerValid(ItemStack containerItem) {
@@ -479,13 +463,13 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 		if (!mealContainerStack.isEmpty()) {
 			return mealContainerStack.sameItem(containerItem);
 		} else {
-			return getMeal().getContainerItem().sameItem(containerItem);
+			return getMeal().getCraftingRemainingItem().sameItem(containerItem);
 		}
 	}
 
 	@Override
 	public Component getName() {
-		return customName != null ? customName : new TranslatableComponent("miners_delight.container.cooking_pot");
+		return customName != null ? customName : Component.translatable("miners_delight.container.cooking_pot");
 	}
 
 	@Override
@@ -511,7 +495,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 	@Override
 	@Nonnull
 	public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
-		if (cap.equals(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)) {
+		if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {
 			if (side == null || side.equals(Direction.UP)) {
 				return inputHandler.cast();
 			} else {

@@ -133,7 +133,7 @@ dependencies {
     shade registrate
 
     // CurseMaven Deps
-    implementation fg.deobf("curse.maven:farmers_delight-398521:3999153")
+    implementation fg.deobf("curse.maven:farmers_delight-398521:3999157")
 }
 
 jar {

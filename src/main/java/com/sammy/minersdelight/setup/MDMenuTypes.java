@@ -1,27 +1,19 @@
 package com.sammy.minersdelight.setup;
 
-import com.sammy.minersdelight.MinersDelightMod;
-import com.sammy.minersdelight.content.block.copper_pot.CopperPotMenu;
-import com.sammy.minersdelight.content.block.copper_pot.CopperPotScreen;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.inventory.MenuType;
-import net.minecraftforge.common.extensions.IForgeMenuType;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.FarmersDelight;
-import vectorwing.farmersdelight.client.gui.CookingPotScreen;
-import vectorwing.farmersdelight.client.recipebook.RecipeCategories;
-import vectorwing.farmersdelight.common.block.entity.container.CookingPotMenu;
-import vectorwing.farmersdelight.common.registry.ModMenuTypes;
+import com.sammy.minersdelight.*;
+import com.sammy.minersdelight.content.block.copper_pot.*;
+import net.minecraft.client.gui.screens.*;
+import net.minecraft.world.inventory.*;
+import net.minecraftforge.common.extensions.*;
+import net.minecraftforge.eventbus.api.*;
+import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.event.lifecycle.*;
+import net.minecraftforge.registries.*;
 
 public class MDMenuTypes {
 
 
-    public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.CONTAINERS, MinersDelightMod.MODID);
+    public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MinersDelightMod.MODID);
 
     public static final RegistryObject<MenuType<CopperPotMenu>> COPPER_POT = MENU_TYPES
             .register("copper_pot", () -> IForgeMenuType.create(CopperPotMenu::new));

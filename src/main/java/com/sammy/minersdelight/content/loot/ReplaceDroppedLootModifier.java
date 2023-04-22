@@ -1,22 +1,31 @@
 package com.sammy.minersdelight.content.loot;
 
-import com.google.gson.JsonObject;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.util.Mth;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
-import net.minecraftforge.common.loot.LootModifier;
-import net.minecraftforge.registries.ForgeRegistries;
+import com.google.common.base.*;
+import com.mojang.serialization.*;
+import com.mojang.serialization.codecs.*;
+import it.unimi.dsi.fastutil.objects.*;
+import net.minecraft.util.*;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.storage.loot.*;
+import net.minecraft.world.level.storage.loot.predicates.*;
+import net.minecraftforge.common.loot.*;
+import net.minecraftforge.registries.*;
 
-import javax.annotation.Nonnull;
-import java.util.List;
+import javax.annotation.*;
 
 public class ReplaceDroppedLootModifier extends LootModifier
 {
+
+	public static final Supplier<Codec<ReplaceDroppedLootModifier>> CODEC = Suppliers.memoize(() ->
+			RecordCodecBuilder.create(inst -> codecStart(inst).and(
+							inst.group(
+									ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter((m) -> m.addedItem),
+									Codec.INT.optionalFieldOf("min", 1).forGetter((m) -> m.min),
+									Codec.INT.optionalFieldOf("max", 1).forGetter((m) -> m.max)
+							)
+					)
+					.apply(inst, ReplaceDroppedLootModifier::new)));
+
 	private final Item addedItem;
 	private final int min;
 	private final int max;
@@ -33,7 +42,7 @@ public class ReplaceDroppedLootModifier extends LootModifier
 
 	@Nonnull
 	@Override
-	protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+	protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
 		generatedLoot.clear();
 		ItemStack addedStack = new ItemStack(addedItem, Mth.nextInt(context.getRandom(), min, max));
 		if (addedStack.getCount() < addedStack.getMaxStackSize()) {
@@ -52,19 +61,8 @@ public class ReplaceDroppedLootModifier extends LootModifier
 		return generatedLoot;
 	}
 
-	public static class Serializer extends GlobalLootModifierSerializer<ReplaceDroppedLootModifier>
-	{
-		@Override
-		public ReplaceDroppedLootModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
-			Item addedItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation((GsonHelper.getAsString(object, "item"))));
-			int min = GsonHelper.getAsInt(object, "min");
-			int max = GsonHelper.getAsInt(object, "max");
-			return new ReplaceDroppedLootModifier(ailootcondition, addedItem, min, max);
-		}
-
-		@Override
-		public JsonObject write(ReplaceDroppedLootModifier instance) {
-			return new JsonObject();
-		}
+	@Override
+	public Codec<? extends IGlobalLootModifier> codec() {
+		return CODEC.get();
 	}
 }

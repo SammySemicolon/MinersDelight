@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "X X",
-    " X "
-  ],
   "key": {
     "X": {
       "tag": "forge:ingots/copper"
     }
   },
+  "pattern": [
+    "X X",
+    " X "
+  ],
   "result": {
     "item": "miners_delight:copper_cup"
   }

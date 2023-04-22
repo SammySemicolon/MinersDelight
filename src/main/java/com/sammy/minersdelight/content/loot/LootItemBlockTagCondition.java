@@ -18,7 +18,7 @@ public class LootItemBlockTagCondition implements LootItemCondition {
 
    public static final LootItemConditionType BLOCK_TAG = new LootItemConditionType(new LootItemBlockTagCondition.Serializer());
 
-   final TagKey<Block> blockTagKey;
+   public final TagKey<Block> blockTagKey;
    LootItemBlockTagCondition(TagKey<Block> blockTagKey) {
       this.blockTagKey = blockTagKey;
    }

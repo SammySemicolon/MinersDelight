@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.25,
   "ingredient": {
     "item": "miners_delight:bat_wing"
   },
-  "result": "miners_delight:smoked_bat_wing",
-  "experience": 0.25,
-  "cookingtime": 100
+  "result": "miners_delight:smoked_bat_wing"
 }

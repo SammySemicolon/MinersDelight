@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.25,
   "ingredient": {
     "item": "miners_delight:cave_carrot"
   },
-  "result": "miners_delight:baked_cave_carrot",
-  "experience": 0.25,
-  "cookingtime": 200
+  "result": "miners_delight:baked_cave_carrot"
 }

@@ -11,8 +11,6 @@ import java.util.function.Supplier;
 
 @Mixin(FoodProperties.class)
 public interface FoodPropertiesMixin {
-
-
     @Accessor("effects")
     List<Pair<Supplier<MobEffectInstance>, Float>> getEffectsRaw();
 }

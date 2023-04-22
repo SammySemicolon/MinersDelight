@@ -5,25 +5,25 @@
       "item": "miners_delight:squid"
     }
   ],
-  "tool": {
-    "tag": "forge:tools/knives"
-  },
   "result": [
     {
-      "item": "miners_delight:tentacles",
-      "count": 3
+      "count": 3,
+      "item": "miners_delight:tentacles"
     },
     {
-      "item": "miners_delight:tentacles",
-      "chance": 0.5
+      "chance": 0.5,
+      "item": "miners_delight:tentacles"
     },
     {
       "item": "minecraft:ink_sac"
     },
     {
-      "item": "minecraft:ink_sac",
+      "chance": 0.5,
       "count": 2,
-      "chance": 0.5
+      "item": "minecraft:ink_sac"
     }
-  ]
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
 }

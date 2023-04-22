@@ -39,7 +39,7 @@ public class SolidCupItem extends BlockItem implements DispensibleContainerItem 
 
    @Override
    public void fillItemCategory(CreativeModeTab pGroup, NonNullList<ItemStack> pItems) {
-      if (this.allowdedIn(pGroup)) {
+      if (this.allowedIn(pGroup)) {
          pItems.add(new ItemStack(this));
       }
    }

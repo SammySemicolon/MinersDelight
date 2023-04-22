@@ -1,53 +1,37 @@
 package com.sammy.minersdelight.content.item;
 
-import com.sammy.minersdelight.setup.MDItems;
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.NonNullList;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
+import com.sammy.minersdelight.setup.*;
+import net.minecraft.advancements.*;
+import net.minecraft.core.*;
+import net.minecraft.core.particles.*;
+import net.minecraft.server.level.*;
+import net.minecraft.sounds.*;
+import net.minecraft.stats.*;
+import net.minecraft.tags.*;
+import net.minecraft.world.*;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.player.*;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BucketPickup;
-import net.minecraft.world.level.block.LiquidBlockContainer;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.*;
+import net.minecraft.world.level.gameevent.*;
+import net.minecraft.world.level.material.*;
+import net.minecraft.world.phys.*;
+import org.jetbrains.annotations.*;
 
-import java.util.function.Function;
+import java.util.function.*;
 
 public class CopperCupItem extends Item implements DispensibleContainerItem {
+
    public static final Function<Item, ItemStack> BUCKET_TO_CUP = (item) -> {
       if (Items.WATER_BUCKET.equals(item)) {
          return MDItems.WATER_CUP.asStack();
-      }
-      else if (Items.MILK_BUCKET.equals(item)) {
+      } else if (Items.MILK_BUCKET.equals(item)) {
          return MDItems.MILK_CUP.asStack();
-      }
-      else if (Items.POWDER_SNOW_BUCKET.equals(item)) {
+      } else if (Items.POWDER_SNOW_BUCKET.equals(item)) {
          return MDItems.POWDERED_SNOW_CUP.asStack();
-      }
-      else if (Items.BUCKET.equals(item)) {
+      } else if (Items.BUCKET.equals(item)) {
          return MDItems.COPPER_CUP.asStack();
       }
       return ItemStack.EMPTY;
@@ -102,8 +86,7 @@ public class CopperCupItem extends Item implements DispensibleContainerItem {
                         }
 
                         return InteractionResultHolder.sidedSuccess(itemstack2, pLevel.isClientSide());
-                     }
-                     else {
+                     } else {
                         pLevel.setBlock(blockpos, blockstate1, 3);
                      }
                   }
@@ -180,9 +163,10 @@ public class CopperCupItem extends Item implements DispensibleContainerItem {
    }
 
    protected void playEmptySound(@Nullable Player pPlayer, LevelAccessor pLevel, BlockPos pPos) {
-      SoundEvent soundevent = this.content.getAttributes().getEmptySound();
-      if (soundevent == null)
+      SoundEvent soundevent = this.content.getFluidType().getSound(pPlayer, pLevel, pPos, net.minecraftforge.common.SoundActions.BUCKET_EMPTY);
+      if (soundevent == null) {
          soundevent = this.content.is(FluidTags.LAVA) ? SoundEvents.BUCKET_EMPTY_LAVA : SoundEvents.BUCKET_EMPTY;
+      }
       pLevel.playSound(pPlayer, pPos, soundevent, SoundSource.BLOCKS, 1.0F, 1.0F);
       pLevel.gameEvent(pPlayer, GameEvent.FLUID_PLACE, pPos);
    }

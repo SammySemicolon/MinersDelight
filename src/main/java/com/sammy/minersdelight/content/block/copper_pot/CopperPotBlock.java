@@ -7,6 +7,7 @@ import net.minecraft.nbt.*;
 import net.minecraft.network.chat.*;
 import net.minecraft.server.level.*;
 import net.minecraft.sounds.*;
+import net.minecraft.util.*;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.*;
@@ -41,7 +42,7 @@ public class CopperPotBlock extends BaseEntityBlock implements SimpleWaterlogged
 	protected static final VoxelShape SHAPE_WITH_TRAY = Shapes.or(SHAPE, Block.box(0.0D, -1.0D, 0.0D, 16.0D, 0.0D, 16.0D));
 
 	public CopperPotBlock(BlockBehaviour.Properties properties) {
-		super(DatagenModLoader.isRunningDataGen() ? properties.noDrops() : properties); //TODO: help);
+		super(DatagenModLoader.isRunningDataGen() ? properties.noLootTable() : properties); //TODO: help);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(SUPPORT, CookingPotSupport.NONE).setValue(WATERLOGGED, false));
 	}
 
@@ -62,7 +63,7 @@ public class CopperPotBlock extends BaseEntityBlock implements SimpleWaterlogged
 					}
 					level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
 				} else {
-					NetworkHooks.openGui((ServerPlayer) player, copperPotEntity, pos);
+					NetworkHooks.openScreen((ServerPlayer) player, copperPotEntity, pos);
 				}
 			}
 			return InteractionResult.SUCCESS;
@@ -187,7 +188,7 @@ public class CopperPotBlock extends BaseEntityBlock implements SimpleWaterlogged
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void animateTick(BlockState state, Level level, BlockPos pos, Random rand) {
+	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
 		BlockEntity tileEntity = level.getBlockEntity(pos);
 		if (tileEntity instanceof CopperPotBlockEntity copperPotEntity && copperPotEntity.isHeated()) {
 			SoundEvent boilSound = !copperPotEntity.getMeal().isEmpty()

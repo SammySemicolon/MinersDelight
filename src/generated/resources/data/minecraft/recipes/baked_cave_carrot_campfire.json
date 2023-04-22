@@ -1,9 +1,9 @@
 {
   "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.25,
   "ingredient": {
     "item": "miners_delight:cave_carrot"
   },
-  "result": "miners_delight:baked_cave_carrot",
-  "experience": 0.25,
-  "cookingtime": 600
+  "result": "miners_delight:baked_cave_carrot"
 }

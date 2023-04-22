@@ -48,18 +48,6 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 				.buildAnimated(200, IDrawableAnimated.StartDirection.LEFT, false);
 	}
 
-	@SuppressWarnings("removal")
-	@Override
-	public ResourceLocation getUid() {
-		return this.getRecipeType().getUid();
-	}
-	
-	@SuppressWarnings("removal")
-	@Override
-	public Class<? extends CookingPotRecipe> getRecipeClass() {
-		return this.getRecipeType().getRecipeClass();
-	}
-
 	@Override
 	public RecipeType<CookingPotRecipe> getRecipeType() {
 		return COOKING;
