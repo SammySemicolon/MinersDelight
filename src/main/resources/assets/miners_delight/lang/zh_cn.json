@@ -3,6 +3,7 @@
   "block.miners_delight.cave_carrots": "洞穴萝卜",
   "block.miners_delight.copper_pot": "铜锅",
   "block.miners_delight.gossypium": "棉花",
+  "block.miners_delight.sticky_basket": "粘性篮子",
   "block.miners_delight.stuffed_squid": "填馅鱿鱼",
   "block.miners_delight.wild_cave_carrots": "野生洞穴萝卜",
   "item.miners_delight.baked_cave_carrot": "烤洞穴萝卜",
@@ -29,11 +30,13 @@
   "item.miners_delight.powder_snow_cup": "细雪杯",
   "item.miners_delight.pumpkin_soup_cup": "南瓜汤杯",
   "item.miners_delight.rabbit_stew_cup": "兔肉煲杯",
+  "item.miners_delight.silverfish_eggs": "蠹虫卵",
   "item.miners_delight.smoked_bat_wing": "烟熏蝙蝠翼",
   "item.miners_delight.squid": "鱿鱼",
   "item.miners_delight.tentacles": "鱿鱼须",
   "item.miners_delight.vegetable_soup_cup": "蔬菜汤杯",
   "item.miners_delight.water_cup": "水杯",
+  "item.miners_delight.weird_caviar": "怪异鱼籽酱",
   "itemGroup.miners_delight": "矿工乐事",
   "miners_delight.container.cooking_pot": "铜锅"
 }
