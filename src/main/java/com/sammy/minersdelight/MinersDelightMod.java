@@ -36,6 +36,7 @@ public class MinersDelightMod {
 		MDItems.register();
 		MDBlockEntities.register();
 		modBus.addListener(MDCauldronInteractions::addCauldronInteractions);
+		modBus.addListener(MDComposting::addCompostValues);
 		modBus.addListener(DataOnly::gatherData);
 	}
 
