@@ -1,5 +1,5 @@
 {
-	"entries" : [
+	"entries": [
 		{
 			"bowl": "miners_delight:cave_soup",
 			"cup": "miners_delight:cave_soup_cup"
@@ -43,6 +43,10 @@
 		{
 			"bowl": "farmersdelight:vegetable_soup",
 			"cup": "miners_delight:vegetable_soup_cup"
+		},
+		{
+			"bowl": "farmersdelight:pumpkin_soup",
+			"cup": "miners_delight:pumpkin_soup_cup"
 		}
 	]
 }
