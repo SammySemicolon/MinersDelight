@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "X": {
       "tag": "forge:ingots/copper"
@@ -23,5 +24,6 @@
   ],
   "result": {
     "item": "miners_delight:copper_pot"
-  }
+  },
+  "show_notification": true
 }

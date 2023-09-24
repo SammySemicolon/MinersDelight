@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_squid": {
+    "has_silverfish_eggs": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:squid"
+              "miners_delight:silverfish_eggs"
             ]
           }
         ]
@@ -15,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_squid_smoking"
+        "recipe": "miners_delight:weird_caviar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_squid",
+      "has_silverfish_eggs",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_squid_smoking"
+      "miners_delight:weird_caviar"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

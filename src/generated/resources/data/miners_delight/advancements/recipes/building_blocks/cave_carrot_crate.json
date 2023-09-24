@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "miners_delight:cave_carrots_from_crate"
+        "recipe": "miners_delight:cave_carrot_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "miners_delight:cave_carrots_from_crate"
+      "miners_delight:cave_carrot_crate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

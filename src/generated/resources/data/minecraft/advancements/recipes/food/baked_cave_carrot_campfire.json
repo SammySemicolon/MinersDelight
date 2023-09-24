@@ -1,14 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "has_cave_carrot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:cave_carrot",
-              "farmersdelight:raw_pasta",
-              "farmersdelight:tomato_sauce"
+              "miners_delight:cave_carrot"
             ]
           }
         ]
@@ -17,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "miners_delight:cooking/pasta_with_veggieballs"
+        "recipe": "minecraft:baked_cave_carrot_campfire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_any_ingredient",
+      "has_cave_carrot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "miners_delight:cooking/pasta_with_veggieballs"
+      "minecraft:baked_cave_carrot_campfire"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

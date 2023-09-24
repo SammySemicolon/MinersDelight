@@ -70,5 +70,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "miners_delight:blocks/cave_carrots"
 }

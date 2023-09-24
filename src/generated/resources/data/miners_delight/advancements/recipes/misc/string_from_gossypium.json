@@ -30,5 +30,6 @@
     "recipes": [
       "miners_delight:string_from_gossypium"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

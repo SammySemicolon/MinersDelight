@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "X": {
       "item": "miners_delight:cave_carrot"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "miners_delight:cave_carrot_crate"
-  }
+  },
+  "show_notification": true
 }

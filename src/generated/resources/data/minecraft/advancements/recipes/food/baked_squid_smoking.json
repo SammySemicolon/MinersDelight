@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_copper": {
+    "has_squid": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:ingots/copper"
+            "items": [
+              "miners_delight:squid"
+            ]
           }
         ]
       },
@@ -13,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "miners_delight:copper_cup"
+        "recipe": "minecraft:baked_squid_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_copper",
+      "has_squid",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "miners_delight:copper_cup"
+      "minecraft:baked_squid_smoking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

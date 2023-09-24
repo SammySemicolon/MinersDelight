@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cave_carrot": {
+    "has_squid": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:cave_carrot"
+              "miners_delight:squid"
             ]
           }
         ]
@@ -15,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "miners_delight:improvised_barbecue_stick"
+        "recipe": "minecraft:baked_squid"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cave_carrot",
+      "has_squid",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "miners_delight:improvised_barbecue_stick"
+      "minecraft:baked_squid"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

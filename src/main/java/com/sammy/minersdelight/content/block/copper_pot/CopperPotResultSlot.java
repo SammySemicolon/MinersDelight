@@ -52,7 +52,7 @@ public class CopperPotResultSlot extends SlotItemHandler {
 		stack.onCraftedBy(this.player.level(), this.player, this.removeCount);
 
 		if (!this.player.level().isClientSide) {
-			tileEntity.awardUsedRecipes(this.player);
+			tileEntity.awardUsedRecipes(this.player, this.tileEntity.getDroppableInventory());
 		}
 
 		this.removeCount = 0;

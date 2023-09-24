@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_tentacles"
+        "recipe": "minecraft:baked_tentacles_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_tentacles"
+      "minecraft:baked_tentacles_smoking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-22T19:46:31.9100047	Registrate Provider for miners_delight [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2023-09-24T13:17:53.8049688	Registrate Provider for miners_delight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 adacba901adc9342fd71c631b98653e8e2a82c5e assets/miners_delight/blockstates/cave_carrots.json
 1095ba9c112aac1751951b2d68b24d9cda7c3ddd assets/miners_delight/blockstates/cave_carrot_crate.json
 5844ef0b62aace6d6f10f61acfebe261e640e8d4 assets/miners_delight/blockstates/gossypium.json
@@ -53,8 +53,8 @@ b3c91c8a105b29b2f56f81d5ba0c0b5c16604e91 data/forge/tags/items/milk.json
 fa7e1d91d3f569b37e5f60eb65977d895a62433e data/minecraft/tags/blocks/mineable/axe.json
 6d27db8283babbf923031053483731812afdd860 data/minecraft/tags/blocks/mineable/pickaxe.json
 98f28aa628f6517205021323b14b5557f48bda94 data/minecraft/tags/blocks/small_flowers.json
-91845c5bba3502a9060ba3bd9adf6c4f5a49ae3d data/miners_delight/loot_tables/blocks/cave_carrots.json
-8b4e1b9c8fcecb6c48b7f5f7f89702aba86dcf67 data/miners_delight/loot_tables/blocks/cave_carrot_crate.json
-75806332ade130e721d3cd269ce0f938201aa9cb data/miners_delight/loot_tables/blocks/gossypium.json
-95e593588f49098c67ff947c54c59008917a81ce data/miners_delight/loot_tables/blocks/sticky_basket.json
-a8827b3e598cfd839e5de9c63b002d6d4647b14b data/miners_delight/loot_tables/blocks/stuffed_squid.json
+2ae9fc2d4083b0c1ca5adb9034f03ba3463a3ed3 data/miners_delight/loot_tables/blocks/cave_carrots.json
+ad444a4d69f852252e31ca7b9a3d224f024c41af data/miners_delight/loot_tables/blocks/cave_carrot_crate.json
+272b083812e6daadc104efe60a4a82c7a9d34a84 data/miners_delight/loot_tables/blocks/gossypium.json
+83ddbff4a9da71d8a0b2eb6b2afcf2119b5e4092 data/miners_delight/loot_tables/blocks/sticky_basket.json
+df2bd05bcc35b2aa12c03ea70b79a1bd74caa7b2 data/miners_delight/loot_tables/blocks/stuffed_squid.json

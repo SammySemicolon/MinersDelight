@@ -1,11 +1,15 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_copper": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:ingots/copper"
+            "items": [
+              "miners_delight:cave_carrot",
+              "farmersdelight:raw_pasta",
+              "farmersdelight:tomato_sauce"
+            ]
           }
         ]
       },
@@ -13,20 +17,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "miners_delight:copper_pot"
+        "recipe": "miners_delight:cooking/pasta_with_veggieballs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_copper",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "miners_delight:copper_pot"
+      "miners_delight:cooking/pasta_with_veggieballs"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

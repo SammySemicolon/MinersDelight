@@ -1,12 +1,14 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cave_carrot": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:cave_carrot"
+              "miners_delight:cave_carrot",
+              "minecraft:red_mushroom",
+              "minecraft:brown_mushroom"
             ]
           }
         ]
@@ -15,20 +17,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "miners_delight:cave_carrot_crate"
+        "recipe": "miners_delight:cooking/cave_soup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cave_carrot",
+      "has_any_ingredient",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "miners_delight:cave_carrot_crate"
+      "miners_delight:cooking/cave_soup"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_tentacles": {
+    "has_squid": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:tentacles"
+              "miners_delight:squid"
             ]
           }
         ]
@@ -15,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_tentacles_smoking"
+        "recipe": "minecraft:baked_squid_campfire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_tentacles",
+      "has_squid",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_tentacles_smoking"
+      "minecraft:baked_squid_campfire"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

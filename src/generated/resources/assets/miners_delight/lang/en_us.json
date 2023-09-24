@@ -36,7 +36,5 @@
   "item.miners_delight.tentacles": "Tentacles",
   "item.miners_delight.vegetable_soup_cup": "Vegetable Soup Cup",
   "item.miners_delight.water_cup": "Water Cup",
-  "item.miners_delight.weird_caviar": "Weird Caviar",
-  "itemGroup.miners_delight": "Miner's Delight",
-  "miners_delight.container.cooking_pot": "Copper Pot"
+  "item.miners_delight.weird_caviar": "Weird Caviar"
 }

@@ -48,9 +48,10 @@ public class MinersDelightMod {
 
 	public static class DataOnly {
 		public static void gatherData(GatherDataEvent event) {
-			DataGenerator generator = event.getGenerator();
-			generator.addProvider(true, new MDLangMerger(generator));
-			generator.addProvider(true, new MDRecipeProvider(generator));
+			final DataGenerator generator = event.getGenerator();
+			final PackOutput packOutput = generator.getPackOutput();
+			generator.addProvider(true, new MDLangMerger(packOutput));
+			generator.addProvider(true, new MDRecipeProvider(packOutput));
 		}
 	}
 }

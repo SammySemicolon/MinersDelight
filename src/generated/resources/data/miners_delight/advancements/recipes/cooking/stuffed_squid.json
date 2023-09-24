@@ -32,5 +32,6 @@
     "recipes": [
       "miners_delight:cooking/stuffed_squid"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

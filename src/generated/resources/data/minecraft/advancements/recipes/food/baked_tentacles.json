@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cave_carrot": {
+    "has_tentacles": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:cave_carrot"
+              "miners_delight:tentacles"
             ]
           }
         ]
@@ -15,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_cave_carrot_campfire"
+        "recipe": "minecraft:baked_tentacles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cave_carrot",
+      "has_tentacles",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_cave_carrot_campfire"
+      "minecraft:baked_tentacles"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_squid": {
+    "has_cobweb": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:squid"
+              "minecraft:cobweb"
             ]
           }
         ]
@@ -15,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_squid_campfire"
+        "recipe": "miners_delight:sticky_basket"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_squid",
+      "has_cobweb",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_squid_campfire"
+      "miners_delight:sticky_basket"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

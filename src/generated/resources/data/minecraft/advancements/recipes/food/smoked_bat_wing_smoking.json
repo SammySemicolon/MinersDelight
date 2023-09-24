@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_silverfish_eggs": {
+    "has_bat_wing": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:silverfish_eggs"
+              "miners_delight:bat_wing"
             ]
           }
         ]
@@ -15,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "miners_delight:weird_caviar"
+        "recipe": "minecraft:smoked_bat_wing_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_silverfish_eggs",
+      "has_bat_wing",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "miners_delight:weird_caviar"
+      "minecraft:smoked_bat_wing_smoking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
