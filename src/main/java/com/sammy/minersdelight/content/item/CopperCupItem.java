@@ -127,7 +127,6 @@ public class CopperCupItem extends Item implements DispensibleContainerItem {
       } else {
          BlockState blockstate = pLevel.getBlockState(pPos);
          Block block = blockstate.getBlock();
-         Material material = blockstate.getMaterial();
          boolean flag = blockstate.canBeReplaced(this.content);
          boolean flag1 = blockstate.isAir() || flag || block instanceof LiquidBlockContainer && ((LiquidBlockContainer) block).canPlaceLiquid(pLevel, pPos, blockstate, this.content);
          if (!flag1) {
@@ -148,7 +147,7 @@ public class CopperCupItem extends Item implements DispensibleContainerItem {
             this.playEmptySound(pPlayer, pLevel, pPos);
             return true;
          } else {
-            if (!pLevel.isClientSide && flag && !material.isLiquid()) {
+            if (!pLevel.isClientSide && flag && !blockstate.liquid()) {
                pLevel.destroyBlock(pPos, true);
             }
 

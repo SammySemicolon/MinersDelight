@@ -11,16 +11,12 @@ import net.minecraft.world.food.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.*;
-import net.minecraftforge.registries.*;
-import org.jetbrains.annotations.*;
 import vectorwing.farmersdelight.common.*;
 import vectorwing.farmersdelight.common.item.*;
 import vectorwing.farmersdelight.common.tag.*;
 
-import static com.sammy.minersdelight.MinersDelightMod.*;
-
 public class MDItems {
-    public static final Registrate ITEM_REGISTRATE = MinersDelightMod.registrate().creativeModeTab(MinersDelightTab::get);
+    public static final Registrate ITEM_REGISTRATE = MinersDelightMod.registrate().defaultCreativeTab(MDCreativeTabs.TAB_MINERS_DELIGHT.getKey());
 
     public static final ItemEntry<CopperCupItem> COPPER_CUP = setupItem("copper_cup", (p) -> new CopperCupItem(Fluids.EMPTY, p.stacksTo(16))).register();
     public static final ItemEntry<CopperCupItem> WATER_CUP = setupItem("water_cup", (p) -> new CopperCupItem(Fluids.WATER, p.stacksTo(1).craftRemainder(COPPER_CUP.get()))).register();
@@ -88,22 +84,5 @@ public class MDItems {
     }
 
     public static void register() {
-    }
-
-    public static class MinersDelightTab extends CreativeModeTab {
-        public static final MinersDelightTab INSTANCE = new MinersDelightTab();
-
-        public static @NotNull MinersDelightTab get() {
-            return INSTANCE;
-        }
-
-        public MinersDelightTab() {
-            super(MODID);
-        }
-
-        @Override
-        public @NotNull ItemStack makeIcon() {
-            return ITEM_REGISTRATE.get("copper_pot", ForgeRegistries.ITEMS.getRegistryKey()).get().getDefaultInstance();
-        }
     }
 }

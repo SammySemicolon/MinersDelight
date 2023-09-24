@@ -31,19 +31,19 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper>
 	//TODO: update this
 	public static final ResourceLocation EMPTY_CONTAINER_SLOT_CUP = new ResourceLocation(FarmersDelight.MODID, "item/empty_container_slot_bowl");
 
-	public final CopperPotBlockEntity tileEntity;
+	public final CopperPotBlockEntity blockEntity;
 	public final ItemStackHandler inventory;
 	private final ContainerData cookingPotData;
 	private final ContainerLevelAccess canInteractWithCallable;
 	protected final Level level;
 
-	public CopperPotMenu(final int windowId, final Inventory playerInventory, final CopperPotBlockEntity tileEntity, ContainerData cookingPotDataIn) {
+	public CopperPotMenu(final int windowId, final Inventory playerInventory, final CopperPotBlockEntity blockEntity, ContainerData cookingPotDataIn) {
 		super(MDMenuTypes.COPPER_POT.get(), windowId);
-		this.tileEntity = tileEntity;
-		this.inventory = tileEntity.getInventory();
+		this.blockEntity = blockEntity;
+		this.inventory = blockEntity.getInventory();
 		this.cookingPotData = cookingPotDataIn;
-		this.level = playerInventory.player.level;
-		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
+		this.level = playerInventory.player.level();
+		this.canInteractWithCallable = ContainerLevelAccess.create(blockEntity.getLevel(), blockEntity.getBlockPos());
 
 		// Ingredient Slots - 2 Rows x 2 Columns
 		int startX = 8;
@@ -72,7 +72,7 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper>
 		});
 
 		// Bowl Output
-		this.addSlot(new CopperPotResultSlot(playerInventory.player, tileEntity, inventory, 6, 115, 56));
+		this.addSlot(new CopperPotResultSlot(playerInventory.player, blockEntity, inventory, 6, 115, 56));
 
 		// Main Player Inventory
 		int startPlayerInvY = startY * 4 + 12;
@@ -94,7 +94,7 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper>
 	private static CopperPotBlockEntity getTileEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
 		Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
-		final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
+		final BlockEntity tileAtPos = playerInventory.player.level().getBlockEntity(data.readBlockPos());
 		if (tileAtPos instanceof CopperPotBlockEntity) {
 			return (CopperPotBlockEntity) tileAtPos;
 		}
@@ -162,7 +162,7 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper>
 
 	@OnlyIn(Dist.CLIENT)
 	public boolean isHeated() {
-		return tileEntity.isHeated();
+		return blockEntity.isHeated();
 	}
 
 	@Override
@@ -181,7 +181,7 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper>
 
 	@Override
 	public boolean recipeMatches(Recipe<? super RecipeWrapper> recipe) {
-		return recipe.matches(tileEntity.createFakeRecipeWrapper(), level);
+		return recipe.matches(blockEntity.createFakeRecipeWrapper(), level);
 	}
 
 	@Override

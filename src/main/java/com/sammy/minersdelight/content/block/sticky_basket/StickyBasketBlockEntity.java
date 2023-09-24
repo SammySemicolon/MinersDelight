@@ -111,7 +111,7 @@ public class StickyBasketBlockEntity extends RandomizableContainerBlockEntity im
         } else if (stack1.getCount() > stack1.getMaxStackSize()) {
             return false;
         } else {
-            return ItemStack.tagMatches(stack1, stack2);
+            return ItemStack.isSameItemSameTags(stack1, stack2);
         }
     }
 

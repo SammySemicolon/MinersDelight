@@ -119,9 +119,6 @@ dependencies {
         annotationProcessor "org.spongepowered:mixin:${mixinVersion}:processor"
     }
 
-    runtimeOnly fg.deobf("curse.maven:stfu-407174:3759881")
-    runtimeOnly fg.deobf("curse.maven:spark-361579:3824951")
-
     // JEI Dependency
     compileOnly fg.deobf("mezz.jei:jei-${minecraftVersion}-common-api:${jeiVersion}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraftVersion}-forge-api:${jeiVersion}")
@@ -133,7 +130,7 @@ dependencies {
     shade registrate
 
     // CurseMaven Deps
-    implementation fg.deobf("curse.maven:farmers_delight-398521:3999157")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:4679319")
 }
 
 jar {

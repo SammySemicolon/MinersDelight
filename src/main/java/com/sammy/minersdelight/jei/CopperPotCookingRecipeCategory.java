@@ -1,31 +1,29 @@
 package com.sammy.minersdelight.jei;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.sammy.minersdelight.MinersDelightMod;
+import com.sammy.minersdelight.*;
 import com.sammy.minersdelight.logic.*;
-import com.sammy.minersdelight.setup.MDBlocks;
-import com.sammy.minersdelight.setup.MDItems;
-import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
-import mezz.jei.api.gui.drawable.IDrawable;
-import mezz.jei.api.gui.drawable.IDrawableAnimated;
-import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
-import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.recipe.IFocusGroup;
-import mezz.jei.api.recipe.RecipeIngredientRole;
+import com.sammy.minersdelight.setup.*;
+import mezz.jei.api.constants.*;
+import mezz.jei.api.gui.builder.*;
+import mezz.jei.api.gui.drawable.*;
+import mezz.jei.api.gui.ingredient.*;
+import mezz.jei.api.helpers.*;
 import mezz.jei.api.recipe.RecipeType;
-import mezz.jei.api.recipe.category.IRecipeCategory;
-import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.core.NonNullList;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
-import vectorwing.farmersdelight.common.utility.TextUtils;
+import mezz.jei.api.recipe.*;
+import mezz.jei.api.recipe.category.*;
+import net.minecraft.*;
+import net.minecraft.client.*;
+import net.minecraft.client.gui.*;
+import net.minecraft.core.*;
+import net.minecraft.network.chat.*;
+import net.minecraft.resources.*;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.*;
+import vectorwing.farmersdelight.common.crafting.*;
+import vectorwing.farmersdelight.common.utility.*;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Arrays;
+import javax.annotation.*;
+import java.util.*;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -81,7 +79,7 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 				}
 			}
 		}
-		ItemStack resultStack = recipe.getResultItem();
+		ItemStack resultStack = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		ItemStack mealContainerStack = cupServed ? MDItems.COPPER_CUP.asStack() : recipe.getOutputContainer();
 		if (cupServed) {
@@ -99,8 +97,8 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 	}
 
 	@Override
-	public void draw(CookingPotRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack matrixStack, double mouseX, double mouseY) {
-		arrow.draw(matrixStack, 48, 11);
-		heatIndicator.draw(matrixStack, 19, 40);
+	public void draw(CookingPotRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+		arrow.draw(guiGraphics, 48, 11);
+		heatIndicator.draw(guiGraphics, 19, 40);
 	}
 }

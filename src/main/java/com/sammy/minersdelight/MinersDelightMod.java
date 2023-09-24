@@ -32,6 +32,7 @@ public class MinersDelightMod {
 		MDLootModifiers.LOOT_MODIFIERS.register(modBus);
 		MDLootConditions.LOOT_CONDITIONS.register(modBus);
 		MDMenuTypes.MENU_TYPES.register(modBus);
+		MDCreativeTabs.CREATIVE_TABS.register(modBus);
 		MDBlocks.register();
 		MDItems.register();
 		MDBlockEntities.register();

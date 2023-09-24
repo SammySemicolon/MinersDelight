@@ -11,13 +11,11 @@ import com.tterrag.registrate.util.entry.*;
 import com.tterrag.registrate.util.nullness.*;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.client.renderer.*;
-import net.minecraft.core.*;
 import net.minecraft.resources.*;
 import net.minecraft.tags.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.*;
-import net.minecraft.world.level.material.*;
 import net.minecraft.world.level.storage.loot.*;
 import net.minecraft.world.level.storage.loot.entries.*;
 import net.minecraft.world.level.storage.loot.functions.*;
@@ -31,9 +29,9 @@ import java.util.function.*;
 import static com.sammy.minersdelight.MinersDelightMod.*;
 
 public class MDBlocks {
-    public static final Registrate BLOCK_REGISTRATE = MinersDelightMod.registrate().creativeModeTab(MDItems.MinersDelightTab::get);
+    public static final Registrate BLOCK_REGISTRATE = MinersDelightMod.registrate().defaultCreativeTab(MDCreativeTabs.TAB_MINERS_DELIGHT.getKey());
 
-    public static final BlockEntry<CopperPotBlock> COPPER_POT = setupBlock("copper_pot", CopperPotBlock::new, BlockBehaviour.Properties.of(Material.METAL).strength(0.5F, 6.0F).sound(SoundType.LANTERN))
+    public static final BlockEntry<CopperPotBlock> COPPER_POT = setupBlock("copper_pot", CopperPotBlock::new, BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).strength(0.5F, 6.0F).sound(SoundType.LANTERN))
             .blockstate((ctx, p) -> {
             })
             .item().properties(p -> p.stacksTo(1)).build()
@@ -41,7 +39,7 @@ public class MDBlocks {
             .addLayer(()-> RenderType::cutout)
             .register();
 
-    public static final BlockEntry<StickyBasketBlock> STICKY_BASKET = setupBlock("sticky_basket", StickyBasketBlock::new, BlockBehaviour.Properties.of(Material.WOOD).strength(1.5F).sound(SoundType.WOOD))
+    public static final BlockEntry<StickyBasketBlock> STICKY_BASKET = setupBlock("sticky_basket", StickyBasketBlock::new, BlockBehaviour.Properties.of().strength(1.5F).sound(SoundType.BAMBOO_WOOD))
             .blockstate((ctx, p) -> {
             })
             .item().build()
@@ -86,7 +84,7 @@ public class MDBlocks {
             .addLayer(()-> RenderType::cutout)
             .register();
 
-    public static final BlockEntry<Block> CAVE_CARROT_CRATE = setupBlock("cave_carrot_crate", Block::new, BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD))
+    public static final BlockEntry<Block> CAVE_CARROT_CRATE = setupBlock("cave_carrot_crate", Block::new, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD))
             .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
                 String name = ctx.getId().getPath();
                 return ConfiguredModel.builder().modelFile(p.models().getExistingFile(path("block/"+name))).build();

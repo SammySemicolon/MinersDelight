@@ -246,7 +246,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 				if (recipe.matches(inventoryWrapper, level)) {
 					return Optional.of((CookingPotRecipe) recipe);
 				}
-				if (recipe.getResultItem().sameItem(getMeal())) {
+				if (ItemStack.isSameItem(recipe.getResultItem(level.registryAccess()), getMeal())) {
 					return Optional.empty();
 				}
 			}
@@ -281,7 +281,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 
 	protected boolean canCook(CookingPotRecipe recipe) {
 		if (hasInput()) {
-			ItemStack resultStack = recipe.getResultItem();
+			ItemStack resultStack = recipe.getResultItem(level.registryAccess());
 			if (CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem())) {
 				ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
 				cupResultStack.setTag(resultStack.getTag());
@@ -293,7 +293,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 				ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
 				if (storedMealStack.isEmpty()) {
 					return true;
-				} else if (!storedMealStack.sameItem(resultStack)) {
+				} else if (!ItemStack.isSameItem(storedMealStack, resultStack)) {
 					return false;
 				} else if (storedMealStack.getCount() + resultStack.getCount() <= inventory.getSlotLimit(MEAL_DISPLAY_SLOT)) {
 					return true;
@@ -316,7 +316,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 		}
 
 		cookTime = 0;
-		ItemStack resultStack = recipe.getResultItem();
+		ItemStack resultStack = recipe.getResultItem(level.registryAccess());
 		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		mealContainerStack = cupServed ? MDItems.COPPER_CUP.asStack() : recipe.getOutputContainer();
 		if (cupServed) {
@@ -327,7 +327,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 		ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
 		if (storedMealStack.isEmpty()) {
 			inventory.setStackInSlot(MEAL_DISPLAY_SLOT, resultStack.copy());
-		} else if (storedMealStack.sameItem(resultStack)) {
+		} else if (ItemStack.isSameItem(storedMealStack, resultStack)) {
 			storedMealStack.grow(resultStack.getCount());
 		}
 		cookingPot.setRecipeUsed(recipe);
@@ -363,8 +363,8 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 	}
 
 	@Override
-	public void awardUsedRecipes(Player player) {
-		List<Recipe<?>> usedRecipes = getUsedRecipesAndPopExperience(player.level, player.position());
+	public void awardUsedRecipes(Player player, List<ItemStack> items) {
+		List<Recipe<?>> usedRecipes = getUsedRecipesAndPopExperience(player.level(), player.position());
 		player.awardRecipes(usedRecipes);
 		usedRecipeTracker.clear();
 	}
@@ -461,9 +461,9 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 	public boolean isContainerValid(ItemStack containerItem) {
 		if (containerItem.isEmpty()) return false;
 		if (!mealContainerStack.isEmpty()) {
-			return mealContainerStack.sameItem(containerItem);
+			return ItemStack.isSameItem(mealContainerStack, containerItem);
 		} else {
-			return getMeal().getCraftingRemainingItem().sameItem(containerItem);
+			return ItemStack.isSameItem(getMeal().getCraftingRemainingItem(), containerItem);
 		}
 	}
 

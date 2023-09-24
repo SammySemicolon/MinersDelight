@@ -1,22 +1,19 @@
 package com.sammy.minersdelight.content.item;
 
-import com.sammy.minersdelight.setup.MDItems;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.NonNullList;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
+import com.sammy.minersdelight.setup.*;
+import net.minecraft.core.*;
+import net.minecraft.sounds.*;
+import net.minecraft.world.*;
+import net.minecraft.world.entity.player.*;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.item.context.*;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.*;
+import net.minecraft.world.phys.*;
+import org.jetbrains.annotations.*;
 
-import java.util.Map;
+import java.util.*;
 
 public class SolidCupItem extends BlockItem implements DispensibleContainerItem {
    private final SoundEvent placeSound;
@@ -35,13 +32,6 @@ public class SolidCupItem extends BlockItem implements DispensibleContainerItem 
          player.setItemInHand(interactionhand, MDItems.COPPER_CUP.asStack());
       }
       return interactionresult;
-   }
-
-   @Override
-   public void fillItemCategory(CreativeModeTab pGroup, NonNullList<ItemStack> pItems) {
-      if (this.allowedIn(pGroup)) {
-         pItems.add(new ItemStack(this));
-      }
    }
 
    @Override

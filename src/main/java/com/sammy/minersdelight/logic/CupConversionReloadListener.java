@@ -1,12 +1,12 @@
 package com.sammy.minersdelight.logic;
 
 import com.google.gson.*;
-import net.minecraft.core.*;
 import net.minecraft.resources.*;
 import net.minecraft.server.packs.resources.*;
 import net.minecraft.util.profiling.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.event.*;
+import net.minecraftforge.registries.*;
 
 import java.util.*;
 
@@ -39,7 +39,10 @@ public class CupConversionReloadListener extends SimpleJsonResourceReloadListene
     }
     public static Item itemFromJson(JsonElement pItemObject) {
         String s = pItemObject.getAsJsonPrimitive().getAsString();
-        Item item = Registry.ITEM.getOptional(new ResourceLocation(s)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + s + "'"));
+        Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(s));
+        if (item == null) {
+            throw new JsonSyntaxException("Unknown item '" + s + "'");
+        }
         if (item == Items.AIR) {
             throw new JsonSyntaxException("Invalid item: " + s);
         } else {

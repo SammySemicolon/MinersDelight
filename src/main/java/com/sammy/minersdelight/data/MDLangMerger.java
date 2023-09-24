@@ -7,7 +7,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonReader;
 import com.sammy.minersdelight.MinersDelightMod;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.*;
 import net.minecraft.util.GsonHelper;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -24,16 +24,16 @@ public class MDLangMerger extends LanguageProvider {
             .disableHtmlEscaping()
             .create();
 
-    private final DataGenerator gen;
+    private final PackOutput output; //TODO: this should be an access transformer instead but I'm lazy
 
-    public MDLangMerger(DataGenerator gen) {
-        super(gen, MinersDelightMod.MODID, "en_us");
-        this.gen = gen;
+    public MDLangMerger(PackOutput output) {
+        super(output, MinersDelightMod.MODID, "en_us");
+        this.output = output;
     }
 
     @Override
     protected void addTranslations() {
-        Path path = gen.getOutputFolder().resolve("assets/" + MinersDelightMod.MODID + "/lang/" + "en_us.json");
+        Path path = output.getOutputFolder().resolve("assets/" + MinersDelightMod.MODID + "/lang/" + "en_us.json");
 
         try {
             collectExistingEntries(path);

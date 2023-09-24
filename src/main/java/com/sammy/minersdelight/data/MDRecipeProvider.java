@@ -20,18 +20,13 @@ import static net.minecraft.data.recipes.SimpleCookingRecipeBuilder.*;
 import static vectorwing.farmersdelight.data.recipe.CookingRecipes.*;
 
 public class MDRecipeProvider extends RecipeProvider {
-    public MDRecipeProvider(DataGenerator pGenerator) {
-        super(pGenerator);
+    public MDRecipeProvider(PackOutput output) {
+        super(output);
     }
 
     @Override
-    public String getName() {
-        return "Miner's Delight Recipe Provider";
-    }
-
-    @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-        shaped(MDBlocks.COPPER_POT.get())
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        shaped(RecipeCategory.DECORATIONS, MDBlocks.COPPER_POT.get())
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .define('Y', Items.WOODEN_SHOVEL)
                 .define('Z', Ingredient.of(Items.WATER_BUCKET, MDItems.WATER_CUP.get()))
@@ -39,26 +34,26 @@ public class MDRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 .save(consumer, MinersDelightMod.path("copper_pot"));
 
-        shaped(MDBlocks.STICKY_BASKET.get())
+        shaped(RecipeCategory.DECORATIONS, MDBlocks.STICKY_BASKET.get())
                 .define('X', Tags.Items.RODS_WOODEN)
                 .define('Y', Items.COBWEB)
                 .pattern("X X").pattern("Y Y").pattern("XYX")
                 .unlockedBy("has_cobweb", has(Items.COBWEB))
                 .save(consumer, MinersDelightMod.path("sticky_basket"));
 
-        shaped(MDItems.COPPER_CUP.get())
+        shaped(RecipeCategory.DECORATIONS, MDItems.COPPER_CUP.get())
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .pattern("X X").pattern(" X ")
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 .save(consumer, MinersDelightMod.path("copper_cup"));
 
-        shaped(MDBlocks.CAVE_CARROT_CRATE.get())
+        shaped(RecipeCategory.BUILDING_BLOCKS, MDBlocks.CAVE_CARROT_CRATE.get())
                 .define('X', MDItems.CAVE_CARROT.get())
                 .pattern("XXX").pattern("XXX").pattern("XXX")
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, MinersDelightMod.path("cave_carrot_crate"));
 
-        shapeless(MDItems.IMPROVISED_BARBECUE_STICK.get(), 2)
+        shapeless(RecipeCategory.FOOD, MDItems.IMPROVISED_BARBECUE_STICK.get(), 2)
                 .requires(Tags.Items.RODS_WOODEN)
                 .requires(Tags.Items.RODS_WOODEN)
                 .requires(MDItems.BAKED_CAVE_CARROT.get())
@@ -68,59 +63,59 @@ public class MDRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, MinersDelightMod.path("improvised_barbecue_stick"));
 
-        shapeless(MDItems.WEIRD_CAVIAR.get(), 1)
+        shapeless(RecipeCategory.FOOD, MDItems.WEIRD_CAVIAR.get(), 1)
                 .requires(Items.BOWL)
                 .requires(MDItems.SILVERFISH_EGGS.get(), 3)
                 .unlockedBy("has_silverfish_eggs", has(MDItems.SILVERFISH_EGGS.get()))
                 .save(consumer, MinersDelightMod.path("weird_caviar"));
 
-        shapeless(MDItems.CAVE_CARROT.get(), 9)
+        shapeless(RecipeCategory.FOOD, MDItems.CAVE_CARROT.get(), 9)
                 .requires(MDBlocks.CAVE_CARROT_CRATE.get())
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, MinersDelightMod.path("cave_carrots_from_crate"));
 
-        shapeless(Items.STRING, 2)
+        shapeless(RecipeCategory.MISC, Items.STRING, 2)
                 .requires(MDBlocks.GOSSYPIUM.get())
                 .unlockedBy("has_gossypium", has(MDBlocks.GOSSYPIUM.get()))
                 .save(consumer, MinersDelightMod.path("string_from_gossypium"));
 
-        smelting(Ingredient.of(MDItems.CAVE_CARROT.get()), MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 200)
+        smelting(Ingredient.of(MDItems.CAVE_CARROT.get()), RecipeCategory.FOOD, MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 200)
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, "baked_cave_carrot");
-        smoking(Ingredient.of(MDItems.CAVE_CARROT.get()), MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 100)
+        smoking(Ingredient.of(MDItems.CAVE_CARROT.get()), RecipeCategory.FOOD, MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 100)
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, "baked_cave_carrot_smoking");
-        campfireCooking(Ingredient.of(MDItems.CAVE_CARROT.get()), MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 600)
+        campfireCooking(Ingredient.of(MDItems.CAVE_CARROT.get()), RecipeCategory.FOOD, MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 600)
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
                 .save(consumer, "baked_cave_carrot_campfire");
 
-        smelting(Ingredient.of(MDItems.BAT_WING.get()), MDItems.SMOKED_BAT_WING.get(), 0.25f, 200)
+        smelting(Ingredient.of(MDItems.BAT_WING.get()), RecipeCategory.FOOD, MDItems.SMOKED_BAT_WING.get(), 0.25f, 200)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
                 .save(consumer, "smoked_bat_wing");
-        smoking(Ingredient.of(MDItems.BAT_WING.get()), MDItems.SMOKED_BAT_WING.get(), 0.25f, 100)
+        smoking(Ingredient.of(MDItems.BAT_WING.get()), RecipeCategory.FOOD, MDItems.SMOKED_BAT_WING.get(), 0.25f, 100)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
                 .save(consumer, "smoked_bat_wing_smoking");
-        campfireCooking(Ingredient.of(MDItems.BAT_WING.get()), MDItems.SMOKED_BAT_WING.get(), 0.25f, 600)
+        campfireCooking(Ingredient.of(MDItems.BAT_WING.get()), RecipeCategory.FOOD, MDItems.SMOKED_BAT_WING.get(), 0.25f, 600)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
                 .save(consumer, "smoked_bat_wing_campfire");
 
-        smelting(Ingredient.of(MDItems.TENTACLES.get()), MDItems.BAKED_TENTACLES.get(), 0.25f, 200)
+        smelting(Ingredient.of(MDItems.TENTACLES.get()), RecipeCategory.FOOD, MDItems.BAKED_TENTACLES.get(), 0.25f, 200)
                 .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
                 .save(consumer, "baked_tentacles");
-        smoking(Ingredient.of(MDItems.TENTACLES.get()), MDItems.BAKED_TENTACLES.get(), 0.25f, 100)
+        smoking(Ingredient.of(MDItems.TENTACLES.get()), RecipeCategory.FOOD, MDItems.BAKED_TENTACLES.get(), 0.25f, 100)
                 .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
                 .save(consumer, "baked_tentacles_smoking");
-        campfireCooking(Ingredient.of(MDItems.TENTACLES.get()), MDItems.BAKED_TENTACLES.get(), 0.25f, 600)
+        campfireCooking(Ingredient.of(MDItems.TENTACLES.get()), RecipeCategory.FOOD, MDItems.BAKED_TENTACLES.get(), 0.25f, 600)
                 .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
                 .save(consumer, "baked_tentacles_campfire");
 
-        smelting(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), MDItems.BAKED_SQUID.get(), 0.25f, 200)
+        smelting(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), RecipeCategory.FOOD, MDItems.BAKED_SQUID.get(), 0.25f, 200)
                 .unlockedBy("has_squid", has(MDItems.SQUID.get()))
                 .save(consumer, "baked_squid");
-        smoking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), MDItems.BAKED_SQUID.get(), 0.25f, 100)
+        smoking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), RecipeCategory.FOOD, MDItems.BAKED_SQUID.get(), 0.25f, 100)
                 .unlockedBy("has_squid", has(MDItems.SQUID.get()))
                 .save(consumer, "baked_squid_smoking");
-        campfireCooking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), MDItems.BAKED_SQUID.get(), 0.25f, 600)
+        campfireCooking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), RecipeCategory.FOOD, MDItems.BAKED_SQUID.get(), 0.25f, 600)
                 .unlockedBy("has_squid", has(MDItems.SQUID.get()))
                 .save(consumer, "baked_squid_campfire");
 

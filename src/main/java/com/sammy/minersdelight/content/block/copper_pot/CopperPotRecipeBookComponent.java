@@ -37,7 +37,7 @@ public class CopperPotRecipeBookComponent extends RecipeBookComponent
 
 	@Override
 	public void setupGhostRecipe(Recipe<?> recipe, List<Slot> slots) {
-		ItemStack resultStack = recipe.getResultItem();
+		ItemStack resultStack = recipe.getResultItem(this.minecraft.level.registryAccess());
 		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		if (cupServed) {
 			ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
