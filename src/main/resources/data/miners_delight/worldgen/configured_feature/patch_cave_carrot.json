@@ -1,5 +1,5 @@
 {
-  "type": "farmersdelight:wild_crop",
+  "type": "minecraft:random_patch",
   "config": {
     "primary_feature": {
       "feature": {
