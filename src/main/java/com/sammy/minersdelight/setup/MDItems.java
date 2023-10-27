@@ -70,11 +70,14 @@ public class MDItems {
     public static final ItemEntry<CopperCupFoodItem> BAKED_COD_STEW_CUP = setupCupFoodItem("baked_cod_stew_cup", FoodValues.BAKED_COD_STEW).register();
     public static final ItemEntry<CopperCupFoodItem> NOODLE_SOUP_CUP = setupCupFoodItem("noodle_soup_cup", FoodValues.NOODLE_SOUP).register();
     public static final ItemEntry<CopperCupFoodItem> BEEF_STEW_CUP = setupCupFoodItem("beef_stew_cup", FoodValues.BEEF_STEW).register();
-    public static final ItemEntry<CopperCupFoodItem> CAVE_SOUP_CUP = setupCupFoodItem("cave_soup_cup", MDFoodValues.CAVE_SOUP).register();
     public static final ItemEntry<CopperCupFoodItem> CHICKEN_SOUP_CUP = setupCupFoodItem("chicken_soup_cup", FoodValues.CHICKEN_SOUP).register();
     public static final ItemEntry<CopperCupFoodItem> FISH_STEW_CUP = setupCupFoodItem("fish_stew_cup", FoodValues.FISH_STEW).register();
     public static final ItemEntry<CopperCupFoodItem> PUMPKIN_SOUP_CUP = setupCupFoodItem("pumpkin_soup_cup", FoodValues.PUMPKIN_SOUP).register();
     public static final ItemEntry<CopperCupFoodItem> VEGETABLE_SOUP_CUP = setupCupFoodItem("vegetable_soup_cup", FoodValues.VEGETABLE_SOUP).register();
+    public static final ItemEntry<CopperCupFoodItem> BONE_BROTH_CUP = setupCupFoodItem("bone_broth_cup", FoodValues.BONE_BROTH).register();
+    public static final ItemEntry<CopperCupFoodItem> CAVE_SOUP_CUP = setupCupFoodItem("cave_soup_cup", MDFoodValues.CAVE_SOUP).register();
+    public static final ItemEntry<CopperCupFoodItem> BAT_SOUP_CUP = setupCupFoodItem("bat_soup_cup", MDFoodValues.BAT_SOUP).register();
+    public static final ItemEntry<CopperCupFoodItem> INSECT_STEW_CUP = setupCupFoodItem("insect_stew_cup", MDFoodValues.INSECT_STEW).register();
 
     public static ItemBuilder<CopperCupFoodItem, Registrate> setupCupFoodItem(String name, FoodProperties foodProperties) {
         return setupCupFoodItem(name, CopperCupFoodItem::new).properties(p -> p.food(MDFoodValues.cupFoodProperties(foodProperties)));

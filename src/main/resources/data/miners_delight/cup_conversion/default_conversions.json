@@ -5,6 +5,14 @@
 			"cup": "miners_delight:cave_soup_cup"
 		},
 		{
+			"bowl": "miners_delight:bat_soup",
+			"cup": "miners_delight:bat_soup_cup"
+		},
+		{
+			"bowl": "miners_delight:insect_soup",
+			"cup": "miners_delight:insect_soup_cup"
+		},
+		{
 			"bowl": "minecraft:beetroot_soup",
 			"cup": "miners_delight:beetroot_soup_cup"
 		},
@@ -43,6 +51,10 @@
 		{
 			"bowl": "farmersdelight:pumpkin_soup",
 			"cup": "miners_delight:pumpkin_soup_cup"
+		},
+		{
+			"bowl": "farmersdelight:bone_broth",
+			"cup": "miners_delight:bone_broth_cup"
 		}
 	]
 }
