@@ -60,7 +60,7 @@ public class MDRecipeProvider extends RecipeProvider {
                 .requires(Items.BROWN_MUSHROOM)
                 .requires(MDItems.SMOKED_BAT_WING.get())
                 .requires(MDItems.SMOKED_BAT_WING.get())
-                .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
+                .unlockedBy("has_cave_carrot", has(MDBlocks.CAVE_CARROTS.get()))
                 .save(consumer, MinersDelightMod.path("improvised_barbecue_stick"));
 
         shapeless(RecipeCategory.FOOD, MDItems.WEIRD_CAVIAR.get(), 1)

@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.*;
 
 public class MDLangMerger extends LanguageProvider {
 
@@ -49,16 +50,18 @@ public class MDLangMerger extends LanguageProvider {
         }
 
         try (BufferedReader reader = Files.newBufferedReader(path)) {
-            addAll(GsonHelper.fromJson(GSON, reader, JsonObject.class));
+            addAll(GsonHelper.fromJson(GSON, reader, JsonObject.class), "itemGroup.miners_delight", "miners_delight.container.cooking_pot");
             reader.close();
         }
     }
 
-    private void addAll(JsonObject jsonObject) {
+    private void addAll(JsonObject jsonObject, String... ignoredKeys) {
         jsonObject.entrySet().forEach(e -> {
             String key = e.getKey();
-            String value = e.getValue().getAsString();
-            add(key, value);
+            if (!Arrays.asList(ignoredKeys).contains(key)) {
+                String value = e.getValue().getAsString();
+                add(key, value);
+            }
         });
     }
 

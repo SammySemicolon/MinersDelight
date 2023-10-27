@@ -94,7 +94,9 @@ public class StickyBasketBlock extends BaseEntityBlock implements SimpleWaterlog
             if (livingEntity instanceof Player player && player.isCrouching()) {
                 return;
             }
-            pEntity.setDeltaMovement(new Vec3(motion.x, -0.05f, motion.z));
+            if (!pState.getValue(WATERLOGGED)) {
+                pEntity.setDeltaMovement(new Vec3(motion.x, -0.05f, motion.z));
+            }
         }
     }
 

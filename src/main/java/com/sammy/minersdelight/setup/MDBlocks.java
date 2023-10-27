@@ -23,6 +23,7 @@ import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.*;
 import net.minecraftforge.client.model.generators.*;
 import vectorwing.farmersdelight.common.block.*;
+import vectorwing.farmersdelight.common.tag.*;
 
 import java.util.function.*;
 
@@ -66,10 +67,27 @@ public class MDBlocks {
     public static final BlockEntry<WildCaveCarrotBlock> WILD_CAVE_CARROTS = setupBlock("wild_cave_carrots", WildCaveCarrotBlock::new, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS))
             .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
                 String name = ctx.getId().getPath();
+                if (s.getValue(WildCaveCarrotBlock.STONE)) {
+                    name = "stone_" + name;
+                }
                 ModelFile cross = p.models().withExistingParent(name, new ResourceLocation("block/cross")).texture("cross", path("block/" + name));
                 return ConfiguredModel.builder().modelFile(cross).build();
             }))
-            .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).build()
+            .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).tag(ModTags.WILD_CROPS_ITEM).build()
+            .tag(BlockTags.SMALL_FLOWERS, ModTags.WILD_CROPS, ModTags.COMPOST_ACTIVATORS)
+            .addLayer(()-> RenderType::cutout)
+            .register();
+
+    public static final BlockEntry<GossypiumFlowerBlock> GOSSYPIUM = setupBlock("gossypium", GossypiumFlowerBlock::new, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS))
+            .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
+                String name = ctx.getId().getPath();
+                if (s.getValue(WildCaveCarrotBlock.STONE)) {
+                    name = "stone_" + name;
+                }
+                ModelFile cross = p.models().withExistingParent(name, new ResourceLocation("block/cross")).texture("cross", path("block/" + name));
+                return ConfiguredModel.builder().modelFile(cross).build();
+            }))
+            .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).tag(ModTags.WILD_CROPS_ITEM).build()
             .tag(BlockTags.SMALL_FLOWERS)
             .addLayer(()-> RenderType::cutout)
             .register();
@@ -80,6 +98,7 @@ public class MDBlocks {
                 ModelFile crop = p.models().withExistingParent(name, new ResourceLocation("block/crop")).texture("crop", path("block/" + name));
                 return ConfiguredModel.builder().modelFile(crop).build();
             }))
+            .tag(BlockTags.CROPS, MDTags.CAVE_CARROTS_CROP_BLOCK)
             .loot(caveCarrotTable())
             .addLayer(()-> RenderType::cutout)
             .register();
@@ -91,16 +110,6 @@ public class MDBlocks {
             }))
             .simpleItem()
             .tag(BlockTags.MINEABLE_WITH_AXE)
-            .register();
-
-    public static final BlockEntry<GossypiumFlowerBlock> GOSSYPIUM = setupBlock("gossypium", GossypiumFlowerBlock::new, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS))
-            .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s -> {
-                String name = ctx.getId().getPath();
-                ModelFile cross = p.models().withExistingParent(name, new ResourceLocation("block/cross")).texture("cross", path("block/" + name));
-                return ConfiguredModel.builder().modelFile(cross).build();
-            }))
-            .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).build()
-            .addLayer(()-> RenderType::cutout)
             .register();
 
 

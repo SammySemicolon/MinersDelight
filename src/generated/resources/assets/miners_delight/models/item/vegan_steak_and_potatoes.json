@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "miners_delight:item/hot_cocoa_cup"
+    "layer0": "miners_delight:item/vegan_steak_and_potatoes"
   }
 }

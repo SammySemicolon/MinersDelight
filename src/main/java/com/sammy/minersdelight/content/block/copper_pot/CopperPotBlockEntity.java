@@ -283,7 +283,8 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 		if (hasInput()) {
 			ItemStack resultStack = recipe.getResultItem(level.registryAccess());
 			if (CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem())) {
-				ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
+				Item cupItem = CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem());
+				ItemStack cupResultStack = new ItemStack(cupItem, Math.min(resultStack.getCount()*2, cupItem.getMaxStackSize(cupItem.getDefaultInstance())));
 				cupResultStack.setTag(resultStack.getTag());
 				resultStack = cupResultStack;
 			}
@@ -320,7 +321,8 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		mealContainerStack = cupServed ? MDItems.COPPER_CUP.asStack() : recipe.getOutputContainer();
 		if (cupServed) {
-			ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
+			Item cupItem = CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem());
+			ItemStack cupResultStack = new ItemStack(cupItem, Math.min(resultStack.getCount()*2, cupItem.getMaxStackSize(cupItem.getDefaultInstance())));
 			cupResultStack.setTag(resultStack.getTag());
 			resultStack = cupResultStack;
 		}

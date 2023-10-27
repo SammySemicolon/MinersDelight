@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "stone=false": {
       "model": "miners_delight:block/gossypium"
+    },
+    "stone=true": {
+      "model": "miners_delight:block/stone_gossypium"
     }
   }
 }

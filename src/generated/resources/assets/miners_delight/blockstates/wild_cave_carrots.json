@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "stone=false": {
       "model": "miners_delight:block/wild_cave_carrots"
+    },
+    "stone=true": {
+      "model": "miners_delight:block/stone_wild_cave_carrots"
     }
   }
 }

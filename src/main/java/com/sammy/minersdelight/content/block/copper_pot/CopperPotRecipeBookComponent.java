@@ -6,7 +6,7 @@ import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import vectorwing.farmersdelight.FarmersDelight;
@@ -40,7 +40,8 @@ public class CopperPotRecipeBookComponent extends RecipeBookComponent
 		ItemStack resultStack = recipe.getResultItem(this.minecraft.level.registryAccess());
 		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		if (cupServed) {
-			ItemStack cupResultStack = new ItemStack(CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem()), resultStack.getCount());
+			Item cupItem = CupConversionReloadListener.BOWL_TO_CUP.get(resultStack.getItem());
+			ItemStack cupResultStack = new ItemStack(cupItem, Math.min(resultStack.getCount()*2, cupItem.getMaxStackSize(cupItem.getDefaultInstance())));
 			cupResultStack.setTag(resultStack.getTag());
 			resultStack = cupResultStack;
 		}
