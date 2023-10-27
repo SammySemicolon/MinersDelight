@@ -6,4 +6,10 @@ public class CopperCupFoodItem extends ConsumableItem {
     public CopperCupFoodItem(Properties properties) {
         super(properties, true, false);
     }
+    public CopperCupFoodItem(Properties properties, boolean hasFoodEffectTooltip) {
+        super(properties, hasFoodEffectTooltip);
+    }
+    public CopperCupFoodItem(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+        super(properties, hasFoodEffectTooltip, hasCustomTooltip);
+    }
 }

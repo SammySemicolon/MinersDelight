@@ -80,7 +80,7 @@ public class MDItems {
     public static final ItemEntry<CopperCupFoodItem> INSECT_STEW_CUP = setupCupFoodItem("insect_stew_cup", MDFoodValues.INSECT_STEW).register();
 
     public static ItemBuilder<CopperCupFoodItem, Registrate> setupCupFoodItem(String name, FoodProperties foodProperties) {
-        return setupCupFoodItem(name, CopperCupFoodItem::new).properties(p -> p.food(MDFoodValues.cupFoodProperties(foodProperties)));
+        return setupCupFoodItem(name, p -> new CopperCupFoodItem(p, !foodProperties.getEffects().isEmpty())).properties(p -> p.food(MDFoodValues.cupFoodProperties(foodProperties)));
     }
 
     public static <T extends Item> ItemBuilder<T, Registrate> setupCupFoodItem(String name, NonNullFunction<Item.Properties, T> factory) {

@@ -31,6 +31,8 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 	public static final RecipeType<CookingPotRecipe> COOKING = RecipeType.create("miners_delight", "cooking", CookingPotRecipe.class);
 
 	protected final IDrawable heatIndicator;
+	protected final IDrawable timeIcon;
+	protected final IDrawable expIcon;
 	protected final IDrawableAnimated arrow;
 	private final Component title;
 	private final IDrawable background;
@@ -39,9 +41,12 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 	public CopperPotCookingRecipeCategory(IGuiHelper helper) {
 		title = TextUtils.getTranslation("jei.cooking");
 		ResourceLocation backgroundImage = MinersDelightMod.path("textures/gui/copper_pot.png");
+		ResourceLocation fdBackgroundImage = new ResourceLocation("farmersdelight", "textures/gui/cooking_pot.png");
 		background = helper.createDrawable(backgroundImage, 29, 16, 117, 57);
 		icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(MDBlocks.COPPER_POT.get()));
 		heatIndicator = helper.createDrawable(backgroundImage, 176, 0, 17, 15);
+		timeIcon = helper.createDrawable(fdBackgroundImage, 176, 32, 8, 11);
+		expIcon = helper.createDrawable(fdBackgroundImage, 176, 43, 9, 9);
 		arrow = helper.drawableBuilder(backgroundImage, 176, 15, 29, 17)
 				.buildAnimated(200, IDrawableAnimated.StartDirection.LEFT, false);
 	}
@@ -79,6 +84,7 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 				}
 			}
 		}
+
 		ItemStack resultStack = recipe.getResultItem(Minecraft.getInstance().level.registryAccess());
 		boolean cupServed = CupConversionReloadListener.BOWL_TO_CUP.containsKey(resultStack.getItem());
 		ItemStack mealContainerStack = cupServed ? MDItems.COPPER_CUP.asStack() : recipe.getOutputContainer();
@@ -101,5 +107,9 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 	public void draw(CookingPotRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 		arrow.draw(guiGraphics, 48, 11);
 		heatIndicator.draw(guiGraphics, 19, 40);
+		timeIcon.draw(guiGraphics, 58, 4);
+		if (recipe.getExperience() > 0.0F) {
+			expIcon.draw(guiGraphics, 57, 23);
+		}
 	}
 }
