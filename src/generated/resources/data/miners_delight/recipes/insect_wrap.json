@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "miners_delight:insect_meat"
+    },
+    {
+      "tag": "miners_delight:insect_meat"
+    },
+    {
+      "tag": "forge:bread"
+    }
+  ],
+  "result": {
+    "item": "miners_delight:insect_wrap"
+  }
+}

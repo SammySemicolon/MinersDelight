@@ -1,0 +1,41 @@
+{
+	"type": "miners_delight:add_items",
+	"conditions": [
+		{
+			"condition": "minecraft:inverted",
+			"term": {
+				"condition": "minecraft:entity_properties",
+				"entity": "killer",
+				"predicate": {
+					"equipment": {
+						"mainhand": {
+							"tag": "farmersdelight:tools/knives"
+						}
+					}
+				}
+			}
+		},
+		{
+			"condition": "alternative",
+			"terms": [
+				{
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"type": "minecraft:spider"
+					}
+				},
+				{
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"type": "minecraft:cave_spider"
+					}
+				}
+			]
+		}
+	],
+	"item": "miners_delight:arthropod",
+	"min": 1,
+	"max": 3
+}

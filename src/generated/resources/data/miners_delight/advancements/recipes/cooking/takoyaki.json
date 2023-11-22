@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_squid_campfire"
+        "recipe": "miners_delight:cooking/takoyaki"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,8 +26,8 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_squid_campfire"
+      "miners_delight:cooking/takoyaki"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

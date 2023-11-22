@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "miners_delight:baked_cave_carrot"
+    }
+  ],
+  "result": {
+    "item": "miners_delight:vegan_wrap"
+  }
+}

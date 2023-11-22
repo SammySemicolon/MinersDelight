@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_squid": {
+    "has_glow_ink_sac": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:squid"
+            "items": [
+              "minecraft:glow_ink_sac"
+            ]
           }
         ]
       },
@@ -13,21 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_squid_campfire"
+        "recipe": "miners_delight:cooking/glow_ink_pasta"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_squid",
+      "has_glow_ink_sac",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_squid_campfire"
+      "miners_delight:cooking/glow_ink_pasta"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

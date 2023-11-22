@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "miners_delight:arthropod"
+    },
+    {
+      "item": "miners_delight:arthropod"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "miners_delight:insect_stew"
+  }
+}

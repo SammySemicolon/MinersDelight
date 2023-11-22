@@ -6,17 +6,9 @@
   "cookingtime": 400,
   "experience": 2.0,
   "ingredients": [
-    [
-      {
-        "item": "miners_delight:squid"
-      },
-      {
-        "item": "miners_delight:glow_squid"
-      },
-      {
-        "item": "miners_delight:baked_squid"
-      }
-    ],
+    {
+      "tag": "forge:squid"
+    },
     {
       "item": "farmersdelight:rice"
     },

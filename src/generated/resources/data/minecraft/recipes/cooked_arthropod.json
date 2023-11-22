@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "ingredient": {
+    "item": "miners_delight:arthropod"
+  },
+  "result": "miners_delight:cooked_arthropod"
+}

@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "miners_delight:cave_carrot"
+      "tag": "forge:vegetables/cave_carrot"
     },
     {
       "item": "minecraft:red_mushroom"

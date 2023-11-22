@@ -1,0 +1,33 @@
+{
+	"type": "farmersdelight:add_item",
+	"conditions": [
+		{
+			"condition": "minecraft:inverted",
+			"term": {
+				"condition": "minecraft:entity_properties",
+				"entity": "killer",
+				"predicate": {
+					"equipment": {
+						"mainhand": {
+							"tag": "farmersdelight:tools/knives"
+						}
+					}
+				}
+			}
+		},
+		{
+			"condition": "alternative",
+			"terms": [
+				{
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"type": "minecraft:silverfish"
+					}
+				}
+			]
+		}
+	],
+	"item": "miners_delight:arthropod",
+	"count": 1
+}
