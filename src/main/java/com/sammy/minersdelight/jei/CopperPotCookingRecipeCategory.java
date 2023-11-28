@@ -97,7 +97,6 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 86, 12).addItemStack(resultStack);
 
 		if (!mealContainerStack.isEmpty()) {
-			//Containers must be recognized as OUTPUT for JEI's builtin transfer handler to work
 			builder.addSlot(RecipeIngredientRole.OUTPUT, 54, 40).addItemStack(mealContainerStack);
 		}
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 86, 40).addItemStack(resultStack);

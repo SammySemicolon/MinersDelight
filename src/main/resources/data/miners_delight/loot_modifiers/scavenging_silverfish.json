@@ -2,15 +2,12 @@
 	"type": "farmersdelight:add_item",
 	"conditions": [
 		{
-			"condition": "minecraft:inverted",
-			"term": {
-				"condition": "minecraft:entity_properties",
-				"entity": "killer",
-				"predicate": {
-					"equipment": {
-						"mainhand": {
-							"tag": "farmersdelight:tools/knives"
-						}
+			"condition": "minecraft:entity_properties",
+			"entity": "killer",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"tag": "farmersdelight:tools/knives"
 					}
 				}
 			}

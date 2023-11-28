@@ -67,15 +67,12 @@ public class MDFoodValues {
             };
             builder.effect(effectSupplier, pair.getSecond());
         }
-        if (foodProperties.isFastFood()) {
-            builder.fast();
-        }
         if (foodProperties.canAlwaysEat()) {
             builder.alwaysEat();
         }
         if (foodProperties.isMeat()) {
             builder.meat();
         }
-        return builder.build();
+        return builder.fast().build();
     }
 }
