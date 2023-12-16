@@ -1,23 +1,15 @@
 package com.sammy.minersdelight.data;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.internal.Streams;
-import com.google.gson.stream.JsonReader;
-import com.sammy.minersdelight.MinersDelightMod;
+import com.google.gson.*;
+import com.google.gson.internal.*;
+import com.google.gson.stream.*;
+import com.sammy.minersdelight.*;
 import net.minecraft.data.*;
-import net.minecraft.util.GsonHelper;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraft.util.*;
+import net.minecraftforge.common.data.*;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.*;
+import java.io.*;
+import java.nio.file.*;
 
 public class MDLangMerger extends LanguageProvider {
 
@@ -35,31 +27,32 @@ public class MDLangMerger extends LanguageProvider {
     @Override
     protected void addTranslations() {
         Path path = output.getOutputFolder().resolve("assets/" + MinersDelightMod.MODID + "/lang/" + "en_us.json");
-
+        JsonObject original = null;
         try {
-            collectExistingEntries(path);
+            original = collectExistingEntries(path);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        addAll(fromResource("assets/" + MinersDelightMod.MODID + "/lang/extra_lang.json").getAsJsonObject());
+        addAll(fromResource("assets/" + MinersDelightMod.MODID + "/lang/extra_lang.json").getAsJsonObject(), original);
     }
 
-    private void collectExistingEntries(Path path) throws IOException {
+    private JsonObject collectExistingEntries(Path path) throws IOException {
         if (!Files.exists(path)) {
-            return;
+            return null;
         }
 
         try (BufferedReader reader = Files.newBufferedReader(path)) {
-            addAll(GsonHelper.fromJson(GSON, reader, JsonObject.class), "itemGroup.miners_delight", "miners_delight.container.cooking_pot");
-            reader.close();
+            final JsonObject jsonObject = GsonHelper.fromJson(GSON, reader, JsonObject.class);
+            addAll(jsonObject, null);
+            return jsonObject;
         }
     }
 
-    private void addAll(JsonObject jsonObject, String... ignoredKeys) {
+    private void addAll(JsonObject jsonObject, JsonObject compareAgainst) {
         jsonObject.entrySet().forEach(e -> {
             String key = e.getKey();
-            if (!Arrays.asList(ignoredKeys).contains(key)) {
-                String value = e.getValue().getAsString();
+            String value = e.getValue().getAsString();
+            if (compareAgainst == null || !compareAgainst.has(key)) {
                 add(key, value);
             }
         });

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cave_carrot": {
+    "has_moss_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:cave_carrot"
+              "minecraft:moss_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_cave_carrot_smoking"
+        "recipe": "minecraft:mossy_cobblestone_from_moss_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cave_carrot",
+      "has_moss_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_cave_carrot_smoking"
+      "minecraft:mossy_cobblestone_from_moss_block"
     ]
   },
   "sends_telemetry_event": false

@@ -1,4 +1,30 @@
 {
 	"itemGroup.miners_delight": "Miner's Delight",
-	"miners_delight.container.cooking_pot": "Copper Pot"
+	"miners_delight.container.cooking_pot": "Copper Pot",
+
+	"item.minecraft.lingering_potion.effect.long_haste": "Lingering Potion of Haste",
+	"item.minecraft.lingering_potion.effect.haste": "Lingering Potion of Haste",
+	"item.minecraft.lingering_potion.effect.strong_haste": "Lingering Potion of Haste",
+	"item.minecraft.potion.effect.long_haste": "Potion of Haste",
+	"item.minecraft.potion.effect.haste": "Potion of Haste",
+	"item.minecraft.potion.effect.strong_haste": "Potion of Haste",
+	"item.minecraft.splash_potion.effect.long_haste": "Splash Potion of Haste",
+	"item.minecraft.splash_potion.effect.haste": "Splash Potion of Haste",
+	"item.minecraft.splash_potion.effect.strong_haste": "Splash Potion of Haste",
+	"item.minecraft.tipped_arrow.effect.long_haste": "Arrow of Haste",
+	"item.minecraft.tipped_arrow.effect.haste": "Arrow of Haste",
+	"item.minecraft.tipped_arrow.effect.strong_haste": "Arrow of Haste",
+
+	"item.minecraft.lingering_potion.effect.long_mining_fatigue": "Lingering Potion of Mining Fatigue",
+	"item.minecraft.lingering_potion.effect.mining_fatigue": "Lingering Potion of Mining Fatigue",
+	"item.minecraft.lingering_potion.effect.strong_mining_fatigue": "Lingering Potion of Mining Fatigue",
+	"item.minecraft.potion.effect.long_mining_fatigue": "Potion of Mining Fatigue",
+	"item.minecraft.potion.effect.mining_fatigue": "Potion of Mining Fatigue",
+	"item.minecraft.potion.effect.strong_mining_fatigue": "Potion of Mining Fatigue",
+	"item.minecraft.splash_potion.effect.long_mining_fatigue": "Splash Potion of Mining Fatigue",
+	"item.minecraft.splash_potion.effect.mining_fatigue": "Splash Potion of Mining Fatigue",
+	"item.minecraft.splash_potion.effect.strong_mining_fatigue": "Splash Potion of Mining Fatigue",
+	"item.minecraft.tipped_arrow.effect.long_mining_fatigue": "Arrow of Mining Fatigue",
+	"item.minecraft.tipped_arrow.effect.mining_fatigue": "Arrow of Mining Fatigue",
+	"item.minecraft.tipped_arrow.effect.strong_mining_fatigue": "Arrow of Mining Fatigue"
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_tentacles": {
+    "has_arthropod": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:tentacles"
+              "miners_delight:arthropod"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_tentacles_smoking"
+        "recipe": "miners_delight:cooked_arthropod"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_tentacles",
+      "has_arthropod",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_tentacles_smoking"
+      "miners_delight:cooked_arthropod"
     ]
   },
   "sends_telemetry_event": false

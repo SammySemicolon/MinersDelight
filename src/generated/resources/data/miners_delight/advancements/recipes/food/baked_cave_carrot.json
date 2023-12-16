@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bat_wing": {
+    "has_cave_carrot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "miners_delight:bat_wing"
+              "miners_delight:cave_carrot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smoked_bat_wing_campfire"
+        "recipe": "miners_delight:baked_cave_carrot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_bat_wing",
+      "has_cave_carrot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smoked_bat_wing_campfire"
+      "miners_delight:baked_cave_carrot"
     ]
   },
   "sends_telemetry_event": false

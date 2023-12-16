@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-27T20:35:54.9196101	Registrate Provider for miners_delight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2023-12-15T22:43:44.4111733	Registrate Provider for miners_delight [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 adacba901adc9342fd71c631b98653e8e2a82c5e assets/miners_delight/blockstates/cave_carrots.json
 1095ba9c112aac1751951b2d68b24d9cda7c3ddd assets/miners_delight/blockstates/cave_carrot_crate.json
 44b8922c173d7b71da37a96ca5bfce2e113b43a4 assets/miners_delight/blockstates/gossypium.json
@@ -82,7 +82,6 @@ ec007a9e96848c80b0a40cadda67ab29fd75fdb6 data/farmersdelight/tags/items/wild_cro
 67b2b2ad54f6927f53ab88f98b5ab8139f6e07ed data/forge/tags/items/crops/cave_carrot.json
 40491a08a37abc6bda4fa64149a952bc6915f2da data/forge/tags/items/glow_squid.json
 b3c91c8a105b29b2f56f81d5ba0c0b5c16604e91 data/forge/tags/items/milk.json
-7c18664467da62f5a3bd401654ca44d373c72ee2 data/forge/tags/items/moss.json
 ad3d7fd4ae87517deb49bd32cd242c47cf914aa0 data/forge/tags/items/raw_fishes/squid.json
 098ff5fed5105ac58645db953532fdcc677f8f04 data/forge/tags/items/squid.json
 31d4b22135f1939d7e0ea7b09577c97846427a01 data/forge/tags/items/tentacles.json

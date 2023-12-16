@@ -35,7 +35,7 @@ public class MDItems {
     public static final ItemEntry<Item> VEGAN_WRAP = setupItem("vegan_wrap", MDFoodValues.VEGAN_WRAP).register();
     public static final ItemEntry<ConsumableItem> VEGAN_STEAK_AND_POTATOES = setupBowlFoodItem("vegan_steak_and_potatoes", MDFoodValues.VEGAN_STEAK_AND_POTATOES).register();
 
-    public static final ItemEntry<Item> MOSS = setupItem("moss", MDFoodValues.MOSS).tag(MDTags.MOSS).register();
+    public static final ItemEntry<Item> MOSS = setupItem("moss", MDFoodValues.MOSS).register();
 
     public static final ItemEntry<Item> BAT_WING = setupItem("bat_wing", MDFoodValues.BAT_WING).tag(MDTags.BAT_WING).register();
     public static final ItemEntry<Item> SMOKED_BAT_WING = setupItem("smoked_bat_wing", MDFoodValues.SMOKED_BAT_WING).tag(MDTags.BAT_WING).register();

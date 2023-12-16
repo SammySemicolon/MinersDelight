@@ -20,12 +20,17 @@ import static net.minecraft.data.recipes.SimpleCookingRecipeBuilder.*;
 import static vectorwing.farmersdelight.data.recipe.CookingRecipes.*;
 
 public class MDRecipeProvider extends RecipeProvider {
+    public final MDVanillaRecipeReplacements vanillaReplacements;
+
     public MDRecipeProvider(PackOutput output) {
         super(output);
+        vanillaReplacements = new MDVanillaRecipeReplacements(output);
     }
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        vanillaReplacements.buildRecipes(consumer);
+
         shaped(RecipeCategory.DECORATIONS, MDBlocks.COPPER_POT.get())
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .define('Y', Items.WOODEN_SHOVEL)
@@ -147,47 +152,47 @@ public class MDRecipeProvider extends RecipeProvider {
 
         smelting(Ingredient.of(MDItems.CAVE_CARROT.get()), RecipeCategory.FOOD, MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 200)
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
-                .save(consumer, "baked_cave_carrot");
+                .save(consumer, MinersDelightMod.path("baked_cave_carrot"));
         smoking(Ingredient.of(MDItems.CAVE_CARROT.get()), RecipeCategory.FOOD, MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 100)
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
-                .save(consumer, "baked_cave_carrot_smoking");
+                .save(consumer, MinersDelightMod.path("baked_cave_carrot_smoking"));
         campfireCooking(Ingredient.of(MDItems.CAVE_CARROT.get()), RecipeCategory.FOOD, MDItems.BAKED_CAVE_CARROT.get(), 0.25f, 600)
                 .unlockedBy("has_cave_carrot", has(MDItems.CAVE_CARROT.get()))
-                .save(consumer, "baked_cave_carrot_campfire");
+                .save(consumer, MinersDelightMod.path("baked_cave_carrot_campfire"));
 
         smelting(Ingredient.of(MDItems.BAT_WING.get()), RecipeCategory.FOOD, MDItems.SMOKED_BAT_WING.get(), 0.25f, 200)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
-                .save(consumer, "smoked_bat_wing");
+                .save(consumer, MinersDelightMod.path("smoked_bat_wing"));
         smoking(Ingredient.of(MDItems.BAT_WING.get()), RecipeCategory.FOOD, MDItems.SMOKED_BAT_WING.get(), 0.25f, 100)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
-                .save(consumer, "smoked_bat_wing_smoking");
+                .save(consumer, MinersDelightMod.path("smoked_bat_wing_smoking"));
         campfireCooking(Ingredient.of(MDItems.BAT_WING.get()), RecipeCategory.FOOD, MDItems.SMOKED_BAT_WING.get(), 0.25f, 600)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
-                .save(consumer, "smoked_bat_wing_campfire");
+                .save(consumer, MinersDelightMod.path("smoked_bat_wing_campfire"));
 
         smelting(Ingredient.of(MDItems.TENTACLES.get()), RecipeCategory.FOOD, MDItems.BAKED_TENTACLES.get(), 0.25f, 200)
                 .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
-                .save(consumer, "baked_tentacles");
+                .save(consumer, MinersDelightMod.path("baked_tentacles"));
         smoking(Ingredient.of(MDItems.TENTACLES.get()), RecipeCategory.FOOD, MDItems.BAKED_TENTACLES.get(), 0.25f, 100)
                 .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
-                .save(consumer, "baked_tentacles_smoking");
+                .save(consumer, MinersDelightMod.path("baked_tentacles_smoking"));
         campfireCooking(Ingredient.of(MDItems.TENTACLES.get()), RecipeCategory.FOOD, MDItems.BAKED_TENTACLES.get(), 0.25f, 600)
                 .unlockedBy("has_tentacles", has(MDItems.TENTACLES.get()))
-                .save(consumer, "baked_tentacles_campfire");
+                .save(consumer, MinersDelightMod.path("baked_tentacles_campfire"));
 
         smelting(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), RecipeCategory.FOOD, MDItems.BAKED_SQUID.get(), 0.25f, 200)
                 .unlockedBy("has_squid", has(MDTags.SQUID))
-                .save(consumer, "baked_squid");
+                .save(consumer, MinersDelightMod.path("baked_squid"));
         smoking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), RecipeCategory.FOOD, MDItems.BAKED_SQUID.get(), 0.25f, 100)
                 .unlockedBy("has_squid", has(MDTags.SQUID))
-                .save(consumer, "baked_squid_smoking");
+                .save(consumer, MinersDelightMod.path("baked_squid_smoking"));
         campfireCooking(Ingredient.of(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get()), RecipeCategory.FOOD, MDItems.BAKED_SQUID.get(), 0.25f, 600)
                 .unlockedBy("has_squid", has(MDTags.SQUID))
-                .save(consumer, "baked_squid_campfire");
+                .save(consumer, MinersDelightMod.path("baked_squid_campfire"));
 
         smelting(Ingredient.of(MDItems.ARTHROPOD.get()), RecipeCategory.FOOD, MDItems.COOKED_ARTHROPOD.get(), 0.25f, 200)
                 .unlockedBy("has_arthropod", has(MDItems.ARTHROPOD))
-                .save(consumer, "cooked_arthropod");
+                .save(consumer, MinersDelightMod.path("cooked_arthropod"));
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.PASTA_WITH_VEGGIEBALLS.get(), 1, SLOW_COOKING, LARGE_EXP)
                 .addIngredient(MDTags.BAKED_CAVE_CARROT)

@@ -4,9 +4,11 @@ import com.sammy.minersdelight.data.*;
 import com.sammy.minersdelight.setup.*;
 import com.tterrag.registrate.*;
 import com.tterrag.registrate.util.nullness.*;
+import net.minecraft.core.*;
 import net.minecraft.data.*;
 import net.minecraft.resources.*;
 import net.minecraftforge.common.*;
+import net.minecraftforge.common.data.*;
 import net.minecraftforge.data.event.*;
 import net.minecraftforge.eventbus.api.*;
 import net.minecraftforge.fml.common.*;
@@ -14,6 +16,7 @@ import net.minecraftforge.fml.javafmlmod.*;
 import org.apache.logging.log4j.*;
 
 import java.util.*;
+import java.util.concurrent.*;
 
 @Mod(MinersDelightMod.MODID)
 public class MinersDelightMod {
@@ -33,11 +36,13 @@ public class MinersDelightMod {
 		MDLootConditions.LOOT_CONDITIONS.register(modBus);
 		MDMenuTypes.MENU_TYPES.register(modBus);
 		MDCreativeTabs.CREATIVE_TABS.register(modBus);
+		MDPotions.POTIONS.register(modBus);
 		MDBlocks.register();
 		MDItems.register();
 		MDBlockEntities.register();
 		MDWorldgen.register();
 		modBus.addListener(MDCauldronInteractions::addCauldronInteractions);
+		modBus.addListener(MDPotions::addPotionMixing);
 		modBus.addListener(MDComposting::addCompostValues);
 		modBus.addListener(DataOnly::gatherData);
 	}
@@ -50,8 +55,15 @@ public class MinersDelightMod {
 		public static void gatherData(GatherDataEvent event) {
 			final DataGenerator generator = event.getGenerator();
 			final PackOutput packOutput = generator.getPackOutput();
+			CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
+			ExistingFileHelper helper = event.getExistingFileHelper();
+
+			MDBlockTags blockTagsProvider = new MDBlockTags(packOutput, provider, helper);
+
 			generator.addProvider(true, new MDLangMerger(packOutput));
 			generator.addProvider(true, new MDRecipeProvider(packOutput));
+			generator.addProvider(event.includeServer(), blockTagsProvider);
+			generator.addProvider(event.includeServer(), new MDItemTags(packOutput, provider, blockTagsProvider.contentsGetter(), helper));
 		}
 	}
 }

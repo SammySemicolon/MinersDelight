@@ -1,21 +1,13 @@
 package com.sammy.minersdelight.content.block;
 
-import com.sammy.minersdelight.setup.MDBlocks;
-import com.sammy.minersdelight.setup.MDItems;
-import net.minecraft.core.BlockPos;
-import net.minecraft.util.Mth;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CarrotBlock;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
+import com.sammy.minersdelight.setup.*;
+import net.minecraft.core.*;
+import net.minecraft.util.*;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.*;
+import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.phys.shapes.*;
 
 public class CaveCarrotBlock extends CropBlock {
 
@@ -29,11 +21,6 @@ public class CaveCarrotBlock extends CropBlock {
 
     public CaveCarrotBlock(Properties pProperties) {
         super(pProperties);
-    }
-
-    @Override
-    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return pState.is(ModBlocks.RICH_SOIL.get());
     }
 
     @Override
@@ -59,5 +46,10 @@ public class CaveCarrotBlock extends CropBlock {
     @Override
     protected int getBonemealAgeIncrease(Level pLevel) {
         return Mth.nextInt(pLevel.random, 1, 2);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return SHAPE_BY_AGE[this.getAge(pState)];
     }
 }

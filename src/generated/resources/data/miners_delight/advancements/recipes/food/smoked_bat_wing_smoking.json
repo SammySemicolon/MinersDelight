@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_squid": {
+    "has_bat_wing": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:squid"
+            "items": [
+              "miners_delight:bat_wing"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_squid_smoking"
+        "recipe": "miners_delight:smoked_bat_wing_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_squid",
+      "has_bat_wing",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_squid_smoking"
+      "miners_delight:smoked_bat_wing_smoking"
     ]
   },
   "sends_telemetry_event": false

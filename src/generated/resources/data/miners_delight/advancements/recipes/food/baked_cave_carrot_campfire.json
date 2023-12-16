@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_cave_carrot"
+        "recipe": "miners_delight:baked_cave_carrot_campfire"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_cave_carrot"
+      "miners_delight:baked_cave_carrot_campfire"
     ]
   },
   "sends_telemetry_event": false
