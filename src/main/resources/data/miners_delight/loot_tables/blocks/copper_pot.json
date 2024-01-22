@@ -8,7 +8,7 @@
 					"type": "minecraft:item",
 					"functions": [
 						{
-							"function": "farmersdelight:copy_meal"
+							"function": "miners_delight:copy_meal"
 						},
 						{
 							"function": "minecraft:copy_name",

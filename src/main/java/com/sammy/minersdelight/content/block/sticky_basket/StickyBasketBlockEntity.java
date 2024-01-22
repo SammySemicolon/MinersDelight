@@ -47,7 +47,6 @@ public class StickyBasketBlockEntity extends RandomizableContainerBlockEntity im
         if (!this.trySaveLootTable(compound)) {
             ContainerHelper.saveAllItems(compound, this.items);
         }
-
         compound.putInt("TransferCooldown", this.transferCooldown);
     }
 
@@ -133,8 +132,7 @@ public class StickyBasketBlockEntity extends RandomizableContainerBlockEntity im
             }
 
             if (flag) {
-                if (isDestinationEmpty && destination instanceof BasketBlockEntity) {
-                    BasketBlockEntity firstBasket = (BasketBlockEntity) destination;
+                if (isDestinationEmpty && destination instanceof StickyBasketBlockEntity firstBasket) {
                     if (!firstBasket.mayTransfer()) {
                         int k = 0;
 

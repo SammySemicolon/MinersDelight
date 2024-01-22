@@ -11,6 +11,9 @@
     "miners_delight:scavenging_tentacles",
     "miners_delight:scavenging_spider",
     "miners_delight:scavenging_cave_spider",
-    "miners_delight:scavenging_silverfish"
+    "miners_delight:scavenging_silverfish",
+    "miners_delight:scavenging_silverfish_eggs",
+    "miners_delight:scavenging_silverfish_eggs_knifeless",
+    "miners_delight:add_loot_abandoned_mineshaft"
   ]
 }

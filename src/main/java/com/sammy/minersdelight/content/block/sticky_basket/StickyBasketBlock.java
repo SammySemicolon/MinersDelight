@@ -139,8 +139,8 @@ public class StickyBasketBlock extends BaseEntityBlock implements SimpleWaterlog
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         if (stack.hasCustomHoverName()) {
             BlockEntity tileEntity = level.getBlockEntity(pos);
-            if (tileEntity instanceof StickyBasketBlockEntity) {
-                ((StickyBasketBlockEntity) tileEntity).setCustomName(stack.getHoverName());
+            if (tileEntity instanceof StickyBasketBlockEntity stickyBasket) {
+                stickyBasket.setCustomName(stack.getHoverName());
             }
         }
     }

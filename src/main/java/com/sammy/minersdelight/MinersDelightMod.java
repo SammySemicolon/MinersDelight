@@ -34,6 +34,7 @@ public class MinersDelightMod {
 		IEventBus forgeBus = MinecraftForge.EVENT_BUS;
 		MDLootModifiers.LOOT_MODIFIERS.register(modBus);
 		MDLootConditions.LOOT_CONDITIONS.register(modBus);
+		MDLootFunctions.LOOT_FUNCTIONS.register(modBus);
 		MDMenuTypes.MENU_TYPES.register(modBus);
 		MDCreativeTabs.CREATIVE_TABS.register(modBus);
 		MDPotions.POTIONS.register(modBus);
