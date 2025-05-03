@@ -1,0 +1,6 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "miners_delight:cave_carrot", "required": false }
+  ]
+}
