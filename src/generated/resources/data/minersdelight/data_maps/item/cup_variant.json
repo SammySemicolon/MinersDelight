@@ -6,14 +6,14 @@
     "farmersdelight:beef_stew": {
       "cup_variant": "minersdelight:beef_stew_cup"
     },
+    "farmersdelight:bone_broth": {
+      "cup_variant": "minersdelight:bone_broth_cup"
+    },
     "farmersdelight:chicken_soup": {
       "cup_variant": "minersdelight:chicken_soup_cup"
     },
     "farmersdelight:fish_stew": {
       "cup_variant": "minersdelight:fish_stew_cup"
-    },
-    "farmersdelight:hot_cocoa": {
-      "cup_variant": "minersdelight:hot_cocoa_cup"
     },
     "farmersdelight:noodle_soup": {
       "cup_variant": "minersdelight:noodle_soup_cup"
@@ -45,8 +45,14 @@
     "minecraft:water_bucket": {
       "cup_variant": "minersdelight:water_cup"
     },
+    "minersdelight:bat_soup": {
+      "cup_variant": "minersdelight:bat_soup_cup"
+    },
     "minersdelight:cave_soup": {
       "cup_variant": "minersdelight:cave_soup_cup"
+    },
+    "minersdelight:insect_stew": {
+      "cup_variant": "minersdelight:insect_stew_cup"
     }
   }
 }

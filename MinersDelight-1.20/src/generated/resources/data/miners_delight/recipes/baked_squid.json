@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "ingredient": [
+    {
+      "item": "miners_delight:squid"
+    },
+    {
+      "item": "miners_delight:glow_squid"
+    }
+  ],
+  "result": "miners_delight:baked_squid"
+}

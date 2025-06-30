@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "miners_delight:block/cave_carrots_3"
+  }
+}

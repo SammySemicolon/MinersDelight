@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minersdelight:cooked_arthropod"
+    },
+    {
+      "item": "minersdelight:weird_caviar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minersdelight:seasoned_arthropods"
+  }
+}

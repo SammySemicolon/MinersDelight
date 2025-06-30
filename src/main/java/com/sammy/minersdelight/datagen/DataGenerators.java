@@ -23,13 +23,16 @@ public class DataGenerators {
         boolean includeClient = event.includeClient();
         boolean includeServer = event.includeServer();
 
+        var blockTagsProvider = new MDBlockTags(output, provider, helper);
+        generator.addProvider(includeServer, blockTagsProvider);
+        generator.addProvider(includeServer, new MDItemTags(output, provider, blockTagsProvider.contentsGetter(), helper));
         generator.addProvider(includeServer, new MDDataMapDatagen(output, provider));
+        generator.addProvider(includeServer, new MDRecipeProvider(output, provider));
+
         generator.addProvider(includeClient, new MDLangDatagen(output));
-        generator.addProvider(includeClient, new MDRecipeProvider(output, provider));
 
         var itemModels = new MDItemModels(output, helper);
-        var blockStates = new MDBlockStates(output, helper, itemModels);
-        generator.addProvider(includeClient, itemModels);
-        generator.addProvider(includeClient, blockStates);
+        generator.addProvider(includeClient, new MDItemModels(output, helper));
+        generator.addProvider(includeClient, new MDBlockStates(output, helper, itemModels));
     }
 }

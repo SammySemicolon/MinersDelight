@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "miners_delight:gossypium"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:string"
+  }
+}

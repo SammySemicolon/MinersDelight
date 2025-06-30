@@ -1,0 +1,7 @@
+{
+  "type": "farmersdelight:add_features_by_filter",
+  "allowed_biomes": "#minecraft:is_overworld",
+  "denied_biomes": ["minecraft:lush_caves", "minecraft:mushroom_fields"],
+  "features": "miners_delight:patch_cave_carrots",
+  "step": "vegetal_decoration"
+}

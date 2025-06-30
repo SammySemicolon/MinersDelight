@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/wheat"
+    },
+    {
+      "item": "minersdelight:smoked_bat_wing"
+    },
+    {
+      "tag": "c:crops/wheat"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "minersdelight:bat_cookie"
+  }
+}

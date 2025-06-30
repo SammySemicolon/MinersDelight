@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_arthropod": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minersdelight:arthropod"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minersdelight:insect_sandwich"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_arthropod"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minersdelight:insect_sandwich"
+    ]
+  }
+}

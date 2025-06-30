@@ -44,6 +44,7 @@ public class CopperPotRecipeBookComponent extends RecipeBookComponent
 		Optional<ItemStack> cupVariant = CupConversionDataMap.getCupVariant(resultStack);
 		if (cupVariant.isPresent()) {
 			resultStack = cupVariant.get();
+			resultStack.grow(1);
 		}
 		this.ghostRecipe.setRecipe(recipe);
 		if (slots.get(6).getItem().isEmpty()) {

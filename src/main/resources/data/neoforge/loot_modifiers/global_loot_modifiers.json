@@ -7,9 +7,13 @@
     "minersdelight:scavenging_bat_wing",
     "minersdelight:scavenging_bat_wing_knifeless",
     "minersdelight:scavenging_glow_squid",
+    "minersdelight:scavenging_squid",
+    "minersdelight:scavenging_tentacles",
+    "minersdelight:scavenging_spider",
+    "minersdelight:scavenging_cave_spider",
+    "minersdelight:scavenging_silverfish",
     "minersdelight:scavenging_silverfish_eggs",
     "minersdelight:scavenging_silverfish_eggs_knifeless",
-    "minersdelight:scavenging_squid",
-    "minersdelight:scavenging_tentacles"
+    "minersdelight:add_loot_abandoned_mineshaft"
   ]
 }

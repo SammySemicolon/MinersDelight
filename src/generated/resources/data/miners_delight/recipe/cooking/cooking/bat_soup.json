@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "minersdelight:bat_wing"
+    },
+    {
+      "tag": "minersdelight:bat_wing"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "minersdelight:bat_soup"
+  }
+}

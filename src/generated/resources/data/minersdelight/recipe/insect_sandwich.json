@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "minersdelight:cooked_insect_meat"
+    },
+    {
+      "tag": "minersdelight:cooked_insect_meat"
+    },
+    {
+      "tag": "c:foods/bread"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minersdelight:insect_sandwich"
+  }
+}

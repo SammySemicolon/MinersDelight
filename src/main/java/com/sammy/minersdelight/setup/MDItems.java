@@ -60,6 +60,7 @@ public class MDItems {
 
     public static final DeferredHolder<Item, BlockItem> COPPER_POT = register("copper_pot", DEFAULT_PROPERTIES(), (p) -> new BlockItem(MDBlocks.COPPER_POT.get(), p));
     public static final DeferredHolder<Item, BlockItem> STICKY_BASKET = register("sticky_basket", DEFAULT_PROPERTIES(), (p) -> new BlockItem(MDBlocks.STICKY_BASKET.get(), p));
+    public static final DeferredHolder<Item, BlockItem> CAVE_CARROT_CRATE = register("cave_carrot_crate", DEFAULT_PROPERTIES(), (p) -> new BlockItem(MDBlocks.CAVE_CARROT_CRATE.get(), p));
 
     public static final DeferredHolder<Item, CopperCupItem> COPPER_CUP = register("copper_cup", CUP_PROPERTIES(), (p) -> new CopperCupItem(Fluids.EMPTY, p));
     public static final DeferredHolder<Item, CopperCupItem> WATER_CUP = register("water_cup", CUP_PROPERTIES().stacksTo(1), (p) -> new CopperCupItem(Fluids.WATER, p));
@@ -67,40 +68,66 @@ public class MDItems {
     public static final DeferredHolder<Item, SolidCupItem> POWDERED_SNOW_CUP = register("powder_snow_cup", CUP_PROPERTIES().stacksTo(1), (p) -> new SolidCupItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, p));
 
     public static final DeferredHolder<Item, BlockItem> WILD_CAVE_CARROTS = register("wild_cave_carrots", p -> new BlockItem(MDBlocks.WILD_CAVE_CARROTS.get(), p));
+    public static final DeferredHolder<Item, Item> GOSSYPIUM = register("gossypium", p -> new BlockItem(MDBlocks.GOSSYPIUM.get(), p));
+    public static final DeferredHolder<Item, Item> STUFFED_SQUID = register("stuffed_squid", DEFAULT_PROPERTIES().stacksTo(1), p -> new BlockItem(MDBlocks.STUFFED_SQUID.get(), p));
+
     public static final DeferredHolder<Item, ItemNameBlockItem> CAVE_CARROT = register("cave_carrot", MDFoodValues.CAVE_CARROT, p -> new ItemNameBlockItem(MDBlocks.CAVE_CARROTS.get(), p));
     public static final DeferredHolder<Item, Item> BAKED_CAVE_CARROT = register("baked_cave_carrot", MDFoodValues.BAKED_CAVE_CARROT);
-    public static final DeferredHolder<Item, Item> GOSSYPIUM = register("gossypium", p -> new BlockItem(MDBlocks.GOSSYPIUM.get(), p));
-    public static final DeferredHolder<Item, BlockItem> CAVE_CARROT_CRATE = register("cave_carrot_crate", DEFAULT_PROPERTIES(), (p) -> new BlockItem(MDBlocks.CAVE_CARROT_CRATE.get(), p));
+    public static final DeferredHolder<Item, Item> COPPER_CARROT = register("copper_carrot", MDFoodValues.COPPER_CARROT);
+    public static final DeferredHolder<Item, Item> PASTA_WITH_VEGGIEBALLS = register("pasta_with_veggieballs", MDFoodValues.PASTA_WITH_VEGGIEBALLS);
+    public static final DeferredHolder<Item, ConsumableItem> CAVE_SOUP = registerBowlFood("cave_soup", MDFoodValues.CAVE_SOUP);
+    // Vegan food
+    public static final DeferredHolder<Item, Item> VEGAN_PATTY = register("vegan_patty", MDFoodValues.VEGAN_PATTY);
+    public static final DeferredHolder<Item, Item> VEGAN_HAMBURGER = register("vegan_hamburger", MDFoodValues.VEGAN_HAMBURGER);
+    public static final DeferredHolder<Item, Item> VEGAN_WRAP = register("vegan_wrap", MDFoodValues.VEGAN_WRAP);
+    public static final DeferredHolder<Item, ConsumableItem> VEGAN_STEAK_AND_POTATOES = registerBowlFood("vegan_steak_and_potatoes", MDFoodValues.VEGAN_STEAK_AND_POTATOES);
 
+    // Moss
+    public static final DeferredHolder<Item, Item> MOSS = register("moss", MDFoodValues.MOSS);
+
+    // Bat food
     public static final DeferredHolder<Item, Item> BAT_WING = register("bat_wing", MDFoodValues.BAT_WING);
     public static final DeferredHolder<Item, Item> SMOKED_BAT_WING = register("smoked_bat_wing", MDFoodValues.SMOKED_BAT_WING);
+    public static final DeferredHolder<Item, Item> BAT_ROLLS = register("bat_rolls", MDFoodValues.BAT_ROLLS);
+    public static final DeferredHolder<Item, Item> BAT_COOKIE = register("bat_cookie", MDFoodValues.BAT_COOKIE);
+    public static final DeferredHolder<Item, Item> IMPROVISED_BARBECUE_STICK = register("improvised_barbecue_stick", MDFoodValues.IMPROVISED_BARBECUE_STICK);
+    public static final DeferredHolder<Item, ConsumableItem> BAT_SOUP = registerBowlFood("bat_soup", MDFoodValues.BAT_SOUP);
 
+    // Insects
     public static final DeferredHolder<Item, SilverfishEggsItem> SILVERFISH_EGGS = register("silverfish_eggs", MDFoodValues.SILVERFISH_EGGS, SilverfishEggsItem::new);
-    public static final DeferredHolder<Item, ConsumableItem> WEIRD_CAVIAR = register("weird_caviar", MDFoodValues.WEIRD_CAVIAR, ConsumableItem::new);
+    public static final DeferredHolder<Item, ConsumableItem> WEIRD_CAVIAR = registerBowlFood("weird_caviar", MDFoodValues.WEIRD_CAVIAR);
+    public static final DeferredHolder<Item, Item> ARTHROPOD = register("arthropod", MDFoodValues.ARTHROPOD);
+    public static final DeferredHolder<Item, Item> COOKED_ARTHROPOD = register("cooked_arthropod", MDFoodValues.COOKED_ARTHROPOD);
+    public static final DeferredHolder<Item, Item> INSECT_SANDWICH = register("insect_sandwich", MDFoodValues.INSECT_SANDWICH);
+    public static final DeferredHolder<Item, Item> INSECT_WRAP = register("insect_wrap", MDFoodValues.INSECT_WRAP);
+    public static final DeferredHolder<Item, ConsumableItem> INSECT_STEW = registerBowlFood("insect_stew", MDFoodValues.INSECT_STEW);
+    public static final DeferredHolder<Item, ConsumableItem> SEASONED_ARTHROPODS = registerBowlFood("seasoned_arthropods", MDFoodValues.SEASONED_ARTHROPODS);
 
+    // Squid
     public static final DeferredHolder<Item, Item> SQUID = register("squid", MDFoodValues.SQUID);
     public static final DeferredHolder<Item, Item> GLOW_SQUID = register("glow_squid", MDFoodValues.GLOW_SQUID);
     public static final DeferredHolder<Item, Item> BAKED_SQUID = register("baked_squid", MDFoodValues.BAKED_SQUID);
     public static final DeferredHolder<Item, Item> TENTACLES = register("tentacles", MDFoodValues.TENTACLES);
     public static final DeferredHolder<Item, Item> BAKED_TENTACLES = register("baked_tentacles", MDFoodValues.BAKED_TENTACLES);
-    public static final DeferredHolder<Item, Item> IMPROVISED_BARBECUE_STICK = register("improvised_barbecue_stick", MDFoodValues.IMPROVISED_BARBECUE_STICK);
-    public static final DeferredHolder<Item, Item> PASTA_WITH_VEGGIEBALLS = register("pasta_with_veggieballs", MDFoodValues.PASTA_WITH_VEGGIEBALLS);
-    public static final DeferredHolder<Item, Item> STUFFED_SQUID = register("stuffed_squid", DEFAULT_PROPERTIES().stacksTo(1), p -> new BlockItem(MDBlocks.STUFFED_SQUID.get(), p));
-
-    public static final DeferredHolder<Item, ConsumableItem> CAVE_SOUP = registerBowlFood("cave_soup", MDFoodValues.CAVE_SOUP);
+    public static final DeferredHolder<Item, Item> SQUID_SANDWICH = register("squid_sandwich", MDFoodValues.SQUID_SANDWICH);
+    public static final DeferredHolder<Item, ConsumableItem> TAKOYAKI = registerBowlFood("takoyaki", MDFoodValues.TAKOYAKI);
     public static final DeferredHolder<Item, ConsumableItem> BOWL_OF_STUFFED_SQUID = registerBowlFood("bowl_of_stuffed_squid", MDFoodValues.BOWL_OF_STUFFED_SQUID);
+    public static final DeferredHolder<Item, ConsumableItem> GLOW_INK_PASTA = registerBowlFood("glow_ink_pasta", MDFoodValues.GLOW_INK_PASTA);
 
+    // Cups
     public static final DeferredHolder<Item, CopperCupFoodItem> BEETROOT_SOUP_CUP = registerCupFood("beetroot_soup_cup", MDFoodValues.BEETROOT_SOUP);
     public static final DeferredHolder<Item, CopperCupFoodItem> MUSHROOM_STEW_CUP = registerCupFood("mushroom_stew_cup", MDFoodValues.MUSHROOM_STEW);
     public static final DeferredHolder<Item, CopperCupFoodItem> RABBIT_STEW_CUP = registerCupFood("rabbit_stew_cup", MDFoodValues.RABBIT_STEW);
-
     public static final DeferredHolder<Item, CopperCupFoodItem> BAKED_COD_STEW_CUP = registerCupFood("baked_cod_stew_cup", FoodValues.BAKED_COD_STEW);
     public static final DeferredHolder<Item, CopperCupFoodItem> NOODLE_SOUP_CUP = registerCupFood("noodle_soup_cup", FoodValues.NOODLE_SOUP);
     public static final DeferredHolder<Item, CopperCupFoodItem> BEEF_STEW_CUP = registerCupFood("beef_stew_cup", FoodValues.BEEF_STEW);
-    public static final DeferredHolder<Item, CopperCupFoodItem> CAVE_SOUP_CUP = registerCupFood("cave_soup_cup", MDFoodValues.CAVE_SOUP);
     public static final DeferredHolder<Item, CopperCupFoodItem> CHICKEN_SOUP_CUP = registerCupFood("chicken_soup_cup", FoodValues.CHICKEN_SOUP);
     public static final DeferredHolder<Item, CopperCupFoodItem> FISH_STEW_CUP = registerCupFood("fish_stew_cup", FoodValues.FISH_STEW);
-    public static final DeferredHolder<Item, HotCocoaCupItem> HOT_COCOA_CUP = register("hot_cocoa_cup", MDFoodValues.HOT_COCOA, p -> new HotCocoaCupItem(p.stacksTo(16)));
     public static final DeferredHolder<Item, CopperCupFoodItem> PUMPKIN_SOUP_CUP = registerCupFood("pumpkin_soup_cup", FoodValues.PUMPKIN_SOUP);
     public static final DeferredHolder<Item, CopperCupFoodItem> VEGETABLE_SOUP_CUP = registerCupFood("vegetable_soup_cup", FoodValues.VEGETABLE_SOUP);
+    public static final DeferredHolder<Item, CopperCupFoodItem> BONE_BROTH_CUP = registerCupFood("bone_broth_cup", FoodValues.BONE_BROTH);
+    public static final DeferredHolder<Item, CopperCupFoodItem> CAVE_SOUP_CUP = registerCupFood("cave_soup_cup", MDFoodValues.CAVE_SOUP);
+    public static final DeferredHolder<Item, CopperCupFoodItem> BAT_SOUP_CUP = registerCupFood("bat_soup_cup", MDFoodValues.BAT_SOUP);
+    public static final DeferredHolder<Item, CopperCupFoodItem> INSECT_STEW_CUP = registerCupFood("insect_stew_cup", MDFoodValues.INSECT_STEW);
+
 }

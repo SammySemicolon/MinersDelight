@@ -1,0 +1,25 @@
+{
+	"type": "farmersdelight:add_item",
+	"conditions": [
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "killer",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"tag": "farmersdelight:tools/knives"
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"type": "minecraft:glow_squid"
+			}
+		}
+	],
+	"item": "miners_delight:glow_squid",
+	"count" : 1
+}

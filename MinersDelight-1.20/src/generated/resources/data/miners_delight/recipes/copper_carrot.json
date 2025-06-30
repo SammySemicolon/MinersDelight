@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "tag": "forge:ingots/copper"
+    },
+    "Y": {
+      "item": "miners_delight:cave_carrot"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "result": {
+    "item": "miners_delight:copper_carrot"
+  },
+  "show_notification": true
+}

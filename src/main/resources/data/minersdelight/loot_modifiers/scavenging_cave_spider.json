@@ -1,0 +1,26 @@
+{
+	"type": "minersdelight:modify_drops",
+	"conditions": [
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "attacker",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"items": "#farmersdelight:tools/knives"
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"type": "minecraft:cave_spider"
+			}
+		}
+	],
+	"item": "miners_delight:arthropod",
+	"min": 1,
+	"max": 3
+}

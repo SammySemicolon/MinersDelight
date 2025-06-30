@@ -81,6 +81,7 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 		Optional<ItemStack> cupVariant = CupConversionDataMap.getCupVariant(resultStack);
 		if (cupVariant.isPresent()) {
 			resultStack = cupVariant.get();
+			resultStack.grow(1);
 			containerStack = resultStack.getCraftingRemainingItem();
 		}
 		int borderSlotSize = 18;

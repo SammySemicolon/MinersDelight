@@ -30,7 +30,7 @@ public class MDBlockStates extends LodestoneBlockStateProvider {
     @Nonnull
     @Override
     public String getName() {
-        return "Malum BlockStates";
+        return "Miner's Delight BlockStates";
     }
 
     @Override
@@ -39,20 +39,15 @@ public class MDBlockStates extends LodestoneBlockStateProvider {
 
         AbstractBlockStateSmith.StateSmithData data = new AbstractBlockStateSmith.StateSmithData(this, blocks::remove);
 
-        STUFFED_SQUID.act(data,
-                MDBlocks.STUFFED_SQUID);
-        WILD_CAVE_CARROTS.act(data,
-                MDBlocks.WILD_CAVE_CARROTS);
-        CAVE_CARROTS.act(data,
-                MDBlocks.CAVE_CARROTS);
+        STUFFED_SQUID.act(data, MDBlocks.STUFFED_SQUID);
+        WILD_CROP_BLOCK.act(data, WILD_CAVE_CARROTS, GOSSYPIUM);
+        CAVE_CARROTS.act(data, MDBlocks.CAVE_CARROTS);
 
         BlockStateSmithTypes.CUSTOM_MODEL.act(data, ItemModelSmithTypes.BLOCK_MODEL_ITEM, this::simpleBlock, this::predefinedModel,
                 CAVE_CARROT_CRATE);
-        BlockStateSmithTypes.CROSS_MODEL_BLOCK.act(data,
-                GOSSYPIUM);
     }
 
-    public static BlockStateSmith<StuffedSquidFeastBlock> STUFFED_SQUID = new BlockStateSmith<>(StuffedSquidFeastBlock.class, ItemModelSmithTypes.BLOCK_MODEL_ITEM, (block, provider) -> {
+    public static BlockStateSmith<StuffedSquidFeastBlock> STUFFED_SQUID = new BlockStateSmith<>(StuffedSquidFeastBlock.class, ItemModelSmithTypes.GENERATED_ITEM, (block, provider) -> {
         Function<BlockState, ModelFile> modelFunc = s -> {
             int servings = s.getValue(StuffedSquidFeastBlock.SERVINGS);
             String path = servings == 0 ? "block/stuffed_squid_block_leftover" : "block/stuffed_squid_block_stage" + (5-servings);
@@ -63,16 +58,19 @@ public class MDBlockStates extends LodestoneBlockStateProvider {
                 .rotationY((((int) s.getValue(FeastBlock.FACING).toYRot() + 180))).build());
     });
 
-    public static BlockStateSmith<WildCaveCarrotBlock> WILD_CAVE_CARROTS = new BlockStateSmith<>(WildCaveCarrotBlock.class, ItemModelSmithTypes.BLOCK_MODEL_ITEM, (block, provider) -> {
+    public static BlockStateSmith<FlowerBlock> WILD_CROP_BLOCK = new BlockStateSmith<>(FlowerBlock.class, ItemModelSmithTypes.BLOCK_TEXTURE_ITEM, (block, provider) -> {
         provider.getVariantBuilder(block).forAllStates(s -> {
             String name = provider.getBlockName(block);
+            if (s.getValue(WildCaveCarrotBlock.STONE)) {
+                name = "stone_" + name;
+            }
             ModelFile cross = provider.models().withExistingParent(name, ResourceLocation.parse("block/cross")).texture("cross", path("block/" + name));
             ConfiguredModel.builder().modelFile(cross).build();
             return ConfiguredModel.builder().modelFile(cross).build();
         });
     });
 
-    public static BlockStateSmith<CaveCarrotBlock> CAVE_CARROTS = new BlockStateSmith<>(CaveCarrotBlock.class, ItemModelSmithTypes.BLOCK_MODEL_ITEM, (block, provider) -> {
+    public static BlockStateSmith<CaveCarrotBlock> CAVE_CARROTS = new BlockStateSmith<>(CaveCarrotBlock.class, ItemModelSmithTypes.GENERATED_ITEM, (block, provider) -> {
         provider.getVariantBuilder(block).forAllStates(s -> {
             String name = provider.getBlockName(block) + "_" + s.getValue(CaveCarrotBlock.AGE);
             ModelFile crop = provider.models().withExistingParent(name, ResourceLocation.parse("block/crop")).texture("crop", path("block/" + name));

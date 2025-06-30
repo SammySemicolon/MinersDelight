@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=north,support=none": {
+      "model": "miners_delight:block/copper_pot"
+    },
+    "facing=south,support=none": {
+      "model": "miners_delight:block/copper_pot",
+      "y": 180
+    },
+    "facing=west,support=none": {
+      "model": "miners_delight:block/copper_pot",
+      "y": 270
+    },
+    "facing=east,support=none": {
+      "model": "miners_delight:block/copper_pot",
+      "y": 90
+    },
+    "facing=north,support=tray": {
+      "model": "miners_delight:block/copper_pot_tray"
+    },
+    "facing=south,support=tray": {
+      "model": "miners_delight:block/copper_pot_tray",
+      "y": 180
+    },
+    "facing=west,support=tray": {
+      "model": "miners_delight:block/copper_pot_tray",
+      "y": 270
+    },
+    "facing=east,support=tray": {
+      "model": "miners_delight:block/copper_pot_tray",
+      "y": 90
+    },
+    "facing=north,support=handle": {
+      "model": "miners_delight:block/copper_pot_handle"
+    },
+    "facing=south,support=handle": {
+      "model": "miners_delight:block/copper_pot_handle",
+      "y": 180
+    },
+    "facing=west,support=handle": {
+      "model": "miners_delight:block/copper_pot_handle",
+      "y": 270
+    },
+    "facing=east,support=handle": {
+      "model": "miners_delight:block/copper_pot_handle",
+      "y": 90
+    }
+  }
+}

@@ -1,3 +1,6 @@
 {
-  "parent": "minersdelight:block/wild_cave_carrots"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minersdelight:block/wild_cave_carrots"
+  }
 }

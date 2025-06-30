@@ -261,6 +261,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 				Optional<ItemStack> cupVariant = CupConversionDataMap.getCupVariant(resultStack);
 				if (cupVariant.isPresent()) {
 					resultStack = cupVariant.get();
+					resultStack.grow(1);
 				}
 				ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
 				if (storedMealStack.isEmpty()) {
@@ -293,6 +294,7 @@ public class CopperPotBlockEntity extends SyncedBlockEntity implements MenuProvi
 		mealContainerStack = recipe.value().getOutputContainer();
 		if (cupVariant.isPresent()) {
 			resultStack = cupVariant.get();
+			resultStack.grow(1);
 			mealContainerStack = resultStack.getCraftingRemainingItem();
 		}
 		ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);

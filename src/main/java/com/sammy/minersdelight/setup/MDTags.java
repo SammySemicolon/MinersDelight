@@ -1,0 +1,46 @@
+package com.sammy.minersdelight.setup;
+
+import com.sammy.minersdelight.*;
+import net.minecraft.resources.*;
+import net.minecraft.tags.*;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.*;
+
+public class MDTags {
+
+    public static final TagKey<Block> CAVE_CARROTS_CROP_BLOCK = commonBlock("crops/cave_carrot");
+    public static final TagKey<Item> CAVE_CARROTS_VEGETABLE_ITEM = commonItem("vegetables/cave_carrot");
+    public static final TagKey<Item> CAVE_CARROTS_CROP_ITEM = commonItem("crops/cave_carrot");
+    public static final TagKey<Item> BAKED_CAVE_CARROT = modItem("baked_cave_carrot");
+
+    public static final TagKey<Item> MOSS = commonItem("moss");
+
+    public static final TagKey<Item> BAT_WING = modItem("bat_wing");
+    public static final TagKey<Item> INSECT_MEAT = modItem("insect_meat");
+    public static final TagKey<Item> COOKED_INSECT_MEAT = modItem("cooked_insect_meat");
+
+    public static final TagKey<Item> SQUID = commonItem("squid");
+    public static final TagKey<Item> GLOW_SQUID = commonItem("glow_squid");
+    public static final TagKey<Item> RAW_FISHES_SQUID = commonItem("raw_fishes/squid");
+    public static final TagKey<Item> COOKED_FISHES_SQUID = commonItem("cooked_fishes/squid");
+    public static final TagKey<Item> TENTACLES = commonItem("tentacles");
+
+    public static final TagKey<Item> BC_RAW_MEATS = modItem("brewinandchewin:raw_meats");
+
+
+    private static TagKey<Item> modItem(String path) {
+        return ItemTags.create(path.contains(":") ? ResourceLocation.parse(path) : MinersDelightMod.path(path));
+    }
+
+    private static TagKey<Block> modBlock(String path) {
+        return BlockTags.create(path.contains(":") ? ResourceLocation.parse(path) : MinersDelightMod.path(path));
+    }
+
+    private static TagKey<Item> commonItem(String path) {
+        return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
+    }
+
+    private static TagKey<Block> commonBlock(String path) {
+        return BlockTags.create(ResourceLocation.fromNamespaceAndPath("forge", path));
+    }
+}

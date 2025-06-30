@@ -26,7 +26,7 @@ public class MDItemModels extends LodestoneItemModelProvider {
         ItemModelSmithData data = new ItemModelSmithData(this, items::remove);
 
         ItemModelSmithTypes.BLOCK_MODEL_ITEM.act(data, COPPER_POT, STICKY_BASKET);
-        ItemModelSmithTypes.GENERATED_ITEM.act(data, POWDERED_SNOW_CUP, CAVE_CARROT, STUFFED_SQUID);
+        ItemModelSmithTypes.GENERATED_ITEM.act(data, POWDERED_SNOW_CUP);
         ItemModelSmithTypes.GENERATED_ITEM.act(data, items);
     }
 
