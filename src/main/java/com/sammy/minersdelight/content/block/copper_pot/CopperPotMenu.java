@@ -38,19 +38,19 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper, CookingPotRecip
 	//TODO: update this
 	public static final ResourceLocation EMPTY_CONTAINER_SLOT_CUP = ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "item/empty_container_slot_bowl");
 
-	public final CopperPotBlockEntity tileEntity;
+	public final CopperPotBlockEntity blockEntity;
 	public final ItemStackHandler inventory;
 	private final ContainerData cookingPotData;
 	private final ContainerLevelAccess canInteractWithCallable;
 	protected final Level level;
 
-	public CopperPotMenu(final int windowId, final Inventory playerInventory, final CopperPotBlockEntity tileEntity, ContainerData cookingPotDataIn) {
+	public CopperPotMenu(final int windowId, final Inventory playerInventory, final CopperPotBlockEntity blockEntity, ContainerData cookingPotDataIn) {
 		super(MDMenuTypes.COPPER_POT.get(), windowId);
-		this.tileEntity = tileEntity;
-		this.inventory = tileEntity.getInventory();
+		this.blockEntity = blockEntity;
+		this.inventory = blockEntity.getInventory();
 		this.cookingPotData = cookingPotDataIn;
 		this.level = playerInventory.player.level();
-		this.canInteractWithCallable = ContainerLevelAccess.create(tileEntity.getLevel(), tileEntity.getBlockPos());
+		this.canInteractWithCallable = ContainerLevelAccess.create(blockEntity.getLevel(), blockEntity.getBlockPos());
 
 		// Ingredient Slots - 2 Rows x 2 Columns
 		int startX = 8;
@@ -79,7 +79,7 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper, CookingPotRecip
 		});
 
 		// Bowl Output
-		this.addSlot(new CopperPotResultSlot(playerInventory.player, tileEntity, inventory, 6, 115, 56));
+		this.addSlot(new CopperPotResultSlot(playerInventory.player, blockEntity, inventory, 6, 115, 56));
 
 		// Main Player Inventory
 		int startPlayerInvY = startY * 4 + 12;
@@ -169,7 +169,7 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper, CookingPotRecip
 
 	@OnlyIn(Dist.CLIENT)
 	public boolean isHeated() {
-		return tileEntity.isHeated();
+		return blockEntity.isHeated();
 	}
 
 	@Override
@@ -188,7 +188,7 @@ public class CopperPotMenu extends RecipeBookMenu<RecipeWrapper, CookingPotRecip
 
 	@Override
 	public boolean recipeMatches(RecipeHolder recipeHolder) {
-		return recipeHolder.value().matches(tileEntity.createFakeRecipeWrapper(), level);
+		return recipeHolder.value().matches(blockEntity.createFakeRecipeWrapper(), level);
 	}
 
 	@Override

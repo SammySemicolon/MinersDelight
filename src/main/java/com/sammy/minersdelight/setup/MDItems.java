@@ -41,6 +41,10 @@ public class MDItems {
         return register(name, CUP_PROPERTIES().food(MDFoodValues.copyAndAddHaste(foodProperties)), p -> new CopperCupFoodItem(p.craftRemainder(COPPER_CUP.get())));
     }
 
+    public static DeferredHolder<Item, ConsumableItem> registerBowlFood(String name, FoodProperties foodProperties) {
+        return register(name, CUP_PROPERTIES().food(foodProperties), p -> new ConsumableItem(p.stacksTo(16).craftRemainder(Items.BOWL)));
+    }
+
     public static <T extends Item> DeferredHolder<Item, T> register(String name, FoodProperties foodProperties, Function<LodestoneItemProperties, T> function) {
         return register(name, DEFAULT_PROPERTIES().food(foodProperties), function);
     }
@@ -52,14 +56,6 @@ public class MDItems {
     public static <T extends Item> DeferredHolder<Item, T> register(String name, LodestoneItemProperties properties, Function<LodestoneItemProperties, T> function) {
         LodestoneItemProperties.addToTabSorting(MinersDelightMod.path(name), properties);
         return ITEMS.register(name, () -> function.apply(properties));
-    }
-
-    public static ConsumableItem bowlItem(Item.Properties properties) {
-        return new ConsumableItem(properties, true);
-    }
-
-    public static CopperCupFoodItem cupItem(Item.Properties properties) {
-        return new CopperCupFoodItem(properties);
     }
 
     public static final DeferredHolder<Item, BlockItem> COPPER_POT = register("copper_pot", DEFAULT_PROPERTIES(), (p) -> new BlockItem(MDBlocks.COPPER_POT.get(), p));
@@ -91,8 +87,8 @@ public class MDItems {
     public static final DeferredHolder<Item, Item> PASTA_WITH_VEGGIEBALLS = register("pasta_with_veggieballs", MDFoodValues.PASTA_WITH_VEGGIEBALLS);
     public static final DeferredHolder<Item, Item> STUFFED_SQUID = register("stuffed_squid", DEFAULT_PROPERTIES().stacksTo(1), p -> new BlockItem(MDBlocks.STUFFED_SQUID.get(), p));
 
-    public static final DeferredHolder<Item, ConsumableItem> CAVE_SOUP = register("cave_soup", MDFoodValues.CAVE_SOUP, MDItems::bowlItem);
-    public static final DeferredHolder<Item, ConsumableItem> BOWL_OF_STUFFED_SQUID = register("bowl_of_stuffed_squid", MDFoodValues.BOWL_OF_STUFFED_SQUID, MDItems::bowlItem);
+    public static final DeferredHolder<Item, ConsumableItem> CAVE_SOUP = registerBowlFood("cave_soup", MDFoodValues.CAVE_SOUP);
+    public static final DeferredHolder<Item, ConsumableItem> BOWL_OF_STUFFED_SQUID = registerBowlFood("bowl_of_stuffed_squid", MDFoodValues.BOWL_OF_STUFFED_SQUID);
 
     public static final DeferredHolder<Item, CopperCupFoodItem> BEETROOT_SOUP_CUP = registerCupFood("beetroot_soup_cup", MDFoodValues.BEETROOT_SOUP);
     public static final DeferredHolder<Item, CopperCupFoodItem> MUSHROOM_STEW_CUP = registerCupFood("mushroom_stew_cup", MDFoodValues.MUSHROOM_STEW);

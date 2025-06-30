@@ -24,6 +24,9 @@ public class MDItemModels extends LodestoneItemModelProvider {
         Set<Supplier<? extends Item>> items = new HashSet<>(ITEMS.getEntries());
         items.removeIf(i -> i.get() instanceof BlockItem);
         ItemModelSmithData data = new ItemModelSmithData(this, items::remove);
+
+        ItemModelSmithTypes.BLOCK_MODEL_ITEM.act(data, COPPER_POT, STICKY_BASKET);
+        ItemModelSmithTypes.GENERATED_ITEM.act(data, POWDERED_SNOW_CUP, CAVE_CARROT, STUFFED_SQUID);
         ItemModelSmithTypes.GENERATED_ITEM.act(data, items);
     }
 

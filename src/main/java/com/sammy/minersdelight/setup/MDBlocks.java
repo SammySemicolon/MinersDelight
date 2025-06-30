@@ -32,7 +32,7 @@ public class MDBlocks {
             () -> new CaveCarrotBlock(LodestoneBlockProperties.copy(Blocks.CARROTS).setCutoutRenderType()));
 
     public static final Supplier<Block> CAVE_CARROT_CRATE = BLOCKS.register("cave_carrot_crate",
-            () -> new CaveCarrotBlock(LodestoneBlockProperties.copy(ModBlocks.CARROT_CRATE.get()).needsAxe()));
+            () -> new Block(LodestoneBlockProperties.copy(ModBlocks.CARROT_CRATE.get()).needsAxe()));
 
     public static final Supplier<Block> GOSSYPIUM = BLOCKS.register("gossypium",
             () -> new GossypiumFlowerBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS).setCutoutRenderType()));

@@ -39,6 +39,9 @@ public class MDLangDatagen extends LanguageProvider {
             name = makeProper(DataHelper.toTitleCase(correctItemName(name), "_"));
             add(i.get().getDescriptionId(), name);
         });
+        add("itemGroup.minersdelight", "Miner's Delight");
+        add("minersdelight.container.cooking_pot", "Copper Pot");
+        add("minersdelight.container.sticky_basket", "Sticky Basket");
     }
 
     @Override

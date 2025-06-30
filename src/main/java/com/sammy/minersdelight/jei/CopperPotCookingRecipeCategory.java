@@ -1,6 +1,7 @@
 package com.sammy.minersdelight.jei;
 
 import com.sammy.minersdelight.*;
+import com.sammy.minersdelight.content.data.*;
 import com.sammy.minersdelight.setup.*;
 import mezz.jei.api.constants.*;
 import mezz.jei.api.gui.builder.*;
@@ -17,9 +18,9 @@ import net.minecraft.network.chat.*;
 import net.minecraft.resources.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.*;
+import vectorwing.farmersdelight.*;
 import vectorwing.farmersdelight.common.crafting.*;
 import vectorwing.farmersdelight.common.utility.*;
-import vectorwing.farmersdelight.integration.jei.*;
 
 import javax.annotation.*;
 import java.util.*;
@@ -28,7 +29,8 @@ import java.util.*;
 @MethodsReturnNonnullByDefault
 public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPotRecipe>
 {
-	public static final RecipeType<CookingPotRecipe> COOKING = RecipeType.create(MinersDelightMod.MODID, "cooking", CookingPotRecipe.class);
+
+	public static final ResourceLocation UID = MinersDelightMod.path("copper_pot_cooking");
 
 	protected final IDrawable heatIndicator;
 	protected final IDrawable timeIcon;
@@ -41,18 +43,19 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 	public CopperPotCookingRecipeCategory(IGuiHelper helper) {
 		title = TextUtils.getTranslation("jei.cooking");
 		ResourceLocation backgroundImage = MinersDelightMod.path("textures/gui/copper_pot.png");
+		ResourceLocation fdBackgroundImage = ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "textures/gui/cooking_pot.png");
 		background = helper.createDrawable(backgroundImage, 29, 16, 116, 56);
 		icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(MDItems.COPPER_POT.get()));
 		heatIndicator = helper.createDrawable(backgroundImage, 176, 0, 17, 15);
-		timeIcon = helper.createDrawable(backgroundImage, 176, 32, 8, 11);
-		expIcon = helper.createDrawable(backgroundImage, 176, 43, 9, 9);
+		timeIcon = helper.createDrawable(fdBackgroundImage, 176, 32, 8, 11);
+		expIcon = helper.createDrawable(fdBackgroundImage, 176, 43, 9, 9);
 		arrow = helper.drawableBuilder(backgroundImage, 176, 15, 24, 17)
 				.buildAnimated(200, IDrawableAnimated.StartDirection.LEFT, false);
 	}
 
 	@Override
 	public RecipeType<CookingPotRecipe> getRecipeType() {
-		return FDRecipeTypes.COOKING;
+		return JEIPlugin.COPPER_POT_COOKING;
 	}
 
 	@Override
@@ -74,41 +77,39 @@ public class CopperPotCookingRecipeCategory implements IRecipeCategory<CookingPo
 	public void setRecipe(IRecipeLayoutBuilder builder, CookingPotRecipe recipe, IFocusGroup focusGroup) {
 		NonNullList<Ingredient> recipeIngredients = recipe.getIngredients();
 		ItemStack resultStack = RecipeUtils.getResultItem(recipe);
-		var data = resultStack.getItem().builtInRegistryHolder().getData(MDDataMaps.CUP_VARIANT);
-		if (data != null) {
-			ItemStack cupResultStack = new ItemStack(data.cupVariant(), resultStack.getCount());
-			cupResultStack.applyComponents(resultStack.getComponents());
-			resultStack = cupResultStack;
-		}
 		ItemStack containerStack = recipe.getOutputContainer();
-
+		Optional<ItemStack> cupVariant = CupConversionDataMap.getCupVariant(resultStack);
+		if (cupVariant.isPresent()) {
+			resultStack = cupVariant.get();
+			containerStack = resultStack.getCraftingRemainingItem();
+		}
 		int borderSlotSize = 18;
 		for (int row = 0; row < 2; ++row) {
-			for (int column = 0; column < 3; ++column) {
-				int inputIndex = row * 3 + column;
+			for (int column = 0; column < 2; ++column) {
+				int inputIndex = row * 2 + column;
 				if (inputIndex < recipeIngredients.size()) {
-					builder.addSlot(RecipeIngredientRole.INPUT, (column * borderSlotSize) + 1, (row * borderSlotSize) + 1)
+					builder.addSlot(RecipeIngredientRole.INPUT, 11+column * borderSlotSize, 2+row * borderSlotSize)
 							.addItemStacks(Arrays.asList(recipeIngredients.get(inputIndex).getItems()));
 				}
 			}
 		}
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 95, 10).addItemStack(resultStack);
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 86, 12).addItemStack(resultStack);
 
 		if (!containerStack.isEmpty()) {
-			builder.addSlot(RecipeIngredientRole.CATALYST, 63, 39).addItemStack(containerStack);
+			builder.addSlot(RecipeIngredientRole.CATALYST, 54, 40).addItemStack(containerStack);
 		}
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 95, 39).addItemStack(resultStack);
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 86, 40).addItemStack(resultStack);
 	}
 
 	@Override
 	public void draw(CookingPotRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
-		arrow.draw(guiGraphics, 60, 9);
-		heatIndicator.draw(guiGraphics, 18, 39);
-		timeIcon.draw(guiGraphics, 64, 2);
+		arrow.draw(guiGraphics, 48, 11);
+		heatIndicator.draw(guiGraphics, 19, 40);
+		timeIcon.draw(guiGraphics, 56, 4);
 		if (recipe.getExperience() > 0) {
-			expIcon.draw(guiGraphics, 63, 21);
+			expIcon.draw(guiGraphics, 55, 23);
 		}
 	}
 

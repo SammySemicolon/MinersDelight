@@ -1,6 +1,6 @@
 package com.sammy.minersdelight.content.block.copper_pot;
 
-import com.sammy.minersdelight.setup.*;
+import com.sammy.minersdelight.content.data.*;
 import net.minecraft.client.gui.components.*;
 import net.minecraft.client.gui.screens.recipebook.*;
 import net.minecraft.network.chat.*;
@@ -41,11 +41,9 @@ public class CopperPotRecipeBookComponent extends RecipeBookComponent
 	@Override
 	public void setupGhostRecipe(RecipeHolder<?> recipe, List<Slot> slots) {
 		ItemStack resultStack = recipe.value().getResultItem(this.minecraft.level.registryAccess());
-		var data = resultStack.getItem().builtInRegistryHolder().getData(MDDataMaps.CUP_VARIANT);
-		if (data != null) {
-			ItemStack cupResultStack = new ItemStack(data.cupVariant(), resultStack.getCount());
-			cupResultStack.applyComponents(resultStack.getComponents());
-			resultStack = cupResultStack;
+		Optional<ItemStack> cupVariant = CupConversionDataMap.getCupVariant(resultStack);
+		if (cupVariant.isPresent()) {
+			resultStack = cupVariant.get();
 		}
 		this.ghostRecipe.setRecipe(recipe);
 		if (slots.get(6).getItem().isEmpty()) {

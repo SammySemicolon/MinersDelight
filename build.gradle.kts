@@ -159,8 +159,8 @@ dependencies {
     compileOnlyApi(("team.lodestar.lodestone:lodestone:${property("minecraft_version")}-${property("lodestone_version")}"))
     runtimeOnly(("team.lodestar.lodestone:lodestone:${property("minecraft_version")}-${property("lodestone_version")}"))
 
-    compileOnly(("curse.maven:farmers-delight-398521:5878217"))
-    localRuntime(("curse.maven:farmers-delight-398521:5878217"))
+    compileOnly(("curse.maven:farmers-delight-398521:6597295"))
+    localRuntime(("curse.maven:farmers-delight-398521:6597295"))
 }
 
 val generateModMetadata by tasks.registering(ProcessResources::class) {

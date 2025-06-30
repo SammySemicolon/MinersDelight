@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-15T02:05:24.8587919	Miner's Delight Item Models
+// 1.21.1	2025-06-30T14:16:22.0807147	Miner's Delight Item Models
 38b4a4afd0d40a937bde719f1243c530af8fb6db assets/minersdelight/models/item/baked_cave_carrot.json
 7478fcec4ffd1d4879cc80d01865497a2535c7fb assets/minersdelight/models/item/baked_cod_stew_cup.json
 e0e70eaca4227560388742c3c399d65d48ca2971 assets/minersdelight/models/item/baked_squid.json
@@ -7,10 +7,12 @@ c50baef7e83638f39024309b6607f9b6443d5bec assets/minersdelight/models/item/baked_
 f34ec720ad99849fce68904bf883eaa48ca817d0 assets/minersdelight/models/item/beef_stew_cup.json
 1d29024d324a721ca4ce541776cab7e69341de09 assets/minersdelight/models/item/beetroot_soup_cup.json
 74e513fa1bbf463b5ade266a0c2a9d59e1d97631 assets/minersdelight/models/item/bowl_of_stuffed_squid.json
+a82eac4392fd0e81e65fefd4939df8d8509cd632 assets/minersdelight/models/item/cave_carrot.json
 ddc076e35493a549ad302f0f2d490cea260e5d88 assets/minersdelight/models/item/cave_soup.json
 3df3bcba1145ccffdb33443bc700d57d126718d7 assets/minersdelight/models/item/cave_soup_cup.json
 2e1b2935611145565e4ebb7b447dfcbb669be31e assets/minersdelight/models/item/chicken_soup_cup.json
 2b2a0550e6f904801ce5b0b7349d301b000f86fd assets/minersdelight/models/item/copper_cup.json
+493016d3379a27b537f1e09b40122ec77dbaa9a6 assets/minersdelight/models/item/copper_pot.json
 fccd4bca331cb0abfa7b80544bf978ef79587b4b assets/minersdelight/models/item/fish_stew_cup.json
 71ec41ec175d96c748c0ed8108afa3369c8ff6ba assets/minersdelight/models/item/glow_squid.json
 c78b288e0d03ac99a50d5ec07b94408cef34115d assets/minersdelight/models/item/hot_cocoa_cup.json
@@ -19,11 +21,14 @@ aa08d118a8a7d9f61d06a8569de60aded891348a assets/minersdelight/models/item/improv
 83ae9c5d0242ca5bed58cf485f1cb31c9d549e3c assets/minersdelight/models/item/mushroom_stew_cup.json
 5d353ab630e44d68436c51bf21df90601657a41d assets/minersdelight/models/item/noodle_soup_cup.json
 3c6cc77bc7e9980bb883662ffea65b1a598346c0 assets/minersdelight/models/item/pasta_with_veggieballs.json
+a0d2a4fad4355e0888f8fa08e88be0cfafa2ea8f assets/minersdelight/models/item/powder_snow_cup.json
 276c1f876089deb05379ad66b8f1d0baa5f80b36 assets/minersdelight/models/item/pumpkin_soup_cup.json
 9919b12e761f4e3197b316401ed22eafb68c6d04 assets/minersdelight/models/item/rabbit_stew_cup.json
 147dd2f91b6d9286f0a030d4db10fff7990890c5 assets/minersdelight/models/item/silverfish_eggs.json
 f42fb76c787f3c7ecf28b1ce7bb52a35a04300bb assets/minersdelight/models/item/smoked_bat_wing.json
 53619aa0d92a0d148af8b48a73724f1d536921e8 assets/minersdelight/models/item/squid.json
+a4efe1145c7ba670619f160ab86d97ad042ca1a3 assets/minersdelight/models/item/sticky_basket.json
+1713fc481e6600dcacdfa057d30bae4c93bf3f30 assets/minersdelight/models/item/stuffed_squid.json
 72f3296e9092bc0e61863fa5287aa3c748d374c9 assets/minersdelight/models/item/tentacles.json
 341880dadddaea34aacfcc1b5f929f6c0d77b112 assets/minersdelight/models/item/vegetable_soup_cup.json
 cba91267181a8e359579bbfa086fe2872183ea58 assets/minersdelight/models/item/water_cup.json

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "minersdelight:block/cave_carrots_0"
+    },
+    "age=1": {
+      "model": "minersdelight:block/cave_carrots_1"
+    },
+    "age=2": {
+      "model": "minersdelight:block/cave_carrots_2"
+    },
+    "age=3": {
+      "model": "minersdelight:block/cave_carrots_3"
+    }
+  }
+}

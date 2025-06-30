@@ -20,6 +20,7 @@ import net.minecraft.world.level.material.*;
 import net.minecraft.world.phys.*;
 
 import javax.annotation.*;
+import java.util.*;
 
 public class CopperCupItem extends Item implements DispensibleContainerItem {
 
@@ -50,11 +51,11 @@ public class CopperCupItem extends Item implements DispensibleContainerItem {
             BlockState fluidState = level.getBlockState(blockpos);
             if (fluidState.getBlock() instanceof BucketPickup bucketpickup) {
                ItemStack bucketStack = bucketpickup.pickupBlock(player, level, blockpos, fluidState);
-               final CupConversionDataMap data = bucketStack.getItem().builtInRegistryHolder().getData(MDDataMaps.CUP_VARIANT);
-               if (data == null) {
+               Optional<ItemStack> data = CupConversionDataMap.getCupVariant(bucketStack);
+               if (data.isEmpty()) {
                   return InteractionResultHolder.pass(itemstack);
                }
-               ItemStack cupStack = data.cupVariant().value().getDefaultInstance();
+               ItemStack cupStack = data.get();
                cupStack.applyComponents(bucketStack.getComponents());
                if (!cupStack.isEmpty()) {
                   player.awardStat(Stats.ITEM_USED.get(this));

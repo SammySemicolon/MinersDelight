@@ -1,29 +1,25 @@
 package com.sammy.minersdelight.content.block.copper_pot;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.sammy.minersdelight.MinersDelightMod;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.ImageButton;
-import net.minecraft.client.gui.components.WidgetSprites;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
-import net.minecraft.client.gui.screens.recipebook.RecipeUpdateListener;
+import com.mojang.blaze3d.systems.*;
+import com.sammy.minersdelight.*;
+import net.minecraft.*;
+import net.minecraft.client.gui.*;
+import net.minecraft.client.gui.components.*;
+import net.minecraft.client.gui.screens.inventory.*;
+import net.minecraft.client.gui.screens.recipebook.*;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.inventory.ClickType;
-import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ItemStack;
-import vectorwing.farmersdelight.common.Configuration;
-import vectorwing.farmersdelight.common.utility.TextUtils;
+import net.minecraft.network.chat.*;
+import net.minecraft.resources.*;
+import net.minecraft.world.entity.player.*;
+import net.minecraft.world.inventory.*;
+import net.minecraft.world.item.*;
+import vectorwing.farmersdelight.common.*;
+import vectorwing.farmersdelight.common.utility.*;
 
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import javax.annotation.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 @ParametersAreNonnullByDefault
 public class CopperPotScreen extends AbstractContainerScreen<CopperPotMenu> implements RecipeUpdateListener {
@@ -87,29 +83,27 @@ public class CopperPotScreen extends AbstractContainerScreen<CopperPotMenu> impl
 
 	private void renderHeatIndicatorTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
 		if (this.isHovering(HEAT_ICON.x, HEAT_ICON.y, HEAT_ICON.width, HEAT_ICON.height, mouseX, mouseY)) {
-			List<Component> tooltip = new ArrayList<>();
 			String key = "container.cooking_pot." + (this.menu.isHeated() ? "heated" : "not_heated");
-			tooltip.add(TextUtils.getTranslation(key, menu));
-			graphics.renderComponentTooltip(font, tooltip, mouseX, mouseY);
+			graphics.renderTooltip(this.font, TextUtils.getTranslation(key), mouseX, mouseY);
 		}
 	}
 
-	protected void renderMealDisplayTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+	protected void renderMealDisplayTooltip(GuiGraphics gui, int mouseX, int mouseY) {
 		if (this.minecraft != null && this.minecraft.player != null && this.menu.getCarried().isEmpty() && this.hoveredSlot != null && this.hoveredSlot.hasItem()) {
 			if (this.hoveredSlot.index == 6) {
 				List<Component> tooltip = new ArrayList<>();
 
 				ItemStack mealStack = this.hoveredSlot.getItem();
-				tooltip.add(((MutableComponent) mealStack.getItem().getDescription()).withStyle(mealStack.getRarity().color()));
+				tooltip.add(((MutableComponent) mealStack.getItem().getDescription()).withStyle(mealStack.getRarity().getStyleModifier()));
 
-				ItemStack containerStack = this.menu.tileEntity.getContainer();
+				ItemStack containerStack = this.menu.blockEntity.getContainer();
 				String container = !containerStack.isEmpty() ? containerStack.getItem().getDescription().getString() : "";
 
 				tooltip.add(TextUtils.getTranslation("container.cooking_pot.served_on", container).withStyle(ChatFormatting.GRAY));
 
-				graphics.renderComponentTooltip(font, tooltip, mouseX, mouseY);
+				gui.renderComponentTooltip(font, tooltip, mouseX, mouseY);
 			} else {
-				graphics.renderTooltip(font, this.hoveredSlot.getItem(), mouseX, mouseY);
+				gui.renderTooltip(font, this.hoveredSlot.getItem(), mouseX, mouseY);
 			}
 		}
 	}

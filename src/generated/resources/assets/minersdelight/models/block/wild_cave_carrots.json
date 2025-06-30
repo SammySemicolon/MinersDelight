@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "minersdelight:block/wild_cave_carrots"
+  }
+}
