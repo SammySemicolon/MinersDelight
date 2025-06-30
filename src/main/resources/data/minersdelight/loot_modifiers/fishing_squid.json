@@ -1,8 +1,8 @@
 {
-	"type": "minersdelight:replace_items",
+	"type": "minersdelight:modify_drops",
 	"conditions": [
 		{
-			"condition": "forge:loot_table_id",
+			"condition": "neoforge:loot_table_id",
 			"loot_table_id": "minecraft:gameplay/fishing"
 		},
 		{
@@ -10,6 +10,7 @@
 			"chance" : 0.05
 		}
 	],
+	"replaceOriginal" : true,
 	"item": "minersdelight:squid",
 	"min": 1,
 	"max": 1

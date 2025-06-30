@@ -1,15 +1,16 @@
 {
-	"type": "minersdelight:replace_items",
+	"type": "minersdelight:modify_drops",
 	"conditions": [
 		{
-			"condition": "forge:loot_table_id",
+			"condition": "neoforge:loot_table_id",
 			"loot_table_id": "minecraft:gameplay/fishing"
 		},
 		{
 			"condition": "minecraft:random_chance",
-			"chance" : 0.005
+			"chance" : 0.01
 		}
 	],
+	"replaceOriginal" : true,
 	"item": "minersdelight:glow_squid",
 	"min": 1,
 	"max": 1

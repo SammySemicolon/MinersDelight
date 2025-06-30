@@ -5,11 +5,11 @@
 			"condition": "minecraft:inverted",
 			"term": {
 				"condition": "minecraft:entity_properties",
-				"entity": "killer",
+				"entity": "attacker",
 				"predicate": {
 					"equipment": {
 						"mainhand": {
-							"tag": "farmersdelight:tools/knives"
+							"items": "#farmersdelight:tools/knives"
 						}
 					}
 				}

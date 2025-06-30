@@ -3,11 +3,11 @@
 	"conditions": [
 		{
 			"condition": "minecraft:entity_properties",
-			"entity": "killer",
+			"entity": "attacker",
 			"predicate": {
 				"equipment": {
 					"mainhand": {
-						"tag": "farmersdelight:tools/knives"
+						"items": "#farmersdelight:tools/knives"
 					}
 				}
 			}
@@ -21,8 +21,9 @@
 		},
 		{
 			"condition": "minecraft:random_chance",
-			"chance" : 0.10
+			"chance" : 0.2
 		}
 	],
-	"item": "minersdelight:silverfish_eggs"
+	"item": "minersdelight:silverfish_eggs",
+	"count" : 1
 }
