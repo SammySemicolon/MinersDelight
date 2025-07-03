@@ -9,7 +9,6 @@ import net.minecraft.tags.*;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.registries.*;
 import team.lodestar.lodestone.systems.block.*;
-import vectorwing.farmersdelight.common.registry.*;
 import vectorwing.farmersdelight.common.tag.*;
 
 import java.util.function.*;
@@ -33,7 +32,7 @@ public class MDBlocks {
             () -> new CaveCarrotBlock(LodestoneBlockProperties.copy(Blocks.CARROTS).addTags(BlockTags.CROPS, MDTags.CAVE_CARROTS_CROP_BLOCK).setCutoutRenderType()));
 
     public static final Supplier<Block> CAVE_CARROT_CRATE = BLOCKS.register("cave_carrot_crate",
-            () -> new Block(LodestoneBlockProperties.copy(ModBlocks.CARROT_CRATE.get()).needsAxe()));
+            () -> new Block(LodestoneBlockProperties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD).needsAxe()));
 
     public static final Supplier<Block> GOSSYPIUM = BLOCKS.register("gossypium",
             () -> new GossypiumFlowerBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS).addTag(ModTags.WILD_CROPS).setCutoutRenderType()));
