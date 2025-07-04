@@ -1,6 +1,7 @@
 package com.sammy.minersdelight.datagen;
 
 import com.sammy.minersdelight.*;
+import com.sammy.minersdelight.content.item.*;
 import net.minecraft.data.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
@@ -33,7 +34,7 @@ public class MDLangDatagen extends LanguageProvider {
             name = makeProper(DataHelper.toTitleCase(correctItemName(name), "_"));
             add(b.get().getDescriptionId(), name);
         });
-        DataHelper.takeAll(items, i -> i.get() instanceof BlockItem && !(i.get() instanceof ItemNameBlockItem));
+        DataHelper.takeAll(items, i -> i.get() instanceof BlockItem && !(i.get() instanceof ItemNameBlockItem) && !(i.get() instanceof SolidCupItem));
         items.forEach(i -> {
             String name = i.get().getDescriptionId().replaceFirst("item\\.minersdelight\\.", "");
             name = makeProper(DataHelper.toTitleCase(correctItemName(name), "_"));

@@ -7,5 +7,5 @@
 			"loot_table_id": "minecraft:chests/abandoned_mineshaft"
 		}
 	],
-	"lootTable": "miners_delight:chests/md_abandoned_mineshaft"
+	"lootTable": "minersdelight:chests/md_abandoned_mineshaft"
 }

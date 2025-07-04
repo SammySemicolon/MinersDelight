@@ -1,0 +1,36 @@
+{
+  "type": "minersdelight:wild_crop",
+  "config": {
+    "spread_height": 4,
+    "spread_width": 6,
+    "state_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "minecraft:cave_air"
+          },
+          "weight": 4
+        },
+        {
+          "data": {
+            "Name": "minersdelight:wild_cave_carrots",
+            "Properties": {
+              "stone": "false"
+            }
+          },
+          "weight": 3
+        },
+        {
+          "data": {
+            "Name": "minersdelight:gossypium",
+            "Properties": {
+              "stone": "false"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

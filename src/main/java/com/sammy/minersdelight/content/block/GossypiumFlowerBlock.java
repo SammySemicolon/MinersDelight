@@ -31,11 +31,8 @@ public class GossypiumFlowerBlock extends FlowerBlock {
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        final BlockState stateForPlacement = super.getStateForPlacement(pContext);
-        if (pContext.getLevel().getBlockState(pContext.getClickedPos().below()).is(BlockTags.BASE_STONE_OVERWORLD)) {
-            return stateForPlacement.setValue(STONE, true);
-        }
-        return stateForPlacement;
+        BlockState stateForPlacement = super.getStateForPlacement(pContext);
+        return stateForPlacement != null ? modifyState(pContext.getLevel(), stateForPlacement, pContext.getClickedPos()) : null;
     }
 
     @Override

@@ -1,0 +1,28 @@
+{
+  "feature": "minersdelight:wild_cave_carrot",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 32
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "absolute": 48
+        },
+        "min_inclusive": {
+          "above_bottom": 12
+        }
+      }
+    },
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 2
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minersdelight:has_cave_carrots",
+  "features": "minersdelight:wild_cave_carrot",
+  "step": "vegetal_decoration"
+}

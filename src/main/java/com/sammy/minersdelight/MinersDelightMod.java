@@ -14,6 +14,7 @@ public class MinersDelightMod {
 		MDLootModifiers.LOOT_MODIFIERS.register(modEventBus);
 		MDLootConditions.LOOT_CONDITIONS.register(modEventBus);
 
+		MDWorldgen.FEATURE_TYPES.register(modEventBus);
 		MDBlocks.BLOCKS.register(modEventBus);
 		MDBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 		MDItems.ITEMS.register(modEventBus);

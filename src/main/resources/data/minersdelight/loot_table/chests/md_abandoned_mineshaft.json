@@ -15,7 +15,7 @@
 							}
 						}
 					],
-					"name": "miners_delight:copper_carrot"
+					"name": "minersdelight:copper_carrot"
 				},
 				{
 					"type": "minecraft:empty",
@@ -38,7 +38,7 @@
 							}
 						}
 					],
-					"name": "miners_delight:cave_carrot",
+					"name": "minersdelight:cave_carrot",
 					"weight" : 6
 				},
 				{

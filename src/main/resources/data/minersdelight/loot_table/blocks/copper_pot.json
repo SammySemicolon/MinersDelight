@@ -2,27 +2,30 @@
 	"type": "minecraft:block",
 	"pools": [
 		{
-			"rolls": 1,
+			"bonus_rolls": 0.0,
+			"conditions": [
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			],
 			"entries": [
 				{
 					"type": "minecraft:item",
 					"functions": [
 						{
-							"function": "farmersdelight:copy_meal"
-						},
-						{
-							"function": "minecraft:copy_name",
+							"function": "minecraft:copy_components",
+							"include": [
+								"minecraft:custom_name",
+								"farmersdelight:meal",
+								"farmersdelight:container"
+							],
 							"source": "block_entity"
 						}
 					],
 					"name": "minersdelight:copper_pot"
 				}
 			],
-			"conditions": [
-				{
-					"condition": "minecraft:survives_explosion"
-				}
-			]
+			"rolls": 1.0
 		}
 	]
 }

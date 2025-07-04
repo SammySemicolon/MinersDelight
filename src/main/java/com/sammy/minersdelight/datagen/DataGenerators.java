@@ -23,16 +23,32 @@ public class DataGenerators {
         boolean includeClient = event.includeClient();
         boolean includeServer = event.includeServer();
 
-        var blockTagsProvider = new MDBlockTags(output, provider, helper);
-        generator.addProvider(includeServer, blockTagsProvider);
-        generator.addProvider(includeServer, new MDItemTags(output, provider, blockTagsProvider.contentsGetter(), helper));
-        generator.addProvider(includeServer, new MDDataMapDatagen(output, provider));
-        generator.addProvider(includeServer, new MDRecipeProvider(output, provider));
-
-        generator.addProvider(includeClient, new MDLangDatagen(output));
-
         var itemModels = new MDItemModels(output, helper);
-        generator.addProvider(includeClient, new MDItemModels(output, helper));
-        generator.addProvider(includeClient, new MDBlockStates(output, helper, itemModels));
+        var blockStates = new MDBlockStateDatagen(output, helper, itemModels);
+        var langDatagen = new MDLangDatagen(output);
+
+        var registryDataDatagen = new RegistryDataGenerator(output, provider);
+        var registryProvider = registryDataDatagen.getRegistryProvider();
+
+        generator.addProvider(includeServer, registryDataDatagen);
+
+        var dataMapsDatagen = new MDDataMapDatagen(output, registryProvider);
+        var blockLootDatagen = new MDBlockLootTables(output, registryProvider);
+        var blockTagDatagen = new MDBlockTagDatagen(output, registryProvider, helper);
+        var itemTagDatagen = new MDItemTags(output, registryProvider, blockTagDatagen.contentsGetter(), helper);
+        var biomeTagDatagen = new MDBiomeTagDatagen(output, registryProvider, helper);
+        var recipeDatagen = new MDRecipeProvider(output, registryProvider);
+
+        generator.addProvider(includeClient, itemModels);
+        generator.addProvider(includeClient, blockStates);
+        generator.addProvider(includeClient, langDatagen);
+
+
+        generator.addProvider(includeServer, dataMapsDatagen);
+        generator.addProvider(includeServer, blockLootDatagen);
+        generator.addProvider(includeServer, blockTagDatagen);
+        generator.addProvider(includeServer, itemTagDatagen);
+        generator.addProvider(includeServer, biomeTagDatagen);
+        generator.addProvider(includeServer, recipeDatagen);
     }
 }

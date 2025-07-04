@@ -73,11 +73,8 @@ public class WildCaveCarrotBlock extends WildCropBlock {
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        final BlockState stateForPlacement = super.getStateForPlacement(pContext);
-        if (pContext.getLevel().getBlockState(pContext.getClickedPos().below()).is(BlockTags.BASE_STONE_OVERWORLD)) {
-            return stateForPlacement.setValue(STONE, true);
-        }
-        return stateForPlacement;
+        BlockState stateForPlacement = super.getStateForPlacement(pContext);
+        return stateForPlacement != null ? modifyState(pContext.getLevel(), stateForPlacement, pContext.getClickedPos()) : null;
     }
 
     @Override
@@ -91,6 +88,15 @@ public class WildCaveCarrotBlock extends WildCropBlock {
         }
         else {
             state.setValue(STONE, false);
+        }
+        return state;
+    }
+
+    public static BlockState modifyState(LevelAccessor level, BlockState state, BlockPos pos) {
+        if (state.hasProperty(STONE)) {
+            if (level.getBlockState(pos.below()).is(BlockTags.BASE_STONE_OVERWORLD)) {
+                return state.setValue(STONE, true);
+            }
         }
         return state;
     }

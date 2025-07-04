@@ -208,7 +208,7 @@ public class MDRecipeProvider extends RecipeProvider {
                 .addIngredient(ModItems.TOMATO_SAUCE.get())
                 .unlockedByAnyIngredient(MDItems.CAVE_CARROT.get(), ModItems.RAW_PASTA.get(), ModItems.TOMATO_SAUCE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(recipeOutput, "miners_delight:cooking/pasta_with_veggieballs");
+                .build(recipeOutput, "minersdelight:cooking/pasta_with_veggieballs");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.CAVE_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(MDTags.CAVE_CARROTS_VEGETABLE_ITEM)
@@ -216,27 +216,27 @@ public class MDRecipeProvider extends RecipeProvider {
                 .addIngredient(Items.BROWN_MUSHROOM, 2)
                 .unlockedByAnyIngredient(MDItems.CAVE_CARROT.get(), Items.RED_MUSHROOM, Items.BROWN_MUSHROOM)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(recipeOutput, "miners_delight:cooking/cave_soup");
+                .build(recipeOutput, "minersdelight:cooking/cave_soup");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.INSECT_STEW.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(MDItems.ARTHROPOD.get(), 2)
                 .unlockedByItems("has_arthropod", MDItems.ARTHROPOD.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(recipeOutput, "miners_delight:cooking/insect_stew");
+                .build(recipeOutput, "minersdelight:cooking/insect_stew");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.BAT_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(MDTags.BAT_WING)
                 .addIngredient(MDTags.BAT_WING)
                 .unlockedByItems("has_bat_wing", MDItems.BAT_WING.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(recipeOutput, "miners_delight:cooking/bat_soup");
+                .build(recipeOutput, "minersdelight:cooking/bat_soup");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.BAT_ROLLS.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(MDTags.BAT_WING)
                 .addIngredient(ModTags.CABBAGE_ROLL_INGREDIENTS)
                 .unlockedByItems("has_bat_wing", MDItems.BAT_WING.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(recipeOutput, "miners_delight:cooking/bat_rolls");
+                .build(recipeOutput, "minersdelight:cooking/bat_rolls");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.TAKOYAKI.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(MDTags.TENTACLES)
@@ -245,7 +245,7 @@ public class MDRecipeProvider extends RecipeProvider {
                 .addIngredient(ModItems.ONION.get())
                 .unlockedBy("has_squid", has(MDTags.SQUID))
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(recipeOutput, "miners_delight:cooking/takoyaki");
+                .build(recipeOutput, "minersdelight:cooking/takoyaki");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDBlocks.STUFFED_SQUID.get(), 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
                 .addIngredient(Ingredient.of(MDTags.SQUID))
@@ -255,7 +255,7 @@ public class MDRecipeProvider extends RecipeProvider {
                 .addIngredient(ModItems.ONION.get())
                 .unlockedByAnyIngredient(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get(), MDItems.BAKED_SQUID.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(recipeOutput, "miners_delight:cooking/stuffed_squid");
+                .build(recipeOutput, "minersdelight:cooking/stuffed_squid");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.GLOW_INK_PASTA.get(), 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
                 .addIngredient(CommonTags.FOODS_SAFE_RAW_FISH)
@@ -264,7 +264,7 @@ public class MDRecipeProvider extends RecipeProvider {
                 .addIngredient(Items.GLOW_INK_SAC)
                 .unlockedBy("has_glow_ink_sac", has(Items.GLOW_INK_SAC))
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(recipeOutput, "miners_delight:cooking/glow_ink_pasta");
+                .build(recipeOutput, "minersdelight:cooking/glow_ink_pasta");
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.MOSS_BLOCK), Ingredient.of(Tags.Items.TOOLS_SHEAR), MDItems.MOSS.get(), 4)
                 .build(recipeOutput, MinersDelightMod.path("cutting/moss"));
