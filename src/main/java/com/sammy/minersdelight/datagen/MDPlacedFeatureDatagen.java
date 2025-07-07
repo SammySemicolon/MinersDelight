@@ -16,11 +16,11 @@ public class MDPlacedFeatureDatagen {
         context.register(MDWorldgen.PlacedFeatures.WILD_CAVE_CARROT,
                 new PlacedFeature(features.getOrThrow(MDWorldgen.ConfiguredFeatures.CONFIGURED_WILD_CAVE_CARROT),
                         ImmutableList.<PlacementModifier>builder().add(
-                                        RarityFilter.onAverageOnceEvery(32),
+                                        RarityFilter.onAverageOnceEvery(24),
                                         HeightRangePlacement.uniform(
                                                 VerticalAnchor.aboveBottom(12),
                                                 VerticalAnchor.absolute(48)),
-                                        CountOnEveryLayerPlacement.of(2),
+                                        CountOnEveryLayerPlacement.of(5),
                                         BiomeFilter.biome())
                                 .build()
                 ));

@@ -3,7 +3,7 @@
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 32
+      "chance": 24
     },
     {
       "type": "minecraft:height_range",
@@ -19,7 +19,7 @@
     },
     {
       "type": "minecraft:count_on_every_layer",
-      "count": 2
+      "count": 5
     },
     {
       "type": "minecraft:biome"
