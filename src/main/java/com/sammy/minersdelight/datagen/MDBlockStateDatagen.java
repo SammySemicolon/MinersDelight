@@ -41,8 +41,10 @@ public class MDBlockStateDatagen extends LodestoneBlockStateProvider {
 
         STUFFED_SQUID.act(data, MDBlocks.STUFFED_SQUID);
         GLAZED_ARACHNID_LIMBS.act(data, MDBlocks.GLAZED_ARACHNID_LIMBS);
-        WILD_CROP_BLOCK.act(data, WILD_CAVE_CARROTS, GOSSYPIUM);
+        WILD_CROP_BLOCK.act(data, MDBlocks.WILD_CAVE_CARROTS, MDBlocks.GOSSYPIUM);
         CAVE_CARROTS.act(data, MDBlocks.CAVE_CARROTS);
+
+//        BlockStateSmithTypes.POTTED_PLANT.act(data, MDBlocks.POTTED_GOSSYPIUM);
 
         BlockStateSmithTypes.CUSTOM_MODEL.act(data, ItemModelSmithTypes.BLOCK_MODEL_ITEM, this::simpleBlock, this::predefinedModel,
                 CAVE_CARROT_CRATE);
