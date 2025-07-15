@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:foods/bread"
+    },
+    {
+      "item": "minersdelight:vegan_patty"
+    },
+    {
+      "item": "minersdelight:smoked_bat_wing"
+    },
+    [
+      {
+        "item": "minersdelight:baked_tentacles"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      }
+    ],
+    [
+      {
+        "item": "minersdelight:baked_tentacles"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      }
+    ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "minersdelight:cave_hamburger"
+  }
+}

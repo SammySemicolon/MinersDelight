@@ -43,6 +43,34 @@ public class MDLangDatagen extends LanguageProvider {
         add("itemGroup.minersdelight", "Miner's Delight");
         add("minersdelight.container.cooking_pot", "Copper Pot");
         add("minersdelight.container.sticky_basket", "Sticky Basket");
+
+        add("item.minecraft.potion.effect.haste", "Potion of the Haste");
+        add("item.minecraft.potion.effect.long_haste", "Potion of the Haste");
+        add("item.minecraft.potion.effect.strong_haste", "Potion of the Haste");
+        add("item.minecraft.splash_potion.effect.haste", "Splash Potion of the Haste");
+        add("item.minecraft.splash_potion.effect.long_haste", "Splash Potion of the Haste");
+        add("item.minecraft.splash_potion.effect.strong_haste", "Splash Potion of the Haste");
+        add("item.minecraft.lingering_potion.effect.haste", "Lingering Potion of the Haste");
+        add("item.minecraft.lingering_potion.effect.long_haste", "Lingering Potion of the Haste");
+        add("item.minecraft.lingering_potion.effect.strong_haste", "Lingering Potion of the Haste");
+
+        add("item.minecraft.tipped_arrow.effect.haste", "Arrow of the Haste");
+        add("item.minecraft.tipped_arrow.effect.long_haste", "Arrow of the Haste");
+        add("item.minecraft.tipped_arrow.effect.strong_haste", "Arrow of the Haste");
+
+        add("item.minecraft.potion.effect.mining_fatigue", "Potion of the Mining Fatigue");
+        add("item.minecraft.potion.effect.long_mining_fatigue", "Potion of the Mining Fatigue");
+        add("item.minecraft.potion.effect.strong_mining_fatigue", "Potion of the Mining Fatigue");
+        add("item.minecraft.splash_potion.effect.mining_fatigue", "Splash Potion of the Mining Fatigue");
+        add("item.minecraft.splash_potion.effect.long_mining_fatigue", "Splash Potion of the Mining Fatigue");
+        add("item.minecraft.splash_potion.effect.strong_mining_fatigue", "Splash Potion of the Mining Fatigue");
+        add("item.minecraft.lingering_potion.effect.mining_fatigue", "Lingering Potion of the Mining Fatigue");
+        add("item.minecraft.lingering_potion.effect.long_mining_fatigue", "Lingering Potion of the Mining Fatigue");
+        add("item.minecraft.lingering_potion.effect.strong_mining_fatigue", "Lingering Potion of the Mining Fatigue");
+
+        add("item.minecraft.tipped_arrow.effect.mining_fatigue", "Arrow of the Mining Fatigue");
+        add("item.minecraft.tipped_arrow.effect.long_mining_fatigue", "Arrow of the Mining Fatigue");
+        add("item.minecraft.tipped_arrow.effect.strong_mining_fatigue", "Arrow of the Mining Fatigue");
     }
 
     @Override

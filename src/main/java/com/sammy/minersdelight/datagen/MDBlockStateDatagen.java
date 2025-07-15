@@ -40,6 +40,7 @@ public class MDBlockStateDatagen extends LodestoneBlockStateProvider {
         AbstractBlockStateSmith.StateSmithData data = new AbstractBlockStateSmith.StateSmithData(this, blocks::remove);
 
         STUFFED_SQUID.act(data, MDBlocks.STUFFED_SQUID);
+        GLAZED_ARACHNID_LIMBS.act(data, MDBlocks.GLAZED_ARACHNID_LIMBS);
         WILD_CROP_BLOCK.act(data, WILD_CAVE_CARROTS, GOSSYPIUM);
         CAVE_CARROTS.act(data, MDBlocks.CAVE_CARROTS);
 
@@ -51,6 +52,17 @@ public class MDBlockStateDatagen extends LodestoneBlockStateProvider {
         Function<BlockState, ModelFile> modelFunc = s -> {
             int servings = s.getValue(StuffedSquidFeastBlock.SERVINGS);
             String path = servings == 0 ? "block/stuffed_squid_block_leftover" : "block/stuffed_squid_block_stage" + (5-servings);
+            return provider.models().getExistingFile(path(path));
+        };
+        provider.getVariantBuilder(block).forAllStates(s -> ConfiguredModel.builder()
+                .modelFile(modelFunc.apply(s))
+                .rotationY((((int) s.getValue(FeastBlock.FACING).toYRot() + 180))).build());
+    });
+
+    public static BlockStateSmith<GlazedArachnidLimbsFeastBlock> GLAZED_ARACHNID_LIMBS = new BlockStateSmith<>(GlazedArachnidLimbsFeastBlock.class, ItemModelSmithTypes.GENERATED_ITEM, (block, provider) -> {
+        Function<BlockState, ModelFile> modelFunc = s -> {
+            int servings = s.getValue(GlazedArachnidLimbsFeastBlock.SERVINGS);
+            String path = servings == 0 ? "block/glazed_arachnid_limbs_block_leftover" : "block/glazed_arachnid_limbs_block_stage" + (4-servings);
             return provider.models().getExistingFile(path(path));
         };
         provider.getVariantBuilder(block).forAllStates(s -> ConfiguredModel.builder()

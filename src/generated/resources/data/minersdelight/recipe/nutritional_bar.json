@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minersdelight:crunchy_bar"
+    },
+    {
+      "item": "minersdelight:crunchy_bar"
+    },
+    {
+      "item": "minersdelight:crunchy_bar"
+    },
+    {
+      "item": "minersdelight:crunchy_bar"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "minersdelight:nutritional_bar"
+  }
+}

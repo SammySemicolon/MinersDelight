@@ -25,6 +25,9 @@ public class MDBlocks {
     public static final Supplier<Block> STUFFED_SQUID = BLOCKS.register("stuffed_squid",
             () -> new StuffedSquidFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
 
+    public static final Supplier<Block> GLAZED_ARACHNID_LIMBS = BLOCKS.register("glazed_arachnid_limbs",
+            () -> new GlazedArachnidLimbsFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
+
     public static final Supplier<Block> WILD_CAVE_CARROTS = BLOCKS.register("wild_cave_carrots",
             () -> new WildCaveCarrotBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS).addTags(BlockTags.SMALL_FLOWERS, ModTags.WILD_CROPS, ModTags.COMPOST_ACTIVATORS).randomTicks().setCutoutRenderType()));
 

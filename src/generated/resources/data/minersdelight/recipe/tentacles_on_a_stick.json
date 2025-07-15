@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:rods/wooden"
+    },
+    {
+      "item": "minersdelight:baked_tentacles"
+    },
+    {
+      "item": "minersdelight:baked_tentacles"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minersdelight:tentacles_on_a_stick"
+  }
+}

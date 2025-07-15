@@ -45,6 +45,8 @@ public class MDBlockLootTables extends LootTableProvider {
             take(blocks, COPPER_POT);
             take(blocks, STICKY_BASKET);
             take(blocks, WILD_CAVE_CARROTS);
+            take(blocks, STUFFED_SQUID);
+            take(blocks, GLAZED_ARACHNID_LIMBS);
             takeAll(blocks, b -> true).forEach(b -> add(b.get(), createSingleItemTable(b.get().asItem())));
         }
 

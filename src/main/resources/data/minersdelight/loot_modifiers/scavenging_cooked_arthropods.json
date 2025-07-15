@@ -1,0 +1,53 @@
+{
+	"type": "farmersdelight:add_item",
+	"conditions": [
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "attacker",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"items": "#farmersdelight:tools/knives"
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"flags": {
+					"is_on_fire": true
+				}
+			}
+		},
+		{
+			"condition": "minecraft:any_of",
+			"terms": [
+				{
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"type": "minecraft:bee"
+					}
+				},
+				{
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"type": "minecraft:silverfish"
+					}
+				},
+				{
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"type": "minecraft:endermite"
+					}
+				}
+			]
+		}
+	],
+	"item": "minersdelight:cooked_arthropod",
+	"count": 1
+}

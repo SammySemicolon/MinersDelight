@@ -1,0 +1,45 @@
+{
+	"type": "minersdelight:modify_drops",
+	"conditions": [
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "attacker",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"items": "#farmersdelight:tools/knives"
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"flags": {
+					"is_on_fire": false
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"type": "minecraft:spider"
+			}
+		},
+		{
+			"condition": "minecraft:random_chance_with_enchanted_bonus",
+			"enchantment": "minecraft:looting",
+			"unenchanted_chance": 0.4,
+			"enchanted_chance": {
+				"type": "minecraft:linear",
+				"base": 0.5,
+				"per_level_above_first": 0.1
+			}
+		}
+	],
+	"item": "minersdelight:spider_leg",
+	"min": 0,
+	"max": 4
+}

@@ -31,7 +31,7 @@ public class MDItemTags extends ItemTagsProvider {
         tag(MDTags.MOSS).add(Items.MOSS_BLOCK, MDItems.MOSS.get());
 
         tag(Tags.Items.BUCKETS_MILK).add(MDItems.MILK_CUP.get());
-        tag(ItemTags.WOLF_FOOD).addTag(MDTags.CAVE_CARROTS_CROP_ITEM).add(MDItems.BAT_WING.get(), MDItems.SMOKED_BAT_WING.get(), MDItems.BAT_COOKIE.get());
+        tag(ItemTags.WOLF_FOOD).addTag(MDTags.CAVE_CARROTS_CROP_ITEM).add(MDItems.BAT_WING.get(), MDItems.SMOKED_BAT_WING.get(), MDItems.BAT_COOKIE.get(), MDItems.SPIDER_LEG.get(), MDItems.BAKED_SPIDER_LEG.get());
         tag(ItemTags.CAT_FOOD).addTag(MDTags.RAW_FISHES_SQUID);
 
         tag(Tags.Items.CROPS).add(MDItems.CAVE_CARROT.get());
@@ -40,7 +40,9 @@ public class MDItemTags extends ItemTagsProvider {
         tag(MDTags.CAVE_CARROTS_VEGETABLE_ITEM).add(MDItems.CAVE_CARROT.get());
         tag(ModTags.CABBAGE_ROLL_INGREDIENTS).add(
                 MDItems.CAVE_CARROT.get(),
+                MDItems.SPIDER_LEG.get(),
                 MDItems.ARTHROPOD.get(),
+                MDItems.CRUNCHY_BAR.get(),
                 MDItems.SQUID.get(),
                 MDItems.GLOW_SQUID.get(),
                 MDItems.TENTACLES.get()
@@ -57,11 +59,20 @@ public class MDItemTags extends ItemTagsProvider {
         );
 
         tag(MDTags.INSECT_MEAT).add(
+                MDItems.SPIDER_LEG.get(),
+                MDItems.BAKED_SPIDER_LEG.get(),
                 MDItems.ARTHROPOD.get(),
-                MDItems.COOKED_ARTHROPOD.get()
+                MDItems.COOKED_ARTHROPOD.get(),
+                MDItems.CRUNCHY_BAR.get()
         );
-        tag(MDTags.BC_RAW_MEATS).add(MDItems.ARTHROPOD.get());
-        tag(MDTags.COOKED_INSECT_MEAT).add(MDItems.COOKED_ARTHROPOD.get());
+        tag(MDTags.BC_RAW_MEATS).add(
+                MDItems.SPIDER_LEG.get(),
+                MDItems.ARTHROPOD.get(),
+                MDItems.CRUNCHY_BAR.get());
+        tag(MDTags.COOKED_INSECT_MEAT).add(
+                MDItems.BAKED_SPIDER_LEG.get(),
+                MDItems.COOKED_ARTHROPOD.get(),
+                MDItems.CRUNCHY_BAR.get());
 
         tag(ItemTags.FISHES).add(
                 MDItems.SQUID.get(),
@@ -86,6 +97,6 @@ public class MDItemTags extends ItemTagsProvider {
         );
 
         tag(CommonTags.FOODS_SAFE_RAW_FISH).addTag(MDTags.RAW_FISHES_SQUID);
-        tag(ModTags.FEASTS).add(MDItems.STUFFED_SQUID.get());
+        tag(ModTags.FEASTS).add(MDItems.STUFFED_SQUID.get(), MDItems.GLAZED_ARACHNID_LIMBS.get());
     }
 }

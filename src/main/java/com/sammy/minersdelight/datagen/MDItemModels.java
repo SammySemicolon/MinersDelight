@@ -27,6 +27,7 @@ public class MDItemModels extends LodestoneItemModelProvider {
 
         ItemModelSmithTypes.BLOCK_MODEL_ITEM.act(data, COPPER_POT, STICKY_BASKET);
         ItemModelSmithTypes.GENERATED_ITEM.act(data, POWDERED_SNOW_CUP);
+        ItemModelSmithTypes.HANDHELD_ITEM.act(data, IMPROVISED_BARBECUE_STICK, TENTACLES_ON_A_STICK);
         ItemModelSmithTypes.GENERATED_ITEM.act(data, items);
     }
 

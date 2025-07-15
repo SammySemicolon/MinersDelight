@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "tag": "c:nuggets/gold"
+    },
+    "Y": {
+      "item": "minersdelight:nutritional_bar"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minersdelight:golden_nutritional_bar"
+  }
+}

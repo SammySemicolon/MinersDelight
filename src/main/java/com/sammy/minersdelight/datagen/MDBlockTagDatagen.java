@@ -35,7 +35,7 @@ public class MDBlockTagDatagen extends LodestoneBlockTagsProvider {
                 Blocks.INFESTED_MOSSY_STONE_BRICKS, Blocks.INFESTED_CHISELED_STONE_BRICKS, Blocks.INFESTED_DEEPSLATE
         );
 
-        tag(ModTags.MINEABLE_WITH_KNIFE).add(MDBlocks.STUFFED_SQUID.get());
+        tag(ModTags.MINEABLE_WITH_KNIFE).add(MDBlocks.STUFFED_SQUID.get(), MDBlocks.GLAZED_ARACHNID_LIMBS.get());
 
         addTagsFromBlockProperties(blocks);
     }

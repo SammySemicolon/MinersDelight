@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "minersdelight:item/tentacles_on_a_stick"
+  }
+}
