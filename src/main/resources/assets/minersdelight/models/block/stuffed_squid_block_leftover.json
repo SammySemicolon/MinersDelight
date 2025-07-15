@@ -1,12 +1,11 @@
-
 {
+	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
-	"texture_size": [64, 32],
 	"textures": {
-		"1": "minersdelight:block/tray_bottom",
-		"2": "minersdelight:block/tray_stuffed_squid",
-		"particle": "minersdelight:block/stuffed_squid"
+		"tray": "minersdelight:block/tray_bottom",
+		"tray_top": "minersdelight:block/tray_stuffed_squid",
+		"particle": "#tray_top"
 	},
 	"elements": [
 		{
@@ -14,12 +13,12 @@
 			"from": [1, 0, 1],
 			"to": [15, 2, 15],
 			"faces": {
-				"north": {"uv": [1, 11, 15, 13], "texture": "#1"},
-				"east": {"uv": [1, 11, 15, 13], "texture": "#1"},
-				"south": {"uv": [1, 11, 15, 13], "texture": "#1"},
-				"west": {"uv": [1, 11, 15, 13], "texture": "#1"},
-				"up": {"uv": [1, 1, 15, 15], "texture": "#2"},
-				"down": {"uv": [1, 1, 15, 15], "texture": "#1", "cullface": "down"}
+				"north": {"uv": [1, 11, 15, 13], "texture": "#tray"},
+				"east": {"uv": [1, 11, 15, 13], "texture": "#tray"},
+				"south": {"uv": [1, 11, 15, 13], "texture": "#tray"},
+				"west": {"uv": [1, 11, 15, 13], "texture": "#tray"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#tray_top"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#tray", "cullface": "down"}
 			}
 		}
 	],
