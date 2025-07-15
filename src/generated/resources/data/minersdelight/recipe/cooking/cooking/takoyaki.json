@@ -16,7 +16,7 @@
       "tag": "c:foods/dough"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "c:foods/onion"
     }
   ],
   "recipe_book_tab": "meals",

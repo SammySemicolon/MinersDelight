@@ -31,7 +31,7 @@
       "tag": "c:eggs"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "c:foods/onion"
     }
   ],
   "recipe_book_tab": "meals",

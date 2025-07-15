@@ -5,6 +5,7 @@ import com.mojang.serialization.*;
 import com.sammy.minersdelight.setup.*;
 import net.minecraft.core.*;
 import net.minecraft.world.*;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.*;
 import net.minecraft.world.inventory.*;
@@ -102,12 +103,16 @@ public class StickyBasketBlock extends BaseEntityBlock implements SimpleWaterlog
     @Override
     public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
         if (pEntity instanceof LivingEntity livingEntity) {
-            Vec3 motion = livingEntity.getDeltaMovement();
             if (livingEntity instanceof Player player && player.isCrouching()) {
                 return;
             }
             if (!pState.getValue(WATERLOGGED)) {
-                pEntity.setDeltaMovement(new Vec3(motion.x, -0.05f, motion.z));
+                Vec3 friction = new Vec3(0.25F, 0.05F, 0.25F);
+                if (livingEntity.hasEffect(MobEffects.WEAVING)) {
+                    friction = new Vec3(0.5F, 0.25F, 0.5F);
+                }
+
+                pEntity.makeStuckInBlock(pState, friction);
             }
         }
     }

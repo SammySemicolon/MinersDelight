@@ -3,12 +3,6 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "c:rods/wooden"
-    },
-    {
-      "tag": "c:rods/wooden"
-    },
-    {
       "tag": "minersdelight:baked_cave_carrot"
     },
     {
@@ -18,11 +12,11 @@
       "item": "minersdelight:smoked_bat_wing"
     },
     {
-      "item": "minersdelight:smoked_bat_wing"
+      "tag": "c:rods/wooden"
     }
   ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "minersdelight:improvised_barbecue_stick"
   }
 }

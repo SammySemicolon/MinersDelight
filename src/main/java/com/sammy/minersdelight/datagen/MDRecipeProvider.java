@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.*;
 import net.neoforged.neoforge.common.*;
+import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import vectorwing.farmersdelight.client.recipebook.*;
 import vectorwing.farmersdelight.common.registry.*;
 import vectorwing.farmersdelight.common.tag.*;
@@ -73,20 +74,18 @@ public class MDRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 .save(recipeOutput, MinersDelightMod.path("copper_carrot"));
 
-        shapeless(RecipeCategory.FOOD, MDItems.IMPROVISED_BARBECUE_STICK.get(), 2)
-                .requires(Tags.Items.RODS_WOODEN)
-                .requires(Tags.Items.RODS_WOODEN)
+        shapeless(RecipeCategory.FOOD, MDItems.IMPROVISED_BARBECUE_STICK.get(), 1)
                 .requires(MDTags.BAKED_CAVE_CARROT)
                 .requires(Items.BROWN_MUSHROOM)
                 .requires(MDItems.SMOKED_BAT_WING.get())
-                .requires(MDItems.SMOKED_BAT_WING.get())
+                .requires(Tags.Items.RODS_WOODEN)
                 .unlockedBy("has_cave_carrot", has(MDBlocks.CAVE_CARROTS.get()))
                 .save(recipeOutput, MinersDelightMod.path("improvised_barbecue_stick"));
 
         shapeless(RecipeCategory.FOOD, MDItems.VEGAN_STEAK_AND_POTATOES.get(), 1)
                 .requires(Items.BAKED_POTATO)
                 .requires(MDTags.BAKED_CAVE_CARROT)
-                .requires(ModItems.ONION.get())
+                .requires(CommonTags.FOODS_ONION)
                 .requires(ModItems.COOKED_RICE.get())
                 .requires(Items.BOWL)
                 .unlockedBy("has_cave_carrot", has(MDBlocks.CAVE_CARROTS.get()))
@@ -96,21 +95,21 @@ public class MDRecipeProvider extends RecipeProvider {
                 .requires(Tags.Items.FOODS_BREAD)
                 .requires(MDItems.VEGAN_PATTY.get())
                 .requires(CommonTags.CROPS_CABBAGE)
-                .requires(ModItems.TOMATO.get())
-                .requires(ModItems.ONION.get())
+                .requires(CommonTags.FOODS_TOMATO)
+                .requires(CommonTags.FOODS_ONION)
                 .unlockedBy("has_cave_carrot", has(MDBlocks.CAVE_CARROTS.get()))
                 .save(recipeOutput, MinersDelightMod.path("vegan_hamburger"));
 
         shapeless(RecipeCategory.FOOD, MDItems.VEGAN_WRAP.get(), 1)
                 .requires(Tags.Items.FOODS_BREAD)
-                .requires(Tags.Items.FOODS_BREAD)
+                .requires(CommonTags.FOODS_ONION)
                 .requires(MDTags.BAKED_CAVE_CARROT)
                 .unlockedBy("has_cave_carrot", has(MDBlocks.CAVE_CARROTS.get()))
                 .save(recipeOutput, MinersDelightMod.path("vegan_wrap"));
 
         shapeless(RecipeCategory.FOOD, MDItems.BAT_COOKIE.get(), 8)
-                .requires(Tags.Items.CROPS_WHEAT)
                 .requires(MDItems.SMOKED_BAT_WING.get(), 1)
+                .requires(Tags.Items.CROPS_WHEAT)
                 .requires(Tags.Items.CROPS_WHEAT)
                 .unlockedBy("has_bat_wing", has(MDItems.BAT_WING.get()))
                 .save(recipeOutput, MinersDelightMod.path("bat_cookie"));
@@ -134,7 +133,8 @@ public class MDRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_arthropod", has(MDItems.ARTHROPOD.get()))
                 .save(recipeOutput, MinersDelightMod.path("seasoned_arthropods"));
 
-        shapeless(RecipeCategory.FOOD, MDItems.INSECT_SANDWICH.get(), 1)
+        shapeless(RecipeCategory.FOOD, MDItems.INSECT_SANDWICH.get(), 2)
+                .requires(Tags.Items.FOODS_BREAD)
                 .requires(MDTags.COOKED_INSECT_MEAT)
                 .requires(MDTags.COOKED_INSECT_MEAT)
                 .requires(Tags.Items.FOODS_BREAD)
@@ -142,9 +142,9 @@ public class MDRecipeProvider extends RecipeProvider {
                 .save(recipeOutput, MinersDelightMod.path("insect_sandwich"));
 
         shapeless(RecipeCategory.FOOD, MDItems.INSECT_WRAP.get(), 1)
-                .requires(MDTags.INSECT_MEAT)
-                .requires(MDTags.INSECT_MEAT)
                 .requires(Tags.Items.FOODS_BREAD)
+                .requires(CompoundIngredient.of( Ingredient.of(CommonTags.FOODS_ONION), Ingredient.of(MDTags.INSECT_MEAT)))
+                .requires(MDTags.INSECT_MEAT)
                 .unlockedBy("has_arthropod", has(MDItems.ARTHROPOD.get()))
                 .save(recipeOutput, MinersDelightMod.path("insect_wrap"));
 
@@ -242,7 +242,7 @@ public class MDRecipeProvider extends RecipeProvider {
                 .addIngredient(MDTags.TENTACLES)
                 .addIngredient(MDTags.TENTACLES)
                 .addIngredient(CommonTags.FOODS_DOUGH)
-                .addIngredient(ModItems.ONION.get())
+                .addIngredient(CommonTags.FOODS_ONION)
                 .unlockedBy("has_squid", has(MDTags.SQUID))
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(recipeOutput, "minersdelight:cooking/takoyaki");
@@ -252,7 +252,7 @@ public class MDRecipeProvider extends RecipeProvider {
                 .addIngredient(ModItems.RICE.get(), 2)
                 .addIngredient(Ingredient.of(MDItems.CAVE_CARROT.get(), Items.CARROT))
                 .addIngredient(Tags.Items.EGGS)
-                .addIngredient(ModItems.ONION.get())
+                .addIngredient(CommonTags.FOODS_ONION)
                 .unlockedByAnyIngredient(MDItems.SQUID.get(), MDItems.GLOW_SQUID.get(), MDItems.BAKED_SQUID.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(recipeOutput, "minersdelight:cooking/stuffed_squid");

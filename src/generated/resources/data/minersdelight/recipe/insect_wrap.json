@@ -3,13 +3,18 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "minersdelight:insect_meat"
-    },
-    {
-      "tag": "minersdelight:insect_meat"
-    },
-    {
       "tag": "c:foods/bread"
+    },
+    [
+      {
+        "tag": "c:foods/onion"
+      },
+      {
+        "tag": "minersdelight:insect_meat"
+      }
+    ],
+    {
+      "tag": "minersdelight:insect_meat"
     }
   ],
   "result": {

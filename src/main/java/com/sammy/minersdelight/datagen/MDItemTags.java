@@ -31,6 +31,8 @@ public class MDItemTags extends ItemTagsProvider {
         tag(MDTags.MOSS).add(Items.MOSS_BLOCK, MDItems.MOSS.get());
 
         tag(Tags.Items.BUCKETS_MILK).add(MDItems.MILK_CUP.get());
+        tag(ItemTags.WOLF_FOOD).addTag(MDTags.CAVE_CARROTS_CROP_ITEM).add(MDItems.BAT_WING.get(), MDItems.SMOKED_BAT_WING.get(), MDItems.BAT_COOKIE.get());
+        tag(ItemTags.CAT_FOOD).addTag(MDTags.RAW_FISHES_SQUID);
 
         tag(Tags.Items.CROPS).add(MDItems.CAVE_CARROT.get());
         tag(ModTags.WILD_CROPS_ITEM).add(MDItems.GOSSYPIUM.get());
@@ -82,5 +84,8 @@ public class MDItemTags extends ItemTagsProvider {
                 MDItems.TENTACLES.get(),
                 MDItems.BAKED_TENTACLES.get()
         );
+
+        tag(CommonTags.FOODS_SAFE_RAW_FISH).addTag(MDTags.RAW_FISHES_SQUID);
+        tag(ModTags.FEASTS).add(MDItems.STUFFED_SQUID.get());
     }
 }

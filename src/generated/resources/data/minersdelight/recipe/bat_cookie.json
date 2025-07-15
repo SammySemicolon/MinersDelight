@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "c:crops/wheat"
+      "item": "minersdelight:smoked_bat_wing"
     },
     {
-      "item": "minersdelight:smoked_bat_wing"
+      "tag": "c:crops/wheat"
     },
     {
       "tag": "c:crops/wheat"
