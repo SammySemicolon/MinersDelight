@@ -38,7 +38,7 @@ public class MDItems {
     }
 
     public static DeferredHolder<Item, CopperCupFoodItem> registerCupFood(String name, FoodProperties foodProperties) {
-        return register(name, CUP_PROPERTIES().food(MDFoodValues.copyAndAddHaste(foodProperties)), p -> new CopperCupFoodItem(p.craftRemainder(COPPER_CUP.get())));
+        return register(name, CUP_PROPERTIES().food(MDFoodValues.createCupFoodProperties(foodProperties)), p -> new CopperCupFoodItem(p.craftRemainder(COPPER_CUP.get())));
     }
 
     public static DeferredHolder<Item, ConsumableItem> registerBowlFood(String name, FoodProperties foodProperties) {

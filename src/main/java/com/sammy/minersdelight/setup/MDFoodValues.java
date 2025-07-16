@@ -62,8 +62,11 @@ public class MDFoodValues {
     public static final FoodProperties MUSHROOM_STEW = new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F).effect(() -> new MobEffectInstance(ModEffects.COMFORT, 3600, 0), 1.0F).build();
     public static final FoodProperties RABBIT_STEW = new FoodProperties.Builder().nutrition(10).saturationModifier(0.6F).effect(() -> new MobEffectInstance(ModEffects.COMFORT, 6000, 0), 1.0F).build();
 
-    public static FoodProperties copyAndAddHaste(FoodProperties foodProperties) {
-        var builder = new FoodProperties.Builder().nutrition(Mth.floor(foodProperties.nutrition() / 2f)).saturationModifier(foodProperties.saturation());
+    public static FoodProperties createCupFoodProperties(FoodProperties foodProperties) {
+        int foodLevel = foodProperties.nutrition();
+        var builder = new FoodProperties.Builder()
+                .nutrition(Mth.floor(foodLevel / 2f))
+                .saturationModifier(saturationModifier(foodLevel, foodProperties.saturation()));
         for (FoodProperties.PossibleEffect possibleEffect : foodProperties.effects()) {
             builder.effect(() -> {
                 MobEffectInstance effectInstance = possibleEffect.effectSupplier().get();
@@ -76,5 +79,9 @@ public class MDFoodValues {
             builder.alwaysEdible();
         }
         return builder.build();
+    }
+
+    public static float saturationModifier(int foodLevel, float saturation) {
+        return saturation / foodLevel / 2.0F;
     }
 }
