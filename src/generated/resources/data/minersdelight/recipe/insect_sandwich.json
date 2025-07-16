@@ -8,9 +8,14 @@
     {
       "tag": "minersdelight:cooked_insect_meat"
     },
-    {
-      "tag": "minersdelight:cooked_insect_meat"
-    },
+    [
+      {
+        "tag": "minersdelight:cooked_insect_meat"
+      },
+      {
+        "item": "minersdelight:weird_caviar"
+      }
+    ],
     {
       "tag": "c:foods/bread"
     }

@@ -140,7 +140,7 @@ public class MDRecipeProvider extends RecipeProvider {
 
         shapeless(RecipeCategory.FOOD, MDItems.SEASONED_ARTHROPODS.get(), 1)
                 .requires(Items.BOWL)
-                .requires(MDItems.COOKED_ARTHROPOD.get())
+                .requires((Ingredient.of(MDItems.COOKED_ARTHROPOD.get(), MDItems.CRUNCHY_BAR.get())))
                 .requires(MDItems.WEIRD_CAVIAR.get())
                 .unlockedBy("has_arthropod", has(MDItems.ARTHROPOD.get()))
                 .save(recipeOutput, MinersDelightMod.path("seasoned_arthropods"));
@@ -148,17 +148,23 @@ public class MDRecipeProvider extends RecipeProvider {
         shapeless(RecipeCategory.FOOD, MDItems.INSECT_SANDWICH.get(), 2)
                 .requires(Tags.Items.FOODS_BREAD)
                 .requires(MDTags.COOKED_INSECT_MEAT)
-                .requires(MDTags.COOKED_INSECT_MEAT)
+                .requires(CompoundIngredient.of(Ingredient.of(MDTags.COOKED_INSECT_MEAT), Ingredient.of(MDItems.WEIRD_CAVIAR.get())))
                 .requires(Tags.Items.FOODS_BREAD)
                 .unlockedBy("has_arthropod", has(MDItems.ARTHROPOD.get()))
                 .save(recipeOutput, MinersDelightMod.path("insect_sandwich"));
 
         shapeless(RecipeCategory.FOOD, MDItems.INSECT_WRAP.get(), 1)
                 .requires(Tags.Items.FOODS_BREAD)
-                .requires(CompoundIngredient.of( Ingredient.of(CommonTags.FOODS_ONION), Ingredient.of(MDTags.INSECT_MEAT)))
-                .requires(MDTags.INSECT_MEAT)
+                .requires(CompoundIngredient.of(Ingredient.of(CommonTags.FOODS_ONION), Ingredient.of(MDTags.INSECT_MEAT)))
+                .requires(Ingredient.of(MDItems.ARTHROPOD.get(), MDItems.SILVERFISH_EGGS.get()),2)
                 .unlockedBy("has_arthropod", has(MDItems.ARTHROPOD.get()))
                 .save(recipeOutput, MinersDelightMod.path("insect_wrap"));
+        shapeless(RecipeCategory.FOOD, MDItems.INSECT_WRAP.get(), 1)
+                .requires(Tags.Items.FOODS_BREAD)
+                .requires(CompoundIngredient.of( Ingredient.of(CommonTags.FOODS_ONION), Ingredient.of(MDTags.INSECT_MEAT)))
+                .requires(MDItems.CRUNCHY_BAR.get())
+                .unlockedBy("has_arthropod", has(MDItems.ARTHROPOD.get()))
+                .save(recipeOutput, MinersDelightMod.path("alt_insect_wrap"));
 
         shapeless(RecipeCategory.FOOD, MDItems.CRUNCHY_BAR.get(), 4)
                 .requires(MDItems.COOKED_ARTHROPOD.get(),3)
@@ -268,10 +274,17 @@ public class MDRecipeProvider extends RecipeProvider {
                 .build(recipeOutput, "minersdelight:cooking/cave_soup");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.INSECT_STEW.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
-                .addIngredient(MDItems.ARTHROPOD.get(), 2)
+                .addIngredient(MDItems.ARTHROPOD.get())
+                .addIngredient(Ingredient.of(MDItems.ARTHROPOD.get(), MDItems.SILVERFISH_EGGS.get()),3)
                 .unlockedByItems("has_arthropod", MDItems.ARTHROPOD.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(recipeOutput, "minersdelight:cooking/insect_stew");
+        CookingPotRecipeBuilder.cookingPotRecipe(MDItems.INSECT_STEW.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
+                .addIngredient(MDItems.CRUNCHY_BAR.get())
+                .addIngredient((Ingredient.of(MDItems.ARTHROPOD.get(), MDItems.CRUNCHY_BAR.get())))
+                .unlockedByItems("has_arthropod", MDItems.ARTHROPOD.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(recipeOutput, "minersdelight:cooking/alt_insect_stew");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.BAT_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(MDTags.BAT_WING)

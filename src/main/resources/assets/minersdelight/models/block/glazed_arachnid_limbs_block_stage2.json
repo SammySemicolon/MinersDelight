@@ -24,8 +24,8 @@
 			}
 		},
 		{
-			"from": [7, 1.5, 2],
-			"to": [14, 4.5, 6],
+			"from": [7, 2, 2],
+			"to": [14, 5, 6],
 			"rotation": {"angle": 0, "axis": "x", "origin": [12, 3, 7]},
 			"faces": {
 				"north": {"uv": [3, 6, 0, 13], "rotation": 270, "texture": "#feast", "tintindex": 0},

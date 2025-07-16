@@ -98,5 +98,10 @@ public class MDItemTags extends ItemTagsProvider {
 
         tag(CommonTags.FOODS_SAFE_RAW_FISH).addTag(MDTags.RAW_FISHES_SQUID);
         tag(ModTags.FEASTS).add(MDItems.STUFFED_SQUID.get(), MDItems.GLAZED_ARACHNID_LIMBS.get());
+
+        tag(Tags.Items.FOODS_SOUP).add(MDItems.CAVE_SOUP.get(), MDItems.BAT_SOUP.get(), MDItems.INSECT_STEW.get());
+        tag(ModTags.MEALS).add(MDItems.CAVE_SOUP.get(), MDItems.BAT_SOUP.get(), MDItems.INSECT_STEW.get(), MDItems.GLOW_INK_PASTA.get(), MDItems.PASTA_WITH_VEGGIEBALLS.get(), MDItems.VEGAN_STEAK_AND_POTATOES.get(), MDItems.SEASONED_ARTHROPODS.get(), MDItems.PLATE_OF_GLAZED_ARACHNID_LIMBS.get(), MDItems.BOWL_OF_STUFFED_SQUID.get());
+        tag(Tags.Items.FOODS_GOLDEN).add(MDItems.GOLDEN_NUTRITIONAL_BAR.get());
+        tag(ItemTags.PIGLIN_LOVED).add(MDItems.GOLDEN_NUTRITIONAL_BAR.get());
     }
 }
