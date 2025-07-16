@@ -13,25 +13,21 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "minersdelight:cave_carrots",
+              "block": "minersdelight:stuffed_squid",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "age": "3"
+                "servings": "5"
               }
             }
           ],
           "functions": [
             {
               "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 4.0,
-                "min": 2.0
-              },
+              "count": 1.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minersdelight:cave_carrot"
+          "name": "minersdelight:stuffed_squid"
         }
       ],
       "rolls": 1.0
@@ -50,10 +46,10 @@
             {
               "condition": "minecraft:inverted",
               "term": {
-                "block": "minersdelight:cave_carrots",
+                "block": "minersdelight:stuffed_squid",
                 "condition": "minecraft:block_state_property",
                 "properties": {
-                  "age": "3"
+                  "servings": "5"
                 }
               }
             }
@@ -65,11 +61,11 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minersdelight:cave_carrot"
+          "name": "minecraft:bowl"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "minersdelight:blocks/cave_carrots"
+  "random_sequence": "minersdelight:blocks/stuffed_squid"
 }
