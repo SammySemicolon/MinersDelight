@@ -3,10 +3,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "minersdelight:bat_wing"
+      "tag": "c:foods/bat_wing"
     },
     {
-      "tag": "minersdelight:bat_wing"
+      "tag": "c:foods/bat_wing"
     }
   ],
   "recipe_book_tab": "meals",

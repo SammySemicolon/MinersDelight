@@ -7,10 +7,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:tentacles"
+      "tag": "c:foods/tentacles"
     },
     {
-      "tag": "c:tentacles"
+      "tag": "c:foods/tentacles"
     },
     {
       "tag": "c:foods/dough"

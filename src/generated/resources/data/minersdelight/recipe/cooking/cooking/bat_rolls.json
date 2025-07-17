@@ -3,7 +3,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "minersdelight:bat_wing"
+      "tag": "c:foods/bat_wing"
     },
     {
       "tag": "farmersdelight:cabbage_roll_ingredients"

@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "c:cooked_fishes/squid"
+      "tag": "c:foods/cooked_squid"
     },
     {
       "tag": "c:foods/bread"
