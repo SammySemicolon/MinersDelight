@@ -63,9 +63,9 @@ public class MDItems {
     public static final DeferredHolder<Item, BlockItem> CAVE_CARROT_CRATE = register("cave_carrot_crate", DEFAULT_PROPERTIES(), (p) -> new BlockItem(MDBlocks.CAVE_CARROT_CRATE.get(), p));
 
     public static final DeferredHolder<Item, CopperCupItem> COPPER_CUP = register("copper_cup", CUP_PROPERTIES(), (p) -> new CopperCupItem(Fluids.EMPTY, p));
-    public static final DeferredHolder<Item, CopperCupItem> WATER_CUP = register("water_cup", CUP_PROPERTIES().stacksTo(1), (p) -> new CopperCupItem(Fluids.WATER, p));
-    public static final DeferredHolder<Item, MilkCupItem> MILK_CUP = register("milk_cup", CUP_PROPERTIES().stacksTo(1), MilkCupItem::new);
-    public static final DeferredHolder<Item, SolidCupItem> POWDERED_SNOW_CUP = register("powder_snow_cup", CUP_PROPERTIES().stacksTo(1), (p) -> new SolidCupItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, p));
+    public static final DeferredHolder<Item, CopperCupItem> WATER_CUP = register("water_cup", CUP_PROPERTIES().stacksTo(1), (p) -> new CopperCupItem(Fluids.WATER, p.craftRemainder(COPPER_CUP.get())));
+    public static final DeferredHolder<Item, MilkCupItem> MILK_CUP = register("milk_cup", CUP_PROPERTIES().stacksTo(1), p -> new MilkCupItem(p.craftRemainder(COPPER_CUP.get())));
+    public static final DeferredHolder<Item, SolidCupItem> POWDERED_SNOW_CUP = register("powder_snow_cup", CUP_PROPERTIES().stacksTo(1), (p) -> new SolidCupItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, p.craftRemainder(COPPER_CUP.get())));
 
     public static final DeferredHolder<Item, BlockItem> WILD_CAVE_CARROTS = register("wild_cave_carrots", p -> new BlockItem(MDBlocks.WILD_CAVE_CARROTS.get(), p));
     public static final DeferredHolder<Item, Item> GOSSYPIUM = register("gossypium", p -> new BlockItem(MDBlocks.GOSSYPIUM.get(), p));
