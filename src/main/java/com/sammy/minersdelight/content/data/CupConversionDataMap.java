@@ -17,7 +17,6 @@ public record CupConversionDataMap(Holder<Item> cupVariant) {
         var data = stack.getItem().builtInRegistryHolder().getData(MDDataMaps.CUP_VARIANT);
         if (data != null) {
             ItemStack inCup = new ItemStack(data.cupVariant(), stack.getCount());
-            inCup.applyComponents(stack.getComponents());
             return Optional.of(inCup);
         }
         return Optional.empty();
