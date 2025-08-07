@@ -80,6 +80,8 @@ public class MDItems {
     public static final DeferredHolder<Item, Item> VEGAN_HAMBURGER = register("vegan_hamburger", MDFoodValues.VEGAN_HAMBURGER);
     public static final DeferredHolder<Item, Item> VEGAN_WRAP = register("vegan_wrap", MDFoodValues.VEGAN_WRAP);
     public static final DeferredHolder<Item, ConsumableItem> VEGAN_STEAK_AND_POTATOES = registerBowlFood("vegan_steak_and_potatoes", MDFoodValues.VEGAN_STEAK_AND_POTATOES, true);
+    public static final DeferredHolder<Item, Item> FAKE_MEATLOAF = register("fake_meatloaf", DEFAULT_PROPERTIES().stacksTo(1), p -> new BlockItem(MDBlocks.FAKE_MEATLOAF.get(), p));
+    public static final DeferredHolder<Item, ConsumableItem> PLATE_OF_FAKE_MEATLOAF = registerBowlFood("plate_of_fake_meatloaf", MDFoodValues.PLATE_OF_FAKE_MEATLOAF, true);
 
     // Moss
     public static final DeferredHolder<Item, Item> MOSS = register("moss", MDFoodValues.MOSS);

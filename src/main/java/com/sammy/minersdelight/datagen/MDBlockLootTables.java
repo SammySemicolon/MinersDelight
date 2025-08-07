@@ -6,7 +6,6 @@ import com.sammy.minersdelight.setup.MDBlocks;
 import com.sammy.minersdelight.setup.MDItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.*;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.*;
 import net.minecraft.data.loot.*;
 import net.minecraft.resources.*;
@@ -15,8 +14,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.storage.loot.*;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
-import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.*;
 import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
@@ -25,6 +22,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.*;
+import vectorwing.farmersdelight.common.block.FeastBlock;
 
 import java.util.*;
 import java.util.concurrent.*;
@@ -60,8 +58,10 @@ public class MDBlockLootTables extends LootTableProvider {
 
             take(blocks, COPPER_POT);
             take(blocks, STICKY_BASKET);
-            take(blocks, GLAZED_ARACHNID_LIMBS);
+            take(blocks, WILD_CAVE_CARROTS);
 
+            createFeastTable(take(blocks, FAKE_MEATLOAF).get());
+            createFeastTable(take(blocks, GLAZED_ARACHNID_LIMBS).get());
             createStuffedSquidTable(take(blocks, STUFFED_SQUID).get());
             createCaveCarrotCropTable(take(blocks, CAVE_CARROTS).get());
 
@@ -82,6 +82,21 @@ public class MDBlockLootTables extends LootTableProvider {
                     .add(LootItem.lootTableItem(Items.BOWL)
                             .when(InvertedLootItemCondition.invert(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                     .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StuffedSquidFeastBlock.SERVINGS, 5))))
+                            .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
+            add(block, builder.withPool(fullBlock).withPool(bowl));
+        }
+
+        protected void createFeastTable(Block block) {
+            LootTable.Builder builder = LootTable.lootTable();
+            LootPool.Builder fullBlock = LootPool.lootPool().when(ExplosionCondition.survivesExplosion())
+                    .add(LootItem.lootTableItem(block.asItem())
+                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FeastBlock.SERVINGS, 4)))
+                            .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
+            LootPool.Builder bowl = LootPool.lootPool().when(ExplosionCondition.survivesExplosion())
+                    .add(LootItem.lootTableItem(Items.BOWL)
+                            .when(InvertedLootItemCondition.invert(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FeastBlock.SERVINGS, 4))))
                             .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
             add(block, builder.withPool(fullBlock).withPool(bowl));
         }

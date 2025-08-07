@@ -1,11 +1,13 @@
-// 1.21.1	2025-07-16T22:15:35.5657861	MD Item Tags
+// 1.21.1	2025-08-07T15:16:25.6114256	MD Item Tags
 aa2206afa152de5d6ba65c5832fbbdacef9c82c7 data/brewinandchewin/tags/item/raw_meats.json
 2fbdbb52be875e7943873bf890533753851bf841 data/c/tags/item/buckets/milk.json
 d826e16089945ede81abff3fc774ad7e43ad7703 data/c/tags/item/crops.json
 d826e16089945ede81abff3fc774ad7e43ad7703 data/c/tags/item/crops/cave_carrot.json
 9323313a073a9f4d359fd35c396405650498a13d data/c/tags/item/foods.json
 159a121434350c1076070f55bb074f366d77cb12 data/c/tags/item/foods/bat_wing.json
+200ac434dafa14d94e4b4a22049932ca8d5c5e60 data/c/tags/item/foods/cooked_meat.json
 b22c3dd5d39919d59545638e2d0545e4dd12c4d0 data/c/tags/item/foods/cooked_squid.json
+523c62de1248bad2bb7a5ed0512abd3ac7e4c278 data/c/tags/item/foods/cookie.json
 5d3c2386007996ce27fcc13f6c2a90ad9a52d283 data/c/tags/item/foods/glow_squid.json
 9cba07cc3c0cf54cbf7011677889e5a9c3d9ceba data/c/tags/item/foods/golden.json
 782bae765d952e11acfdbaa95c650af140fbab8f data/c/tags/item/foods/raw_squid.json
@@ -13,11 +15,12 @@ b22c3dd5d39919d59545638e2d0545e4dd12c4d0 data/c/tags/item/foods/cooked_squid.jso
 d3f1cd557fe13b17f7728a4cf7108b783a83e385 data/c/tags/item/foods/soup.json
 a519875a609a11b7958a829cc95d2509748a0da4 data/c/tags/item/foods/squid.json
 5a8ac0ba65f2d3985617728de07d8235725c3d4d data/c/tags/item/foods/tentacles.json
+d826e16089945ede81abff3fc774ad7e43ad7703 data/c/tags/item/foods/vegetable.json
 7c14c6d5dd378a4aef7418e3d5168d2bd2338d75 data/c/tags/item/moss.json
 d826e16089945ede81abff3fc774ad7e43ad7703 data/c/tags/item/vegetables/cave_carrot.json
 aecabe87c623e789a6c965cf31f9a3b4a7ba6f16 data/farmersdelight/tags/item/cabbage_roll_ingredients.json
-16098588e3710c6c65e850d611452b02bb425f01 data/farmersdelight/tags/item/feasts.json
-37a73da49013c14d8a1a125a7f6831eff97075c3 data/farmersdelight/tags/item/meals.json
+c0aa38c28c6039c43524040120a3887df6afe1d9 data/farmersdelight/tags/item/feasts.json
+79995a7c4a2a8266427b15ace51d72800b632c32 data/farmersdelight/tags/item/meals.json
 3baf722661bd1e52b64188508f87c580d004afd5 data/farmersdelight/tags/item/wild_crops.json
 3b729cbad6b7186f22c434b9ee1c232087b576ab data/minecraft/tags/item/cat_food.json
 a519875a609a11b7958a829cc95d2509748a0da4 data/minecraft/tags/item/fishes.json

@@ -9,6 +9,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.*;
 import net.neoforged.neoforge.common.*;
 import net.neoforged.neoforge.common.crafting.CompoundIngredient;
+import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import vectorwing.farmersdelight.client.recipebook.*;
 import vectorwing.farmersdelight.common.registry.*;
 import vectorwing.farmersdelight.common.tag.*;
@@ -35,6 +36,9 @@ public class MDRecipeProvider extends RecipeProvider {
         return "Miner's Delight Recipe Provider";
     }
 
+    private static Ingredient vegetablesPatch() {
+        return DifferenceIngredient.of(Ingredient.of(Tags.Items.FOODS_VEGETABLE), Ingredient.of(Items.MELON_SLICE));
+    }
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
@@ -259,11 +263,19 @@ public class MDRecipeProvider extends RecipeProvider {
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.PASTA_WITH_VEGGIEBALLS.get(), 1, SLOW_COOKING, LARGE_EXP)
                 .addIngredient(MDTags.BAKED_CAVE_CARROT)
-                .addIngredient(ModItems.RAW_PASTA.get())
+                .addIngredient(CommonTags.FOODS_PASTA)
                 .addIngredient(ModItems.TOMATO_SAUCE.get())
                 .unlockedByAnyIngredient(MDItems.CAVE_CARROT.get(), ModItems.RAW_PASTA.get(), ModItems.TOMATO_SAUCE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(recipeOutput, "minersdelight:cooking/pasta_with_veggieballs");
+
+        CookingPotRecipeBuilder.cookingPotRecipe(MDItems.FAKE_MEATLOAF.get(), 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
+                .addIngredient(Ingredient.of(MDTags.BAKED_CAVE_CARROT),2)
+                .addIngredient(Ingredient.of(MDItems.BAKED_CAVE_CARROT.get(), Items.CARROT))
+                .addIngredient(CommonTags.FOODS_ONION)
+                .unlockedByAnyIngredient(MDItems.CAVE_CARROT.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(recipeOutput, "minersdelight:cooking/fake_meatloaf");
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.CAVE_SOUP.get(), 1, NORMAL_COOKING, MEDIUM_EXP)
                 .addIngredient(MDTags.CAVE_CARROTS_VEGETABLE_ITEM)
@@ -321,7 +333,7 @@ public class MDRecipeProvider extends RecipeProvider {
 
         CookingPotRecipeBuilder.cookingPotRecipe(MDItems.GLOW_INK_PASTA.get(), 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
                 .addIngredient(CommonTags.FOODS_SAFE_RAW_FISH)
-                .addIngredient(ModItems.RAW_PASTA.get())
+                .addIngredient(CommonTags.FOODS_PASTA)
                 .addIngredient(Items.GLOW_BERRIES)
                 .addIngredient(Items.GLOW_INK_SAC)
                 .unlockedBy("has_glow_ink_sac", has(Items.GLOW_INK_SAC))

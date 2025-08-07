@@ -28,6 +28,9 @@ public class MDBlocks {
     public static final Supplier<Block> STUFFED_SQUID = BLOCKS.register("stuffed_squid",
             () -> new StuffedSquidFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
 
+    public static final Supplier<Block> FAKE_MEATLOAF = BLOCKS.register("fake_meatloaf",
+            () -> new FakeMeatloafFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
+
     public static final Supplier<Block> GLAZED_ARACHNID_LIMBS = BLOCKS.register("glazed_arachnid_limbs",
             () -> new GlazedArachnidLimbsFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
 

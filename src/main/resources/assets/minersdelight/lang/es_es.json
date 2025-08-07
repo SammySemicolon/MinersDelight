@@ -96,5 +96,8 @@
 
   "itemGroup.minersdelight": "Miner's Delight",
   "minersdelight.container.cooking_pot": "Olla de cobre",
-  "minersdelight.container.sticky_basket": "Cesta pegajosa"
+  "minersdelight.container.sticky_basket": "Cesta pegajosa",
+
+  "block.minersdelight.fake_meatloaf": "Pastel de carne falso",
+  "item.minersdelight.plate_of_fake_meatloaf": "Plato de pastel de carne falso"
 }

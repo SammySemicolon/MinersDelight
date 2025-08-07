@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-16T22:15:35.5776025	Miner's Delight Recipe Provider
+// 1.21.1	2025-08-07T15:16:25.620969	Miner's Delight Recipe Provider
 547239b441bae99b1c5ad9f8d2b12ca352f03755 data/minecraft/recipe/mossy_cobblestone_from_moss_block.json
 b75c252a4be183c41711cac4ee906947e293de02 data/minecraft/recipe/mossy_stone_bricks_from_moss_block.json
 57b8be8e9bf51caf7f2cb7b511a0015420737a3a data/minecraft/recipe/moss_carpet.json
@@ -7,6 +7,7 @@ b75c252a4be183c41711cac4ee906947e293de02 data/minecraft/recipe/mossy_stone_brick
 f95111410e347ed6ac9cba2f027cb472b926f586 data/minersdelight/advancement/recipes/cooking/cooking/bat_rolls.json
 9e9e29e94f7801d5db07263f4001541e6bae3ecf data/minersdelight/advancement/recipes/cooking/cooking/bat_soup.json
 4a2a94c1eb47db9ecdd4de03f816e1f62517e460 data/minersdelight/advancement/recipes/cooking/cooking/cave_soup.json
+1cbb163cb903d43dd8bc7a89db600488e69915ad data/minersdelight/advancement/recipes/cooking/cooking/fake_meatloaf.json
 f9de7cffee3ef1e617e8c690865e11b89675bb78 data/minersdelight/advancement/recipes/cooking/cooking/glow_ink_pasta.json
 a911ec753f93d504a59853f2b97430951181a493 data/minersdelight/advancement/recipes/cooking/cooking/insect_stew.json
 ee50f0b734b0c7016dc387555126d6935b81f1a5 data/minersdelight/advancement/recipes/cooking/cooking/pasta_with_veggieballs.json
@@ -73,9 +74,10 @@ d3b0f91a787a1cff975b577181d28127dedb72bf data/minersdelight/recipe/cooking/cooki
 500eb9f6b708bfe2fe9ecb0d535e8c243cd1d3b0 data/minersdelight/recipe/cooking/cooking/bat_rolls.json
 2e7a91c3b25ae383bc15686a7770885aff29735a data/minersdelight/recipe/cooking/cooking/bat_soup.json
 73937e94c89aab6aa93699e04725b78ea2430b8f data/minersdelight/recipe/cooking/cooking/cave_soup.json
-b0007b253f65969914cd9a6614fe51abcf4f9311 data/minersdelight/recipe/cooking/cooking/glow_ink_pasta.json
+ab4d00cb485cd34695b16dad2afa77e7f9ea3848 data/minersdelight/recipe/cooking/cooking/fake_meatloaf.json
+304e95ab279061e732f7b292eaae9fd81f88e400 data/minersdelight/recipe/cooking/cooking/glow_ink_pasta.json
 1734c8817211428635059411dcd810a9b7b382cc data/minersdelight/recipe/cooking/cooking/insect_stew.json
-3958f582c5ee07a103c3a8ea38407bb86d23b971 data/minersdelight/recipe/cooking/cooking/pasta_with_veggieballs.json
+a2c2aa723e4bfb52c224720429dc02c7065f229f data/minersdelight/recipe/cooking/cooking/pasta_with_veggieballs.json
 5515942a85e9f84e9bfa5cfc64b42fa3e3954529 data/minersdelight/recipe/cooking/cooking/stuffed_squid.json
 6cfb04ce8bec3ac3e1b9c94713cef16b5f97aa9f data/minersdelight/recipe/cooking/cooking/takoyaki.json
 63f6cd96c7e90af82099d4499c399ade0f77863f data/minersdelight/recipe/copper_carrot.json
