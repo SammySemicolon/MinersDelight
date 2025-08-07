@@ -21,15 +21,15 @@ public class MDTags {
 
     public static final TagKey<Item> MOSS = commonItem("moss");
 
-    public static final TagKey<Item> BAT_WING = modItem("bat_wing");
     public static final TagKey<Item> INSECT_MEAT = modItem("insect_meat");
     public static final TagKey<Item> COOKED_INSECT_MEAT = modItem("cooked_insect_meat");
 
-    public static final TagKey<Item> SQUID = commonItem("squid");
-    public static final TagKey<Item> GLOW_SQUID = commonItem("glow_squid");
-    public static final TagKey<Item> RAW_FISHES_SQUID = commonItem("raw_fishes/squid");
-    public static final TagKey<Item> COOKED_FISHES_SQUID = commonItem("cooked_fishes/squid");
-    public static final TagKey<Item> TENTACLES = commonItem("tentacles");
+    public static final TagKey<Item> BAT_WING = commonItem("foods/bat_wing");
+    public static final TagKey<Item> SQUID = commonItem("foods/squid");
+    public static final TagKey<Item> GLOW_SQUID = commonItem("foods/glow_squid");
+    public static final TagKey<Item> RAW_FISHES_SQUID = commonItem("foods/raw_squid");
+    public static final TagKey<Item> COOKED_FISHES_SQUID = commonItem("foods/cooked_squid");
+    public static final TagKey<Item> TENTACLES = commonItem("foods/tentacles");
 
     public static final TagKey<Item> BC_RAW_MEATS = modItem("brewinandchewin:raw_meats");
 

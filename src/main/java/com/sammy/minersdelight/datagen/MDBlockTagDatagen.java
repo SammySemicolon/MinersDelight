@@ -9,6 +9,7 @@ import net.neoforged.neoforge.common.*;
 import net.neoforged.neoforge.common.data.*;
 import net.neoforged.neoforge.registries.*;
 import team.lodestar.lodestone.systems.datagen.providers.*;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.*;
 import java.util.*;
@@ -33,6 +34,8 @@ public class MDBlockTagDatagen extends LodestoneBlockTagsProvider {
                 Blocks.INFESTED_STONE, Blocks.INFESTED_STONE_BRICKS, Blocks.INFESTED_CRACKED_STONE_BRICKS,
                 Blocks.INFESTED_MOSSY_STONE_BRICKS, Blocks.INFESTED_CHISELED_STONE_BRICKS, Blocks.INFESTED_DEEPSLATE
         );
+
+        tag(ModTags.MINEABLE_WITH_KNIFE).add(MDBlocks.STUFFED_SQUID.get(), MDBlocks.GLAZED_ARACHNID_LIMBS.get(), MDBlocks.FAKE_MEATLOAF.get());
 
         addTagsFromBlockProperties(blocks);
     }

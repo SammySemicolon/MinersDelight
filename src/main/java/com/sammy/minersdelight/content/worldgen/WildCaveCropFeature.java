@@ -5,6 +5,7 @@ import net.minecraft.tags.*;
 import net.minecraft.util.*;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.state.*;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.*;
 
 import static com.sammy.minersdelight.content.block.WildCaveCarrotBlock.modifyState;
@@ -22,6 +23,9 @@ public class WildCaveCropFeature extends Feature<WildCaveCropFeatureConfiguratio
         WildCaveCropFeatureConfiguration config = context.config();
         RandomSource randomsource = context.random();
 
+        if (worldgenlevel.canSeeSky(blockpos) || blockpos.getY() > 60) { //This sucks but I couldn't figure out the PlacedFeature stuff
+            return false;
+        }
         if (blockstate.is(BlockTags.BASE_STONE_OVERWORLD) || blockstate.is(BlockTags.DIRT) || blockstate.is(BlockTags.SAND)) {
             int i = blockpos.getY();
             if (i >= worldgenlevel.getMinBuildHeight() + 1 && i + 1 < worldgenlevel.getMaxBuildHeight()) {

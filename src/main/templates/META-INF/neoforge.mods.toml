@@ -33,13 +33,13 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="minecraft"
 type="required"
-versionRange="${lodestone_version_range}"
+versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
 [[dependencies.${mod_id}]]
 modId = "lodestone"
 type="required"
-versionRange = "[1.7.2,)"
+versionRange="${lodestone_version_range}"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.${mod_id}]]

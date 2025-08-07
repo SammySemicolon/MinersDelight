@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crunchy_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minersdelight:crunchy_bar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minersdelight:nutritional_bar"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crunchy_bar"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minersdelight:nutritional_bar"
+    ]
+  }
+}

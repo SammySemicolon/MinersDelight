@@ -7,16 +7,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:tentacles"
+      "tag": "c:foods/tentacles"
     },
     {
-      "tag": "c:tentacles"
+      "tag": "c:foods/tentacles"
     },
     {
       "tag": "c:foods/dough"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "c:foods/onion"
     }
   ],
   "recipe_book_tab": "meals",

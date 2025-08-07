@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minersdelight:crunchy_bar"
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minersdelight:arthropod"
+        },
+        {
+          "item": "minersdelight:crunchy_bar"
+        }
+      ]
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "minersdelight:insect_stew"
+  }
+}

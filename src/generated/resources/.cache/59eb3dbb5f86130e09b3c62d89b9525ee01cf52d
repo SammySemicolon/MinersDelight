@@ -1,5 +1,8 @@
-// 1.21.1	2025-07-04T16:50:16.9149888	Loot Tables
-02e859bb39e115967764fe8478a45a7071e80612 data/minersdelight/loot_table/blocks/cave_carrots.json
+// 1.21.1	2025-08-07T13:43:01.4881564	Loot Tables
+1267d00c9dfe7efc25debefe8e0aaeba955b6695 data/minersdelight/loot_table/blocks/cave_carrots.json
 66aabb39f0f32c0cb768c1cfa9a21aa94a67b35d data/minersdelight/loot_table/blocks/cave_carrot_crate.json
+7ed34157ce20379bcffdec4def64292446ff5ccb data/minersdelight/loot_table/blocks/fake_meatloaf.json
+88ec2ecaf62459dbb1efeedfba71baec398a066c data/minersdelight/loot_table/blocks/glazed_arachnid_limbs.json
 4e3af67c26143a9f39e7c00d25e88fa5432b50de data/minersdelight/loot_table/blocks/gossypium.json
-4f0638656baf886f8e6c0fb5abbe97cd723b4793 data/minersdelight/loot_table/blocks/stuffed_squid.json
+f78610ccfbf3b49174e50db401119d42107f7557 data/minersdelight/loot_table/blocks/potted_gossypium.json
+b2d2e8c4cba4c7f9a0fe47c0a185392419b4a658 data/minersdelight/loot_table/blocks/stuffed_squid.json

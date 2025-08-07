@@ -13,7 +13,14 @@ public class StuffedSquidFeastBlock extends FeastBlock {
 
     public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, 5);
     protected static final VoxelShape PLATE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 2.0D, 15.0D);
-    protected static final VoxelShape PIE_SHAPE = Shapes.joinUnoptimized(PLATE_SHAPE, Block.box(2.0D, 2.0D, 2.0D, 14.0D, 8.0D, 14.0D), BooleanOp.OR);;
+    protected static final VoxelShape[] FEAST_SHAPE = new VoxelShape[]{
+            Block.box(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D),
+            Block.box(2, 1, 2, 14, 7, 14),
+            Block.box(2, 1, 2, 14, 8, 14),
+            Block.box(2, 1.2, 2, 14, 9.2, 14),
+            Block.box(2, 1.2, 2, 14, 11.2, 14),
+            Block.box(2, 1.2, 2, 14, 12.2, 14)
+    };
 
     public StuffedSquidFeastBlock(Properties properties) {
         super(properties, MDItems.BOWL_OF_STUFFED_SQUID::get, true);
@@ -31,7 +38,8 @@ public class StuffedSquidFeastBlock extends FeastBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return state.getValue(SERVINGS) == 0 ? PLATE_SHAPE : PIE_SHAPE;
+        int servings = state.getValue(SERVINGS);
+        return Shapes.or(PLATE_SHAPE, FEAST_SHAPE[servings]);
     }
 
     @Override

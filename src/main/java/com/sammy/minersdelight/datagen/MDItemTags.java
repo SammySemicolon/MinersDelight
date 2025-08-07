@@ -31,6 +31,8 @@ public class MDItemTags extends ItemTagsProvider {
         tag(MDTags.MOSS).add(Items.MOSS_BLOCK, MDItems.MOSS.get());
 
         tag(Tags.Items.BUCKETS_MILK).add(MDItems.MILK_CUP.get());
+        tag(ItemTags.WOLF_FOOD).addTag(MDTags.CAVE_CARROTS_CROP_ITEM).add(MDItems.BAT_WING.get(), MDItems.SMOKED_BAT_WING.get(), MDItems.BAT_COOKIE.get(), MDItems.SPIDER_LEG.get(), MDItems.BAKED_SPIDER_LEG.get());
+        tag(ItemTags.CAT_FOOD).addTag(MDTags.RAW_FISHES_SQUID);
 
         tag(Tags.Items.CROPS).add(MDItems.CAVE_CARROT.get());
         tag(ModTags.WILD_CROPS_ITEM).add(MDItems.GOSSYPIUM.get());
@@ -38,7 +40,9 @@ public class MDItemTags extends ItemTagsProvider {
         tag(MDTags.CAVE_CARROTS_VEGETABLE_ITEM).add(MDItems.CAVE_CARROT.get());
         tag(ModTags.CABBAGE_ROLL_INGREDIENTS).add(
                 MDItems.CAVE_CARROT.get(),
+                MDItems.SPIDER_LEG.get(),
                 MDItems.ARTHROPOD.get(),
+                MDItems.CRUNCHY_BAR.get(),
                 MDItems.SQUID.get(),
                 MDItems.GLOW_SQUID.get(),
                 MDItems.TENTACLES.get()
@@ -55,11 +59,20 @@ public class MDItemTags extends ItemTagsProvider {
         );
 
         tag(MDTags.INSECT_MEAT).add(
+                MDItems.SPIDER_LEG.get(),
+                MDItems.BAKED_SPIDER_LEG.get(),
                 MDItems.ARTHROPOD.get(),
-                MDItems.COOKED_ARTHROPOD.get()
+                MDItems.COOKED_ARTHROPOD.get(),
+                MDItems.CRUNCHY_BAR.get()
         );
-        tag(MDTags.BC_RAW_MEATS).add(MDItems.ARTHROPOD.get());
-        tag(MDTags.COOKED_INSECT_MEAT).add(MDItems.COOKED_ARTHROPOD.get());
+        tag(MDTags.BC_RAW_MEATS).add(
+                MDItems.SPIDER_LEG.get(),
+                MDItems.ARTHROPOD.get(),
+                MDItems.CRUNCHY_BAR.get());
+        tag(MDTags.COOKED_INSECT_MEAT).add(
+                MDItems.BAKED_SPIDER_LEG.get(),
+                MDItems.COOKED_ARTHROPOD.get(),
+                MDItems.CRUNCHY_BAR.get());
 
         tag(ItemTags.FISHES).add(
                 MDItems.SQUID.get(),
@@ -82,5 +95,18 @@ public class MDItemTags extends ItemTagsProvider {
                 MDItems.TENTACLES.get(),
                 MDItems.BAKED_TENTACLES.get()
         );
+
+        tag(CommonTags.FOODS_SAFE_RAW_FISH).addTag(MDTags.RAW_FISHES_SQUID);
+        tag(ModTags.FEASTS).add(MDItems.STUFFED_SQUID.get(), MDItems.FAKE_MEATLOAF.get(), MDItems.GLAZED_ARACHNID_LIMBS.get());
+
+        tag(Tags.Items.FOODS_SOUP).add(MDItems.CAVE_SOUP.get(), MDItems.BAT_SOUP.get(), MDItems.INSECT_STEW.get());
+        tag(Tags.Items.FOODS).add(MDItems.CAVE_CARROT.get(), MDItems.BAKED_CAVE_CARROT.get(), MDItems.COPPER_CARROT.get(), MDItems.PASTA_WITH_VEGGIEBALLS.get(), MDItems.CAVE_SOUP.get(), MDItems.VEGAN_PATTY.get(), MDItems.VEGAN_HAMBURGER.get(), MDItems.VEGAN_WRAP.get(), MDItems.VEGAN_STEAK_AND_POTATOES.get(), MDItems.BAT_WING.get(), MDItems.SMOKED_BAT_WING.get(), MDItems.BAT_ROLLS.get(), MDItems.CAVE_HAMBURGER.get(), MDItems.BAT_SOUP.get(), MDItems.IMPROVISED_BARBECUE_STICK.get(), MDItems.BAT_COOKIE.get(), MDItems.SPIDER_LEG.get(), MDItems.BAKED_SPIDER_LEG.get(), MDItems.SILVERFISH_EGGS.get(), MDItems.WEIRD_CAVIAR.get(), MDItems.ARTHROPOD.get(), MDItems.COOKED_ARTHROPOD.get(), MDItems.INSECT_SANDWICH.get(), MDItems.INSECT_WRAP.get(), MDItems.INSECT_STEW.get(), MDItems.SEASONED_ARTHROPODS.get(), MDItems.CRUNCHY_BAR.get(), MDItems.NUTRITIONAL_BAR.get(), MDItems.GOLDEN_NUTRITIONAL_BAR.get(), MDItems.GLOW_INK_PASTA.get(), MDItems.GLOW_SQUID.get(), MDItems.SQUID.get(), MDItems.BAKED_SQUID.get(), MDItems.TENTACLES.get(), MDItems.BAKED_TENTACLES.get(), MDItems.SQUID_SANDWICH.get(), MDItems.TAKOYAKI.get(), MDItems.TENTACLES_ON_A_STICK.get(), MDItems.BOWL_OF_STUFFED_SQUID.get(), MDItems.MOSS.get());
+        tag(ModTags.MEALS).add(MDItems.CAVE_SOUP.get(), MDItems.BAT_SOUP.get(), MDItems.INSECT_STEW.get(), MDItems.GLOW_INK_PASTA.get(), MDItems.PASTA_WITH_VEGGIEBALLS.get(), MDItems.VEGAN_STEAK_AND_POTATOES.get(), MDItems.PLATE_OF_FAKE_MEATLOAF.get(), MDItems.SEASONED_ARTHROPODS.get(), MDItems.PLATE_OF_GLAZED_ARACHNID_LIMBS.get(), MDItems.BOWL_OF_STUFFED_SQUID.get());
+        tag(Tags.Items.FOODS_GOLDEN).add(MDItems.GOLDEN_NUTRITIONAL_BAR.get());
+        tag(Tags.Items.FOODS_COOKED_MEAT).add(MDItems.VEGAN_PATTY.get());
+        tag(Tags.Items.FOODS_COOKIE).add(MDItems.BAT_COOKIE.get());
+        tag(Tags.Items.FOODS_VEGETABLE).add(MDItems.CAVE_CARROT.get());
+
+        tag(ItemTags.PIGLIN_LOVED).add(MDItems.GOLDEN_NUTRITIONAL_BAR.get());
     }
 }

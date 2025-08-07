@@ -3,17 +3,25 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "minersdelight:cooked_insect_meat"
+      "tag": "c:foods/bread"
     },
     {
       "tag": "minersdelight:cooked_insect_meat"
     },
+    [
+      {
+        "tag": "minersdelight:cooked_insect_meat"
+      },
+      {
+        "item": "minersdelight:weird_caviar"
+      }
+    ],
     {
       "tag": "c:foods/bread"
     }
   ],
   "result": {
-    "count": 1,
+    "count": 2,
     "id": "minersdelight:insect_sandwich"
   }
 }

@@ -7,9 +7,12 @@ import com.sammy.minersdelight.content.block.sticky_basket.*;
 import net.minecraft.core.registries.*;
 import net.minecraft.tags.*;
 import net.minecraft.world.level.block.*;
-import net.neoforged.neoforge.registries.*;
+import net.minecraft.world.level.material.PushReaction;
 import team.lodestar.lodestone.systems.block.*;
 import vectorwing.farmersdelight.common.tag.*;
+import net.neoforged.fml.event.lifecycle.*;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.*;
 
@@ -25,6 +28,12 @@ public class MDBlocks {
     public static final Supplier<Block> STUFFED_SQUID = BLOCKS.register("stuffed_squid",
             () -> new StuffedSquidFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
 
+    public static final Supplier<Block> FAKE_MEATLOAF = BLOCKS.register("fake_meatloaf",
+            () -> new FakeMeatloafFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
+
+    public static final Supplier<Block> GLAZED_ARACHNID_LIMBS = BLOCKS.register("glazed_arachnid_limbs",
+            () -> new GlazedArachnidLimbsFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
+
     public static final Supplier<Block> WILD_CAVE_CARROTS = BLOCKS.register("wild_cave_carrots",
             () -> new WildCaveCarrotBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS).addTags(BlockTags.SMALL_FLOWERS, ModTags.WILD_CROPS, ModTags.COMPOST_ACTIVATORS).randomTicks().setCutoutRenderType()));
 
@@ -34,6 +43,19 @@ public class MDBlocks {
     public static final Supplier<Block> CAVE_CARROT_CRATE = BLOCKS.register("cave_carrot_crate",
             () -> new Block(LodestoneBlockProperties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD).needsAxe()));
 
-    public static final Supplier<Block> GOSSYPIUM = BLOCKS.register("gossypium",
-            () -> new GossypiumFlowerBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS).addTag(ModTags.WILD_CROPS).setCutoutRenderType()));
+    public static final DeferredHolder<Block, Block> GOSSYPIUM = BLOCKS.register("gossypium",
+            () -> new GossypiumFlowerBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS)
+                    .addTag(ModTags.WILD_CROPS)
+                    .setCutoutRenderType()));
+
+    public static final DeferredHolder<Block, Block> POTTED_GOSSYPIUM = BLOCKS.register("potted_gossypium",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GOSSYPIUM,
+                    new LodestoneBlockProperties().setCutoutRenderType().addTag(BlockTags.FLOWER_POTS)
+                            .instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)
+            ));
+
+    public static void addPottedBlocks(FMLCommonSetupEvent event) {
+        FlowerPotBlock flowerPot = (FlowerPotBlock) Blocks.FLOWER_POT;
+        flowerPot.addPlant(GOSSYPIUM.getId(), POTTED_GOSSYPIUM);
+    }
 }

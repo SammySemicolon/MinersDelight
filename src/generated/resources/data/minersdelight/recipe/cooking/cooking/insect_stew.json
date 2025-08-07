@@ -6,7 +6,37 @@
       "item": "minersdelight:arthropod"
     },
     {
-      "item": "minersdelight:arthropod"
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minersdelight:arthropod"
+        },
+        {
+          "item": "minersdelight:silverfish_eggs"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minersdelight:arthropod"
+        },
+        {
+          "item": "minersdelight:silverfish_eggs"
+        }
+      ]
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "minersdelight:arthropod"
+        },
+        {
+          "item": "minersdelight:silverfish_eggs"
+        }
+      ]
     }
   ],
   "recipe_book_tab": "meals",

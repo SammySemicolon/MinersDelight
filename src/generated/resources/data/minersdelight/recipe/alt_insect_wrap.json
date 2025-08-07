@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:foods/bread"
+    },
+    [
+      {
+        "tag": "c:foods/onion"
+      },
+      {
+        "tag": "minersdelight:insect_meat"
+      }
+    ],
+    {
+      "item": "minersdelight:crunchy_bar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minersdelight:insect_wrap"
+  }
+}

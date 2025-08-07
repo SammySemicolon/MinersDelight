@@ -3,14 +3,32 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "minersdelight:insect_meat"
-    },
-    {
-      "tag": "minersdelight:insect_meat"
-    },
-    {
       "tag": "c:foods/bread"
-    }
+    },
+    [
+      {
+        "tag": "c:foods/onion"
+      },
+      {
+        "tag": "minersdelight:insect_meat"
+      }
+    ],
+    [
+      {
+        "item": "minersdelight:arthropod"
+      },
+      {
+        "item": "minersdelight:silverfish_eggs"
+      }
+    ],
+    [
+      {
+        "item": "minersdelight:arthropod"
+      },
+      {
+        "item": "minersdelight:silverfish_eggs"
+      }
+    ]
   ],
   "result": {
     "count": 1,

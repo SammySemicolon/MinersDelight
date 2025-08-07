@@ -8,7 +8,7 @@
   "experience": 2.0,
   "ingredients": [
     {
-      "tag": "c:squid"
+      "tag": "c:foods/squid"
     },
     {
       "item": "farmersdelight:rice"
@@ -31,7 +31,7 @@
       "tag": "c:eggs"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "c:foods/onion"
     }
   ],
   "recipe_book_tab": "meals",

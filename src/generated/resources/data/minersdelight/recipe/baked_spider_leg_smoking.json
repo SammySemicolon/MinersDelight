@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 150,
+  "experience": 0.25,
+  "ingredient": {
+    "item": "minersdelight:spider_leg"
+  },
+  "result": {
+    "count": 1,
+    "id": "minersdelight:baked_spider_leg"
+  }
+}

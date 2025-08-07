@@ -161,6 +161,8 @@ dependencies {
 
     compileOnly(("curse.maven:farmers-delight-398521:6597295"))
     localRuntime(("curse.maven:farmers-delight-398521:6597295"))
+
+    localRuntime(("curse.maven:appleskin-248787:5586600"))
 }
 
 val generateModMetadata by tasks.registering(ProcessResources::class) {

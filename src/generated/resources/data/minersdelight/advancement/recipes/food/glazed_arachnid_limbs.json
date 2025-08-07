@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_spider_leg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minersdelight:spider_leg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minersdelight:glazed_arachnid_limbs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_spider_leg"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minersdelight:glazed_arachnid_limbs"
+    ]
+  }
+}
