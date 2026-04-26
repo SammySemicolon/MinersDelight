@@ -10,7 +10,10 @@
         "tag": "c:foods/onion"
       },
       {
-        "tag": "minersdelight:insect_meat"
+        "tag": "minersdelight:raw_insect_meat"
+      },
+      {
+        "tag": "minersdelight:cooked_insect_meat"
       }
     ],
     {

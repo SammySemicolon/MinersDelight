@@ -101,6 +101,10 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven {
+        name = "Greenhouse"
+        url = uri("https://maven.greenhouse.lgbt/snapshots")
+    }
+    maven {
         name = "Curios maven"
         url = uri("https://maven.theillusivec4.top/")
     }
@@ -159,8 +163,10 @@ dependencies {
     compileOnlyApi(("team.lodestar.lodestone:lodestone:${property("minecraft_version")}-${property("lodestone_version")}"))
     runtimeOnly(("team.lodestar.lodestone:lodestone:${property("minecraft_version")}-${property("lodestone_version")}"))
 
-    compileOnly(("curse.maven:farmers-delight-398521:6597295"))
-    localRuntime(("curse.maven:farmers-delight-398521:6597295"))
+    ///compileOnly(("curse.maven:farmers-delight-398521:6597295"))
+    ///localRuntime(("curse.maven:farmers-delight-398521:6597295"))
+    compileOnly(("vectorwing.farmersdelight:FarmersDelight:1.21.1-1.3.0-rc2"))
+    localRuntime(("vectorwing.farmersdelight:FarmersDelight:1.21.1-1.3.0-rc2"))
 
     localRuntime(("curse.maven:appleskin-248787:5586600"))
 }

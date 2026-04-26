@@ -115,7 +115,7 @@ public class CopperPotBlock extends BaseEntityBlock implements SimpleWaterlogged
 	}
 
 	private CookingPotSupport getTrayState(LevelAccessor level, BlockPos pos) {
-		if (level.getBlockState(pos.below()).is(ModTags.TRAY_HEAT_SOURCES)) {
+		if (level.getBlockState(pos.below()).is(ModTags.Blocks.TRAY_HEAT_SOURCES)) {
 			return CookingPotSupport.TRAY;
 		}
 		return CookingPotSupport.NONE;

@@ -35,7 +35,7 @@ public class MDBlocks {
             () -> new GlazedArachnidLimbsFeastBlock(LodestoneBlockProperties.copy(Blocks.CAKE).needsAxe()));
 
     public static final Supplier<Block> WILD_CAVE_CARROTS = BLOCKS.register("wild_cave_carrots",
-            () -> new WildCaveCarrotBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS).addTags(BlockTags.SMALL_FLOWERS, ModTags.WILD_CROPS, ModTags.COMPOST_ACTIVATORS).randomTicks().setCutoutRenderType()));
+            () -> new WildCaveCarrotBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS).addTags(BlockTags.SMALL_FLOWERS, ModTags.Blocks.WILD_CROPS, ModTags.Blocks.COMPOST_ACTIVATORS).randomTicks().setCutoutRenderType()));
 
     public static final Supplier<Block> CAVE_CARROTS = BLOCKS.register("cave_carrots",
             () -> new CaveCarrotBlock(LodestoneBlockProperties.copy(Blocks.CARROTS).addTags(BlockTags.CROPS, MDTags.CAVE_CARROTS_CROP_BLOCK).setCutoutRenderType()));
@@ -45,7 +45,7 @@ public class MDBlocks {
 
     public static final DeferredHolder<Block, Block> GOSSYPIUM = BLOCKS.register("gossypium",
             () -> new GossypiumFlowerBlock(LodestoneBlockProperties.copy(Blocks.TALL_GRASS)
-                    .addTag(ModTags.WILD_CROPS)
+                    .addTag(ModTags.Blocks.WILD_CROPS)
                     .setCutoutRenderType()));
 
     public static final DeferredHolder<Block, Block> POTTED_GOSSYPIUM = BLOCKS.register("potted_gossypium",

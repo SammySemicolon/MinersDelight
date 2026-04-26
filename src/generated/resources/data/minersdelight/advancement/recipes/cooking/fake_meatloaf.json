@@ -5,11 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minersdelight:squid",
-              "minersdelight:glow_squid",
-              "minersdelight:baked_squid"
-            ]
+            "items": "minersdelight:cave_carrot"
           }
         ]
       },
@@ -17,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minersdelight:cooking/cooking/stuffed_squid"
+        "recipe": "minersdelight:cooking/fake_meatloaf"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minersdelight:cooking/cooking/stuffed_squid"
+      "minersdelight:cooking/fake_meatloaf"
     ]
   }
 }

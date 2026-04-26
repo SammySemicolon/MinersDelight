@@ -1,11 +1,15 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_glow_ink_sac": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:glow_ink_sac"
+            "items": [
+              "minersdelight:cave_carrot",
+              "minecraft:red_mushroom",
+              "minecraft:brown_mushroom"
+            ]
           }
         ]
       },
@@ -13,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minersdelight:cooking/cooking/glow_ink_pasta"
+        "recipe": "minersdelight:cooking/cave_soup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +25,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_glow_ink_sac"
+      "has_any_ingredient"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minersdelight:cooking/cooking/glow_ink_pasta"
+      "minersdelight:cooking/cave_soup"
     ]
   }
 }

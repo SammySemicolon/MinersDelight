@@ -1,15 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_any_ingredient": {
+    "has_arthropod": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "minersdelight:cave_carrot",
-              "farmersdelight:raw_pasta",
-              "farmersdelight:tomato_sauce"
-            ]
+            "items": "minersdelight:arthropod"
           }
         ]
       },
@@ -17,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minersdelight:cooking/cooking/pasta_with_veggieballs"
+        "recipe": "minersdelight:cooking/insect_stew"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -25,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_any_ingredient"
+      "has_arthropod"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minersdelight:cooking/cooking/pasta_with_veggieballs"
+      "minersdelight:cooking/insect_stew"
     ]
   }
 }

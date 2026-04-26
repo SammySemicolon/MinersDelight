@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/bat_wing"
+    },
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "tag": "c:foods/raw_meat"
+        },
+        {
+          "tag": "c:foods/safe_raw_fish"
+        },
+        {
+          "tag": "c:foods/vegetable"
+        },
+        {
+          "tag": "c:mushrooms"
+        }
+      ]
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "minersdelight:bat_rolls"
+  }
+}

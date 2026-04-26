@@ -16,7 +16,7 @@ public class HotCocoaCupItem extends HotCocoaItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
-        if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
+        if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
             var text = Component.translatable("farmersdelight.tooltip.hot_cocoa");
             tooltip.add(text.withStyle(ChatFormatting.BLUE));
             TextUtils.addFoodEffectTooltip(stack, tooltip::add, 1.0F, context.tickRate());

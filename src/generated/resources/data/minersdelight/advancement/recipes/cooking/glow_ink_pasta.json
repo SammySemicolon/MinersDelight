@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bat_wing": {
+    "has_glow_ink_sac": {
       "conditions": {
         "items": [
           {
-            "items": "minersdelight:bat_wing"
+            "items": "minecraft:glow_ink_sac"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minersdelight:cooking/cooking/bat_rolls"
+        "recipe": "minersdelight:cooking/glow_ink_pasta"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bat_wing"
+      "has_glow_ink_sac"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minersdelight:cooking/cooking/bat_rolls"
+      "minersdelight:cooking/glow_ink_pasta"
     ]
   }
 }

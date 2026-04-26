@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_arthropod": {
+    "has_bat_wing": {
       "conditions": {
         "items": [
           {
-            "items": "minersdelight:arthropod"
+            "items": "minersdelight:bat_wing"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minersdelight:cooking/cooking/insect_stew"
+        "recipe": "minersdelight:cooking/bat_soup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_arthropod"
+      "has_bat_wing"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minersdelight:cooking/cooking/insect_stew"
+      "minersdelight:cooking/bat_soup"
     ]
   }
 }

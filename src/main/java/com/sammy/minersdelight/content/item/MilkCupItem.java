@@ -16,8 +16,8 @@ public class MilkCupItem extends MilkBottleItem {
 
    @Override
    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
-      if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
-         var text = Component.translatable("farmersdelight.tooltip.milk_bottle");
+      if (Configuration.ENABLE_COOKING_POT_RECIPE_BOOK.get()) {
+         var text = Component.translatable("tooltip.farmersdelight.milk_bottle");
          tooltip.add(text.withStyle(ChatFormatting.BLUE));
       }
    }

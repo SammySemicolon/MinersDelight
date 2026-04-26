@@ -1,11 +1,15 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_squid": {
+    "has_any_ingredient": {
       "conditions": {
         "items": [
           {
-            "items": "#c:foods/squid"
+            "items": [
+              "minersdelight:squid",
+              "minersdelight:glow_squid",
+              "minersdelight:baked_squid"
+            ]
           }
         ]
       },
@@ -13,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minersdelight:cooking/cooking/takoyaki"
+        "recipe": "minersdelight:cooking/stuffed_squid"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +25,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_squid"
+      "has_any_ingredient"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minersdelight:cooking/cooking/takoyaki"
+      "minersdelight:cooking/stuffed_squid"
     ]
   }
 }

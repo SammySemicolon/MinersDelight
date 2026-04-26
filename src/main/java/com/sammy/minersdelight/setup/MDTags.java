@@ -21,7 +21,7 @@ public class MDTags {
 
     public static final TagKey<Item> MOSS = commonItem("moss");
 
-    public static final TagKey<Item> INSECT_MEAT = modItem("insect_meat");
+    public static final TagKey<Item> RAW_INSECT_MEAT = modItem("raw_insect_meat");
     public static final TagKey<Item> COOKED_INSECT_MEAT = modItem("cooked_insect_meat");
 
     public static final TagKey<Item> BAT_WING = commonItem("foods/bat_wing");

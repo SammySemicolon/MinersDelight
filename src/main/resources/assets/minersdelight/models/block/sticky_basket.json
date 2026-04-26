@@ -1,6 +1,6 @@
 
 {
-	"parent": "farmersdelight:block/basket",
+	"parent": "farmersdelight:block/template_basket",
 	"textures": {
 		"top": "minersdelight:block/sticky_basket_top",
 		"bottom": "minersdelight:block/sticky_basket_bottom",

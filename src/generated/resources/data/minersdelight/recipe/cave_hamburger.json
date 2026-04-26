@@ -5,9 +5,14 @@
     {
       "tag": "c:foods/bread"
     },
-    {
-      "item": "minersdelight:vegan_patty"
-    },
+    [
+      {
+        "item": "minersdelight:crunchy_bar"
+      },
+      {
+        "item": "minersdelight:vegan_patty"
+      }
+    ],
     {
       "item": "minersdelight:smoked_bat_wing"
     },
