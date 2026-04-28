@@ -4,21 +4,73 @@
 	"parent": "block/block",
 	"textures": {
 		"tray": "minersdelight:block/tray_bottom",
-		"tray_top": "minersdelight:block/tray_stuffed_squid",
-		"particle": "#tray_top"
+		"particle": "minersdelight:block/tray_stuffed_squid",
+		"tray_top": "minersdelight:block/tray_stuffed_squid"
 	},
 	"elements": [
 		{
 			"name": "plate",
 			"from": [1, 0, 1],
-			"to": [15, 2, 15],
+			"to": [15, 1, 15],
 			"faces": {
-				"north": {"uv": [1, 11, 15, 13], "texture": "#tray"},
-				"east": {"uv": [1, 11, 15, 13], "texture": "#tray"},
-				"south": {"uv": [1, 11, 15, 13], "texture": "#tray"},
-				"west": {"uv": [1, 11, 15, 13], "texture": "#tray"},
+				"north": {"uv": [1, 12, 15, 13], "texture": "#tray"},
+				"east": {"uv": [1, 12, 15, 13], "texture": "#tray"},
+				"south": {"uv": [1, 12, 15, 13], "texture": "#tray"},
+				"west": {"uv": [1, 12, 15, 13], "texture": "#tray"},
 				"up": {"uv": [1, 1, 15, 15], "texture": "#tray_top"},
 				"down": {"uv": [1, 1, 15, 15], "texture": "#tray", "cullface": "down"}
+			}
+		},
+		{
+			"name": "plate",
+			"from": [1, 1, 1],
+			"to": [2, 2, 15],
+			"faces": {
+				"north": {"uv": [14, 11, 15, 12], "texture": "#tray"},
+				"east": {"uv": [1, 11, 15, 12], "texture": "#tray"},
+				"south": {"uv": [1, 11, 2, 12], "texture": "#tray"},
+				"west": {"uv": [1, 11, 15, 12], "texture": "#tray"},
+				"up": {"uv": [1, 1, 2, 15], "texture": "#tray_top"},
+				"down": {"uv": [1, 1, 2, 15], "texture": "#tray", "cullface": "down"}
+			}
+		},
+		{
+			"name": "plate",
+			"from": [2, 1, 1],
+			"to": [14, 2, 2],
+			"faces": {
+				"north": {"uv": [2, 11, 14, 12], "texture": "#tray"},
+				"east": {"uv": [14, 11, 15, 12], "texture": "#tray"},
+				"south": {"uv": [2, 11, 14, 12], "texture": "#tray"},
+				"west": {"uv": [1, 11, 2, 12], "texture": "#tray"},
+				"up": {"uv": [2, 1, 14, 2], "texture": "#tray_top"},
+				"down": {"uv": [2, 14, 14, 15], "texture": "#tray", "cullface": "down"}
+			}
+		},
+		{
+			"name": "plate",
+			"from": [2, 1, 14],
+			"to": [14, 2, 15],
+			"faces": {
+				"north": {"uv": [2, 11, 14, 12], "texture": "#tray"},
+				"east": {"uv": [1, 11, 2, 12], "texture": "#tray"},
+				"south": {"uv": [2, 11, 14, 12], "texture": "#tray"},
+				"west": {"uv": [14, 11, 15, 12], "texture": "#tray"},
+				"up": {"uv": [2, 14, 14, 15], "texture": "#tray_top"},
+				"down": {"uv": [2, 1, 14, 2], "texture": "#tray", "cullface": "down"}
+			}
+		},
+		{
+			"name": "plate",
+			"from": [14, 1, 1],
+			"to": [15, 2, 15],
+			"faces": {
+				"north": {"uv": [1, 11, 2, 12], "texture": "#tray"},
+				"east": {"uv": [1, 11, 15, 12], "texture": "#tray"},
+				"south": {"uv": [14, 11, 15, 12], "texture": "#tray"},
+				"west": {"uv": [1, 11, 15, 12], "texture": "#tray"},
+				"up": {"uv": [14, 1, 15, 15], "texture": "#tray_top"},
+				"down": {"uv": [14, 1, 15, 15], "texture": "#tray", "cullface": "down"}
 			}
 		}
 	],
@@ -26,13 +78,15 @@
 		{
 			"name": "stuffed_squid",
 			"origin": [8, 8, 8],
+			"scope": 0,
 			"color": 0,
 			"children": [
 				{
 					"name": "plate",
 					"origin": [8, 8, 8],
+					"scope": 0,
 					"color": 0,
-					"children": [0]
+					"children": [0, 1, 2, 3, 4]
 				}
 			]
 		}

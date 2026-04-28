@@ -1,8 +1,8 @@
-// 1.21.1	2025-08-07T13:43:01.4821571	Miner's Delight Item Models
+// 1.21.1	2026-04-28T15:47:37.8847825	Miner's Delight Item Models
 fca6ef9d30ab7539de4957d289a517f93e5dee2b assets/minersdelight/models/item/arthropod.json
 38b4a4afd0d40a937bde719f1243c530af8fb6db assets/minersdelight/models/item/baked_cave_carrot.json
 7478fcec4ffd1d4879cc80d01865497a2535c7fb assets/minersdelight/models/item/baked_cod_stew_cup.json
-728e15496e250d1d8bb12a2a9ac9d1c39ff5ff73 assets/minersdelight/models/item/baked_spider_leg.json
+38f42610e0a0b9583388c41eaa58af9fd23fee8b assets/minersdelight/models/item/baked_spider_leg.json
 e0e70eaca4227560388742c3c399d65d48ca2971 assets/minersdelight/models/item/baked_squid.json
 c50baef7e83638f39024309b6607f9b6443d5bec assets/minersdelight/models/item/baked_tentacles.json
 462333cb8eddc4d78cb5c0f1d86221beb504aa1d assets/minersdelight/models/item/bat_cookie.json
@@ -37,6 +37,7 @@ fccd4bca331cb0abfa7b80544bf978ef79587b4b assets/minersdelight/models/item/fish_s
 83ae9c5d0242ca5bed58cf485f1cb31c9d549e3c assets/minersdelight/models/item/mushroom_stew_cup.json
 5d353ab630e44d68436c51bf21df90601657a41d assets/minersdelight/models/item/noodle_soup_cup.json
 312f5bc1c77c12e6430d2760fdff9cf5be7a5e47 assets/minersdelight/models/item/nutritional_bar.json
+0780207303b8026f0651050941a5a38cf6a653c4 assets/minersdelight/models/item/onion_soup_cup.json
 3c6cc77bc7e9980bb883662ffea65b1a598346c0 assets/minersdelight/models/item/pasta_with_veggieballs.json
 40f5557531c18048cfcb084f80294c43f074cb34 assets/minersdelight/models/item/plate_of_fake_meatloaf.json
 d79809ba37e7322b9c5cc2703e3bf8e0bd107e84 assets/minersdelight/models/item/plate_of_glazed_arachnid_limbs.json
@@ -46,7 +47,7 @@ a0d2a4fad4355e0888f8fa08e88be0cfafa2ea8f assets/minersdelight/models/item/powder
 793aab95666b37f4447c2efb07b9794f49734f50 assets/minersdelight/models/item/seasoned_arthropods.json
 147dd2f91b6d9286f0a030d4db10fff7990890c5 assets/minersdelight/models/item/silverfish_eggs.json
 f42fb76c787f3c7ecf28b1ce7bb52a35a04300bb assets/minersdelight/models/item/smoked_bat_wing.json
-8dc3449b0224ecba57e36f9a344f5d2d888ad9ac assets/minersdelight/models/item/spider_leg.json
+b6e4eeee1fb8038f25f236d17c801300f91c1c54 assets/minersdelight/models/item/spider_leg.json
 53619aa0d92a0d148af8b48a73724f1d536921e8 assets/minersdelight/models/item/squid.json
 153c078f2aaf383ae67aadd5329e1004fcdd0791 assets/minersdelight/models/item/squid_sandwich.json
 a4efe1145c7ba670619f160ab86d97ad042ca1a3 assets/minersdelight/models/item/sticky_basket.json

@@ -38,6 +38,7 @@ public class MDDataMapDatagen extends DataMapProvider {
                 .add(ModItems.FISH_STEW.get().builtInRegistryHolder(), new CupConversionDataMap(MDItems.FISH_STEW_CUP), false)
                 .add(ModItems.PUMPKIN_SOUP.get().builtInRegistryHolder(), new CupConversionDataMap(MDItems.PUMPKIN_SOUP_CUP), false)
                 .add(ModItems.VEGETABLE_SOUP.get().builtInRegistryHolder(), new CupConversionDataMap(MDItems.VEGETABLE_SOUP_CUP), false)
+                .add(ModItems.VEGETABLE_SOUP.get().builtInRegistryHolder(), new CupConversionDataMap(MDItems.ONION_SOUP_CUP), false)
 
                 // MD-specific soups
                 .add(MDItems.CAVE_SOUP.get().builtInRegistryHolder(), new CupConversionDataMap(MDItems.CAVE_SOUP_CUP), false)

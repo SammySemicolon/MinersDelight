@@ -1,8 +1,9 @@
-// 1.21.1	2026-04-26T18:58:38.2866757	MD Item Tags
+// 1.21.1	2026-04-28T13:54:57.7641014	MD Item Tags
 aa2206afa152de5d6ba65c5832fbbdacef9c82c7 data/brewinandchewin/tags/item/raw_meats.json
 2fbdbb52be875e7943873bf890533753851bf841 data/c/tags/item/buckets/milk.json
 d826e16089945ede81abff3fc774ad7e43ad7703 data/c/tags/item/crops.json
 d826e16089945ede81abff3fc774ad7e43ad7703 data/c/tags/item/crops/cave_carrot.json
+2fbdbb52be875e7943873bf890533753851bf841 data/c/tags/item/drinks/milk.json
 9323313a073a9f4d359fd35c396405650498a13d data/c/tags/item/foods.json
 159a121434350c1076070f55bb074f366d77cb12 data/c/tags/item/foods/bat_wing.json
 146c7840827a62f3c5d86b0c90a371f07518e7a1 data/c/tags/item/foods/cooked_meat.json
