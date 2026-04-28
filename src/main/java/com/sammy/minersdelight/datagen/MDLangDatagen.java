@@ -43,6 +43,7 @@ public class MDLangDatagen extends LanguageProvider {
         add("itemGroup.minersdelight", "Miner's Delight");
         add("minersdelight.container.cooking_pot", "Copper Pot");
         add("minersdelight.container.sticky_basket", "Sticky Basket");
+        add("farmersdelight.tooltip.honey_bar", "Soothing honey center!");
 
         add("item.minecraft.potion.effect.haste", "Potion of the Haste");
         add("item.minecraft.potion.effect.long_haste", "Potion of the Haste");

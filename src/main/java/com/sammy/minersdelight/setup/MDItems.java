@@ -110,8 +110,8 @@ public class MDItems {
     public static final DeferredHolder<Item, ConsumableItem> SEASONED_ARTHROPODS = registerBowlFood("seasoned_arthropods", MDFoodValues.SEASONED_ARTHROPODS, true);
 
     public static final DeferredHolder<Item, Item> CRUNCHY_BAR = register("crunchy_bar", MDFoodValues.CRUNCHY_BAR);
-    public static final DeferredHolder<Item, Item> NUTRITIONAL_BAR = register("nutritional_bar", MDFoodValues.NUTRITIONAL_BAR);
-    public static final DeferredHolder<Item, Item> GOLDEN_NUTRITIONAL_BAR = register("golden_nutritional_bar", MDFoodValues.GOLDEN_NUTRITIONAL_BAR);
+    public static final DeferredHolder<Item, HoneyBarItem> NUTRITIONAL_BAR = register("nutritional_bar", MDFoodValues.NUTRITIONAL_BAR, HoneyBarItem::new);
+    public static final DeferredHolder<Item, HoneyBarItem> GOLDEN_NUTRITIONAL_BAR = register("golden_nutritional_bar", MDFoodValues.GOLDEN_NUTRITIONAL_BAR, HoneyBarItem::new);
 
     // Squid
     public static final DeferredHolder<Item, ConsumableItem> GLOW_INK_PASTA = registerBowlFood("glow_ink_pasta", MDFoodValues.GLOW_INK_PASTA, true);

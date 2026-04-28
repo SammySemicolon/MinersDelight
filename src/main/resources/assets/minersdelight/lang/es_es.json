@@ -72,6 +72,7 @@
   "item.minersdelight.mushroom_stew_cup": "Estofado de champiñones en taza",
   "item.minersdelight.noodle_soup_cup": "Sopa de fideos en taza",
   "item.minersdelight.nutritional_bar": "Barra nutricional",
+  "item.minersdelight.onion_soup_cup": "Sopa de cebolla en taza",
   "item.minersdelight.pasta_with_veggieballs": "Pasta con albóndigas veganas",
   "item.minersdelight.plate_of_glazed_arachnid_limbs": "Plato de extremidad arácnida glaseada",
   "item.minersdelight.powder_snow_cup": "Taza con nieve polvo",
@@ -99,5 +100,7 @@
   "minersdelight.container.sticky_basket": "Cesta pegajosa",
 
   "block.minersdelight.fake_meatloaf": "Pastel de carne falso",
-  "item.minersdelight.plate_of_fake_meatloaf": "Plato de pastel de carne falso"
+  "item.minersdelight.plate_of_fake_meatloaf": "Plato de pastel de carne falso",
+
+  "farmersdelight.tooltip.honey_bar": "¡Con relleno de miel!"
 }

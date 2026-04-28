@@ -18,11 +18,14 @@
     "farmersdelight:noodle_soup": {
       "cup_variant": "minersdelight:noodle_soup_cup"
     },
+    "farmersdelight:onion_soup": {
+      "cup_variant": "minersdelight:onion_soup_cup"
+    },
     "farmersdelight:pumpkin_soup": {
       "cup_variant": "minersdelight:pumpkin_soup_cup"
     },
     "farmersdelight:vegetable_soup": {
-      "cup_variant": "minersdelight:onion_soup_cup"
+      "cup_variant": "minersdelight:vegetable_soup_cup"
     },
     "minecraft:beetroot_soup": {
       "cup_variant": "minersdelight:beetroot_soup_cup"
