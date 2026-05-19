@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/stuffed_squid"
+    "layer0": "miners_delight:item/stuffed_squid"
   }
 }

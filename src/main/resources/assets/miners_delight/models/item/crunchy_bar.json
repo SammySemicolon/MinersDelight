@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/crunchy_bar"
+    "layer0": "miners_delight:item/crunchy_bar"
   }
 }

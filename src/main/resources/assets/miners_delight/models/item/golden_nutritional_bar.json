@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/golden_nutritional_bar"
+    "layer0": "miners_delight:item/golden_nutritional_bar"
   }
 }

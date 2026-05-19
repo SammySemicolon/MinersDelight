@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"tray": "minersdelight:block/tray_bottom",
-		"particle": "minersdelight:block/tray_stuffed_squid",
-		"tray_top": "minersdelight:block/tray_stuffed_squid"
+		"tray": "miners_delight:block/tray_bottom",
+		"particle": "miners_delight:block/tray_stuffed_squid",
+		"tray_top": "miners_delight:block/tray_stuffed_squid"
 	},
 	"elements": [
 		{

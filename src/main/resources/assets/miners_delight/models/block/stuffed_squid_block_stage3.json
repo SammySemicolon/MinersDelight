@@ -4,16 +4,16 @@
 	"parent": "block/block",
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"tray": "minersdelight:block/tray_bottom",
-		"particle": "minersdelight:block/tray_stuffed_squid",
-		"tray_top": "minersdelight:block/tray_stuffed_squid",
-		"squid_back": "minersdelight:block/stuffed_squid_back",
-		"squid_bottom": "minersdelight:block/stuffed_squid_bottom",
-		"squid_front": "minersdelight:block/stuffed_squid_front",
-		"squid_rice": "minersdelight:block/stuffed_squid_rice",
-		"squid_side": "minersdelight:block/stuffed_squid_side",
-		"squid_tentacles": "minersdelight:block/stuffed_squid_tentacles",
-		"squid_top": "minersdelight:block/stuffed_squid_top"
+		"tray": "miners_delight:block/tray_bottom",
+		"particle": "miners_delight:block/tray_stuffed_squid",
+		"tray_top": "miners_delight:block/tray_stuffed_squid",
+		"squid_back": "miners_delight:block/stuffed_squid_back",
+		"squid_bottom": "miners_delight:block/stuffed_squid_bottom",
+		"squid_front": "miners_delight:block/stuffed_squid_front",
+		"squid_rice": "miners_delight:block/stuffed_squid_rice",
+		"squid_side": "miners_delight:block/stuffed_squid_side",
+		"squid_tentacles": "miners_delight:block/stuffed_squid_tentacles",
+		"squid_top": "miners_delight:block/stuffed_squid_top"
 	},
 	"elements": [
 		{

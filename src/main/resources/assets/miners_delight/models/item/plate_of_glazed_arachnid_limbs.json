@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/plate_of_glazed_arachnid_limbs"
+    "layer0": "miners_delight:item/plate_of_glazed_arachnid_limbs"
   }
 }

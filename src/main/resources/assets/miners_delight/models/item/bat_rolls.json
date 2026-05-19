@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/bat_rolls"
+    "layer0": "miners_delight:item/bat_rolls"
   }
 }

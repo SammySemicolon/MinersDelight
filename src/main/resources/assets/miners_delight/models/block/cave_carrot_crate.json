@@ -2,8 +2,8 @@
 {
 	"parent": "minecraft:block/cube_bottom_top",
 	"textures": {
-		"side": "minersdelight:block/cave_carrot_crate_side",
+		"side": "miners_delight:block/cave_carrot_crate_side",
 		"bottom": "farmersdelight:block/crate_bottom",
-		"top": "minersdelight:block/cave_carrot_crate_top"
+		"top": "miners_delight:block/cave_carrot_crate_top"
 	}
 }

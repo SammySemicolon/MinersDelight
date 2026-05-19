@@ -4,8 +4,8 @@
 	"parent": "block/block",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "minersdelight:block/copper_pot",
-		"particle": "minersdelight:block/copper_pot",
+		"0": "miners_delight:block/copper_pot",
+		"particle": "miners_delight:block/copper_pot",
 		"tray_side": "farmersdelight:block/heating_tray_side",
 		"tray_top": "farmersdelight:block/heating_tray_top"
 	},

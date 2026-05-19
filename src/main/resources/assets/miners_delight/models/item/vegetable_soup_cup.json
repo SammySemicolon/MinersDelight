@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/vegetable_soup_cup"
+    "layer0": "miners_delight:item/vegetable_soup_cup"
   }
 }

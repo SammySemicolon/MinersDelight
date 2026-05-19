@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"3": "minersdelight:block/fake_meatloaf",
-		"4": "minersdelight:block/tray_fake_meatloaf",
+		"3": "miners_delight:block/fake_meatloaf",
+		"4": "miners_delight:block/tray_fake_meatloaf",
 		"particle": "farmersdelight:block/tray_bottom",
 		"bowl": "farmersdelight:block/tray_bottom"
 	},

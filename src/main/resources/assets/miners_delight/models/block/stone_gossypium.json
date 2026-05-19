@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "minersdelight:block/stone_gossypium"
+    "cross": "miners_delight:block/stone_gossypium"
   }
 }

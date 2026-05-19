@@ -4,11 +4,11 @@
 	"parent": "block/block",
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"4": "minersdelight:block/sticky_basket_web",
-		"particle": "minersdelight:block/sticky_basket_bottom",
-		"bottom": "minersdelight:block/sticky_basket_bottom",
-		"side": "minersdelight:block/sticky_basket_side",
-		"handle": "minersdelight:block/sticky_basket_handle"
+		"4": "miners_delight:block/sticky_basket_web",
+		"particle": "miners_delight:block/sticky_basket_bottom",
+		"bottom": "miners_delight:block/sticky_basket_bottom",
+		"side": "miners_delight:block/sticky_basket_side",
+		"handle": "miners_delight:block/sticky_basket_handle"
 	},
 	"elements": [
 		{

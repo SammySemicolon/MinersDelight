@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/pumpkin_soup_cup"
+    "layer0": "miners_delight:item/pumpkin_soup_cup"
   }
 }

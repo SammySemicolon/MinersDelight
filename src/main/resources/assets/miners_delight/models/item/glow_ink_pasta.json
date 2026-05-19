@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/glow_ink_pasta"
+    "layer0": "miners_delight:item/glow_ink_pasta"
   }
 }

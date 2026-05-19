@@ -4,10 +4,10 @@
 	"parent": "block/block",
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"feast": "minersdelight:block/glazed_arachnid_limbs",
-		"tray": "minersdelight:block/tray_bottom",
-		"particle": "minersdelight:block/tray_honey_rice_garnish",
-		"tray_top": "minersdelight:block/tray_honey_rice_garnish"
+		"feast": "miners_delight:block/glazed_arachnid_limbs",
+		"tray": "miners_delight:block/tray_bottom",
+		"particle": "miners_delight:block/tray_honey_rice_garnish",
+		"tray_top": "miners_delight:block/tray_honey_rice_garnish"
 	},
 	"elements": [
 		{

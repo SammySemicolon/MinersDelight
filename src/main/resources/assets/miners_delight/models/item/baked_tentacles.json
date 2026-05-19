@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/baked_tentacles"
+    "layer0": "miners_delight:item/baked_tentacles"
   }
 }

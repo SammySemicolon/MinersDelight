@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minersdelight:item/cave_hamburger"
+    "layer0": "miners_delight:item/cave_hamburger"
   }
 }
