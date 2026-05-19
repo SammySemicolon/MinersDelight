@@ -82,5 +82,20 @@
   "item.miners_delight.water_cup": "Water Cup",
   "item.miners_delight.weird_caviar": "Weird Caviar",
   "itemGroup.miners_delight": "Miner's Delight",
-  "miners_delight.container.cooking_pot": "Copper Pot"
+  "miners_delight.container.cooking_pot": "Copper Pot",
+  "block.miners_delight.fake_meatloaf": "Fake Meatloaf",
+  "block.miners_delight.glazed_arachnid_limbs": "Glazed Arachnid Limbs",
+  "block.miners_delight.potted_gossypium": "Potted Gossypium",
+  "item.miners_delight.spider_leg": "Spider Leg",
+  "item.miners_delight.baked_spider_leg": "Baked Spider Leg",
+  "item.miners_delight.glazed_arachnid_limbs": "Glazed Arachnid Limbs",
+  "item.miners_delight.plate_of_glazed_arachnid_limbs": "Plate of Glazed Arachnid Limbs",
+  "item.miners_delight.fake_meatloaf": "Fake Meatloaf",
+  "item.miners_delight.plate_of_fake_meatloaf": "Plate of Fake Meatloaf",
+  "item.miners_delight.cave_hamburger": "Cave Hamburger",
+  "item.miners_delight.crunchy_bar": "Crunchy Bar",
+  "item.miners_delight.nutritional_bar": "Nutritional Bar",
+  "item.miners_delight.golden_nutritional_bar": "Golden Nutritional Bar",
+  "item.miners_delight.tentacles_on_a_stick": "Tentacles on a Stick",
+  "item.miners_delight.onion_soup_cup": "Onion Soup Cup"
 }

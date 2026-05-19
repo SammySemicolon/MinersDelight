@@ -25,7 +25,7 @@ public class MinersDelightMod {
 	public static final Random RANDOM = new Random();
 	public static final NonNullSupplier<Registrate> REGISTRATE = NonNullSupplier.lazy(() -> Registrate.create(MODID));
 
-	public static Registrate registrate(){
+	public static Registrate registrate() {
 		return REGISTRATE.get();
 	}
 
@@ -45,6 +45,7 @@ public class MinersDelightMod {
 		modBus.addListener(MDCauldronInteractions::addCauldronInteractions);
 		modBus.addListener(MDPotions::addPotionMixing);
 		modBus.addListener(MDComposting::addCompostValues);
+		modBus.addListener(MDBlocks::addPottedBlocks);
 		modBus.addListener(DataOnly::gatherData);
 	}
 

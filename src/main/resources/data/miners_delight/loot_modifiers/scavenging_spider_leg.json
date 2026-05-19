@@ -1,0 +1,40 @@
+{
+	"type": "miners_delight:add_items",
+	"conditions": [
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "killer",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"tag": "farmersdelight:tools/knives"
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"flags": {
+					"is_on_fire": false
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"type": "minecraft:spider"
+			}
+		},
+		{
+			"condition": "minecraft:random_chance_with_looting",
+			"chance": 0.4,
+			"looting_multiplier": 0.1
+		}
+	],
+	"item": "miners_delight:spider_leg",
+	"min": 0,
+	"max": 4
+}

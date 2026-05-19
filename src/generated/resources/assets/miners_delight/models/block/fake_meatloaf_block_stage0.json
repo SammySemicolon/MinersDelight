@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "miners_delight:block/fake_meatloaf_top_stage0",
+    "top": "miners_delight:block/fake_meatloaf_top_stage0",
+    "side": "miners_delight:block/fake_meatloaf_side",
+    "tray": "miners_delight:block/tray_fake_meatloaf"
+  },
+  "elements": [
+    {
+      "from": [1, 0, 1], "to": [15, 2, 15],
+      "faces": {
+        "down":  { "texture": "#tray",  "cullface": "down" },
+        "up":    { "texture": "#tray" },
+        "north": { "texture": "#tray" },
+        "south": { "texture": "#tray" },
+        "west":  { "texture": "#tray" },
+        "east":  { "texture": "#tray" }
+      }
+    },
+    {
+      "from": [2, 2, 2], "to": [14, 8, 14],
+      "faces": {
+        "up":    { "texture": "#top" },
+        "north": { "texture": "#side" },
+        "south": { "texture": "#side" },
+        "west":  { "texture": "#side" },
+        "east":  { "texture": "#side" }
+      }
+    }
+  ]
+}

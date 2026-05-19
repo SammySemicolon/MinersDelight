@@ -93,10 +93,6 @@ minecraft {
 repositories {
     mavenCentral()
     maven {
-        name 'JEI maven'
-        url = "https://dvs1.progwml6.com/files/maven"
-    }
-    maven {
         name 'tterrag maven'
         url "https://maven.tterrag.com/"
     }
@@ -120,9 +116,7 @@ dependencies {
     }
 
     // JEI Dependency
-    compileOnly fg.deobf("mezz.jei:jei-${minecraftVersion}-common-api:${jeiVersion}")
-    compileOnly fg.deobf("mezz.jei:jei-${minecraftVersion}-forge-api:${jeiVersion}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraftVersion}-forge:${jeiVersion}")
+    implementation fg.deobf("curse.maven:jei-238222:7391695")
 
     // Registrate dependency
     def registrate = "com.tterrag.registrate:Registrate:${registrateVersion}"
@@ -130,7 +124,7 @@ dependencies {
     shade registrate
 
     // CurseMaven Deps
-    implementation fg.deobf("curse.maven:farmers-delight-398521:4679319")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:8083474")
 }
 
 jar {

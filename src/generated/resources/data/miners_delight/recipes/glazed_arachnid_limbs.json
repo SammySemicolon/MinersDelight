@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    { "item": "miners_delight:baked_spider_leg" },
+    { "item": "miners_delight:baked_spider_leg" },
+    { "item": "miners_delight:baked_spider_leg" },
+    { "item": "miners_delight:baked_spider_leg" },
+    { "item": "minecraft:honey_bottle" },
+    { "item": "farmersdelight:cooked_rice" },
+    { "item": "minecraft:glow_berries" },
+    { "item": "minecraft:glow_berries" },
+    { "item": "minecraft:bowl" }
+  ],
+  "result": { "item": "miners_delight:glazed_arachnid_limbs", "count": 1 }
+}

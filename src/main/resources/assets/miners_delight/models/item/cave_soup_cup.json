@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minersdelight:item/cave_soup_cup"
+  }
+}

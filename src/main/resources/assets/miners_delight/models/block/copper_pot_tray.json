@@ -1,79 +1,15 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "miners_delight:block/copper_pot",
-		"particle": "miners_delight:block/copper_pot",
-		"tray_side": "farmersdelight:block/cooking_pot_tray_side",
-		"tray_top": "farmersdelight:block/cooking_pot_tray_top"
+		"0": "minersdelight:block/copper_pot",
+		"particle": "minersdelight:block/copper_pot",
+		"tray_side": "farmersdelight:block/heating_tray_side",
+		"tray_top": "farmersdelight:block/heating_tray_top"
 	},
 	"elements": [
-		{
-			"name": "grate",
-			"from": [0, -1, 0],
-			"to": [16, 0, 16],
-			"faces": {
-				"north": {"uv": [0, 0, 16, 1], "texture": "#tray_side"},
-				"east": {"uv": [0, 0, 16, 1], "texture": "#tray_side"},
-				"south": {"uv": [0, 0, 16, 1], "texture": "#tray_side"},
-				"west": {"uv": [0, 0, 16, 1], "texture": "#tray_side"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#tray_top"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#tray_top"}
-			}
-		},
-		{
-			"name": "leg SE",
-			"from": [15, -16, 15],
-			"to": [16, -1, 16],
-			"faces": {
-				"north": {"uv": [0, 1, 1, 16], "texture": "#tray_side"},
-				"east": {"uv": [0, 1, 1, 16], "texture": "#tray_side"},
-				"south": {"uv": [15, 1, 16, 16], "texture": "#tray_side"},
-				"west": {"uv": [15, 1, 16, 16], "texture": "#tray_side"},
-				"up": {"uv": [0, 0, 0.5, 0.5], "texture": "#tray_side"},
-				"down": {"uv": [0, 0, 0.5, 0.5], "texture": "#tray_side"}
-			}
-		},
-		{
-			"name": "leg SW",
-			"from": [0, -16, 15],
-			"to": [1, -1, 16],
-			"faces": {
-				"north": {"uv": [15, 1, 16, 16], "texture": "#tray_side"},
-				"east": {"uv": [0, 1, 1, 16], "texture": "#tray_side"},
-				"south": {"uv": [0, 1, 1, 16], "texture": "#tray_side"},
-				"west": {"uv": [15, 1, 16, 16], "texture": "#tray_side"},
-				"up": {"uv": [0, 0, 0.5, 0.5], "texture": "#tray_side"},
-				"down": {"uv": [0, 0, 0.5, 0.5], "texture": "#tray_side"}
-			}
-		},
-		{
-			"name": "leg NE",
-			"from": [15, -16, 0],
-			"to": [16, -1, 1],
-			"faces": {
-				"north": {"uv": [0, 1, 1, 16], "texture": "#tray_side"},
-				"east": {"uv": [15, 1, 16, 16], "texture": "#tray_side"},
-				"south": {"uv": [15, 1, 16, 16], "texture": "#tray_side"},
-				"west": {"uv": [0, 1, 1, 16], "texture": "#tray_side"},
-				"up": {"uv": [0, 0, 0.5, 0.5], "texture": "#tray_side"},
-				"down": {"uv": [0, 0, 0.5, 0.5], "texture": "#tray_side"}
-			}
-		},
-		{
-			"name": "leg NW",
-			"from": [0, -16, 0],
-			"to": [1, -1, 1],
-			"faces": {
-				"north": {"uv": [15, 1, 16, 16], "texture": "#tray_side"},
-				"east": {"uv": [15, 1, 16, 16], "texture": "#tray_side"},
-				"south": {"uv": [0, 1, 1, 16], "texture": "#tray_side"},
-				"west": {"uv": [0, 1, 1, 16], "texture": "#tray_side"},
-				"up": {"uv": [0, 0, 0.5, 0.5], "texture": "#tray_side"},
-				"down": {"uv": [0, 0, 0.5, 0.5], "texture": "#tray_side"}
-			}
-		},
 		{
 			"name": "pot",
 			"from": [3, 0, 3],
@@ -126,20 +62,68 @@
 				"up": {"uv": [1, 8.5, 4, 9.5], "rotation": 270, "texture": "#0"},
 				"down": {"uv": [1, 10.5, 4, 9.5], "rotation": 270, "texture": "#0"}
 			}
+		},
+		{
+			"name": "grate",
+			"from": [0, -0.001, 0],
+			"to": [16, -0.001, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#tray_top"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#tray_top", "cullface": "down"}
+			}
+		},
+		{
+			"name": "north_legs",
+			"from": [0, -16, 0],
+			"to": [16, 0, 0],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -16]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#tray_side"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#tray_side"}
+			}
+		},
+		{
+			"name": "south_legs",
+			"from": [0, -16, 16],
+			"to": [16, 0, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#tray_side"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#tray_side"}
+			}
+		},
+		{
+			"name": "east_legs",
+			"from": [16, -16, 0],
+			"to": [16, 0, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#tray_side"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#tray_side"}
+			}
+		},
+		{
+			"name": "west_legs",
+			"from": [0, -16, 0],
+			"to": [0, 0, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#tray_side"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#tray_side"}
+			}
 		}
 	],
 	"groups": [
 		{
-			"name": "tray",
-			"origin": [8, 8, 8],
-			"color": 0,
-			"children": [0, 1, 2, 3, 4]
-		},
-		{
 			"name": "copper pot",
 			"origin": [8, 8, 8],
+			"scope": 0,
 			"color": 0,
-			"children": [5, 6, 7, 8]
+			"children": [0, 1, 2, 3]
+		},
+		{
+			"name": "heating_tray",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [4, 5, 6, 7, 8]
 		}
 	]
 }

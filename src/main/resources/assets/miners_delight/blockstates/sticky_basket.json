@@ -1,28 +1,59 @@
 {
   "variants": {
-    "facing=down": {
-      "model": "miners_delight:block/sticky_basket",
+    "facing=down,waterlogged=false": {
+      "model": "minersdelight:block/web_sticky_basket",
       "x": 180
     },
-    "facing=up": {
-      "model": "miners_delight:block/sticky_basket"
+    "facing=down,waterlogged=true": {
+      "model": "minersdelight:block/sticky_basket",
+      "x": 180
     },
-    "facing=north": {
-      "model": "miners_delight:block/sticky_basket",
+
+    "facing=up,waterlogged=false": {
+      "model": "minersdelight:block/web_sticky_basket"
+    },
+    "facing=up,waterlogged=true": {
+      "model": "minersdelight:block/sticky_basket"
+    },
+
+    "facing=north,waterlogged=false": {
+      "model": "minersdelight:block/web_sticky_basket",
       "x": 90
     },
-    "facing=south": {
-      "model": "miners_delight:block/sticky_basket",
+    "facing=north,waterlogged=true": {
+      "model": "minersdelight:block/sticky_basket",
+      "x": 90
+    },
+
+    "facing=south,waterlogged=false": {
+      "model": "minersdelight:block/web_sticky_basket",
       "x": 90,
       "y": 180
     },
-    "facing=west": {
-      "model": "miners_delight:block/sticky_basket",
+    "facing=south,waterlogged=true": {
+      "model": "minersdelight:block/sticky_basket",
+      "x": 90,
+      "y": 180
+    },
+
+    "facing=west,waterlogged=false": {
+      "model": "minersdelight:block/web_sticky_basket",
       "x": 90,
       "y": 270
     },
-    "facing=east": {
-      "model": "miners_delight:block/sticky_basket",
+    "facing=west,waterlogged=true": {
+      "model": "minersdelight:block/sticky_basket",
+      "x": 90,
+      "y": 270
+    },
+
+    "facing=east,waterlogged=false": {
+      "model": "minersdelight:block/web_sticky_basket",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "minersdelight:block/sticky_basket",
       "x": 90,
       "y": 90
     }

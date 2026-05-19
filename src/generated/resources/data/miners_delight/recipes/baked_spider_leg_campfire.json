@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.25,
+  "ingredient": { "item": "miners_delight:spider_leg" },
+  "result": "miners_delight:baked_spider_leg"
+}

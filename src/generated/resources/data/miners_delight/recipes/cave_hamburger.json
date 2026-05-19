@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    { "tag": "forge:bread" },
+    { "item": "miners_delight:vegan_patty" },
+    { "tag": "forge:vegetables/cave_carrot" },
+    { "item": "farmersdelight:onion" },
+    { "tag": "forge:salad_ingredients" }
+  ],
+  "result": { "item": "miners_delight:cave_hamburger" }
+}

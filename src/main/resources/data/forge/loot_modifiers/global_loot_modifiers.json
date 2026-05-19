@@ -6,14 +6,23 @@
     "miners_delight:fishing_squid",
     "miners_delight:scavenging_bat_wing",
     "miners_delight:scavenging_bat_wing_knifeless",
+    "miners_delight:scavenging_cooked_bat_wing",
     "miners_delight:scavenging_glow_squid",
     "miners_delight:scavenging_squid",
+    "miners_delight:scavenging_cooked_squid",
     "miners_delight:scavenging_tentacles",
+    "miners_delight:scavenging_cooked_tentacles",
     "miners_delight:scavenging_spider",
     "miners_delight:scavenging_cave_spider",
+    "miners_delight:scavenging_cooked_spider",
+    "miners_delight:scavenging_spider_leg",
+    "miners_delight:scavenging_cooked_spider_leg",
+    "miners_delight:scavenging_spider_web",
     "miners_delight:scavenging_silverfish",
     "miners_delight:scavenging_silverfish_eggs",
     "miners_delight:scavenging_silverfish_eggs_knifeless",
+    "miners_delight:scavenging_cooked_arthropods",
+    "miners_delight:scavenging_arthropods",
     "miners_delight:add_loot_abandoned_mineshaft"
   ]
 }

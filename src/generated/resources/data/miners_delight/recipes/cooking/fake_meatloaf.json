@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 2.0,
+  "ingredients": [
+    { "tag": "forge:vegetables/cave_carrot" },
+    { "tag": "forge:vegetables/cave_carrot" },
+    { "item": "miners_delight:baked_cave_carrot" },
+    { "item": "farmersdelight:onion" }
+  ],
+  "container": { "item": "minecraft:bowl" },
+  "recipe_book_tab": "meals",
+  "result": { "item": "miners_delight:fake_meatloaf" }
+}

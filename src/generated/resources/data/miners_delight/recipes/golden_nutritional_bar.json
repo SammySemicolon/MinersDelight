@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    { "item": "miners_delight:nutritional_bar" },
+    { "tag": "forge:nuggets/gold" },
+    { "tag": "forge:nuggets/gold" },
+    { "tag": "forge:nuggets/gold" },
+    { "tag": "forge:nuggets/gold" },
+    { "tag": "forge:nuggets/gold" },
+    { "tag": "forge:nuggets/gold" },
+    { "tag": "forge:nuggets/gold" },
+    { "tag": "forge:nuggets/gold" }
+  ],
+  "result": { "item": "miners_delight:golden_nutritional_bar", "count": 1 }
+}
