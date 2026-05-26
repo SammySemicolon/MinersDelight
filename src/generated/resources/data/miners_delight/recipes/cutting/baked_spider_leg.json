@@ -1,0 +1,13 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    { "item": "miners_delight:baked_spider_leg" }
+  ],
+  "result": [
+    { "item": "miners_delight:cooked_arthropod", "count": 2 },
+    { "chance": 0.5, "item": "minecraft:bone_meal", "count": 1 }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

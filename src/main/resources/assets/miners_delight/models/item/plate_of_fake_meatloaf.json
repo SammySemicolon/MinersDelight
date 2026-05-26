@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "miners_delight:item/improvised_barbecue_stick"
+    "layer0": "miners_delight:item/plate_of_fake_meatloaf"
   }
 }
