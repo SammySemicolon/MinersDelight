@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "miners_delight:block/potted_gossypium" }
+    "": {
+      "model": "miners_delight:block/potted_gossypium"
+    }
   }
 }

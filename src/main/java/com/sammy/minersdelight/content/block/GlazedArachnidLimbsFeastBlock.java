@@ -23,7 +23,7 @@ public class GlazedArachnidLimbsFeastBlock extends FeastBlock {
     };
 
     public GlazedArachnidLimbsFeastBlock(Properties properties) {
-        super(properties, MDItems.GLAZED_ARACHNID_LIMBS_ITEM::get, true);
+        super(properties, MDItems.PLATE_OF_GLAZED_ARACHNID_LIMBS::get, true);
     }
 
     @Override

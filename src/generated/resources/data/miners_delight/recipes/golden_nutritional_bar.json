@@ -1,16 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "food",
-  "ingredients": [
-    { "item": "miners_delight:nutritional_bar" },
-    { "tag": "forge:nuggets/gold" },
-    { "tag": "forge:nuggets/gold" },
-    { "tag": "forge:nuggets/gold" },
-    { "tag": "forge:nuggets/gold" },
-    { "tag": "forge:nuggets/gold" },
-    { "tag": "forge:nuggets/gold" },
-    { "tag": "forge:nuggets/gold" },
-    { "tag": "forge:nuggets/gold" }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "tag": "forge:nuggets/gold"
+    },
+    "Y": {
+      "item": "miners_delight:nutritional_bar"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
   ],
-  "result": { "item": "miners_delight:golden_nutritional_bar", "count": 1 }
+  "result": {
+    "item": "miners_delight:golden_nutritional_bar"
+  },
+  "show_notification": true
 }

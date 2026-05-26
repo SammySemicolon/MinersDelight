@@ -17,11 +17,10 @@ public class MilkCupItem extends MilkBottleItem {
       super(pProperties);
    }
 
-
    @OnlyIn(Dist.CLIENT)
    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-      if (Configuration.FOOD_EFFECT_TOOLTIP.get()) {
-         MutableComponent textEmpty = Component.translatable("farmersdelight.tooltip.milk_bottle");
+      if (Configuration.ENABLE_FOOD_EFFECT_TOOLTIP.get()) {
+         MutableComponent textEmpty = Component.translatable("tooltip.farmersdelight.milk_bottle");
          tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
       }
    }

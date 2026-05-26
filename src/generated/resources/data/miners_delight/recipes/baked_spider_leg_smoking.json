@@ -3,6 +3,8 @@
   "category": "food",
   "cookingtime": 150,
   "experience": 0.25,
-  "ingredient": { "item": "miners_delight:spider_leg" },
+  "ingredient": {
+    "item": "miners_delight:spider_leg"
+  },
   "result": "miners_delight:baked_spider_leg"
 }

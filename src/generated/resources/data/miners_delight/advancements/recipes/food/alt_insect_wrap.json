@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_arthropod": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:arthropod"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "miners_delight:alt_insect_wrap"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_arthropod",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "miners_delight:alt_insect_wrap"
+    ]
+  },
+  "sends_telemetry_event": false
+}

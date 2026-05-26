@@ -24,6 +24,7 @@ import net.minecraft.world.level.storage.loot.providers.number.*;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.fml.event.lifecycle.*;
 import vectorwing.farmersdelight.common.block.*;
+import vectorwing.farmersdelight.common.item.PlaceableItem;
 import vectorwing.farmersdelight.common.tag.*;
 
 import java.util.function.*;
@@ -37,7 +38,6 @@ public class MDBlocks {
             .blockstate((ctx, p) -> {
             })
             .item().properties(p -> p.stacksTo(1)).build()
-            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
             .addLayer(() -> RenderType::cutout)
             .register();
 
@@ -45,7 +45,6 @@ public class MDBlocks {
             .blockstate((ctx, p) -> {
             })
             .item().build()
-            .tag(BlockTags.MINEABLE_WITH_AXE)
             .addLayer(() -> RenderType::cutout)
             .register();
 
@@ -61,8 +60,7 @@ public class MDBlocks {
                         .rotationY((((int) s.getValue(FeastBlock.FACING).toYRot() + 180))).build());
             })
             .loot(stuffedSquidTable())
-            .item().defaultModel().properties(p -> p.stacksTo(1)).build()
-            .tag(BlockTags.MINEABLE_WITH_AXE)
+            .item((block, properties) -> new PlaceableItem(block, properties)).defaultModel().properties(p -> p.stacksTo(1)).tag(ModTags.Items.FEASTS).build()
             .register();
 
     public static final BlockEntry<FakeMeatloafFeastBlock> FAKE_MEATLOAF = setupBlock("fake_meatloaf", FakeMeatloafFeastBlock::new, BlockBehaviour.Properties.copy(Blocks.CAKE))
@@ -77,8 +75,7 @@ public class MDBlocks {
                         .rotationY((((int) s.getValue(FeastBlock.FACING).toYRot() + 180))).build());
             })
             .loot(fakeMeatloafTable())
-            .item().defaultModel().properties(p -> p.stacksTo(1)).build()
-            .tag(BlockTags.MINEABLE_WITH_AXE)
+            .item((block, properties) -> new PlaceableItem(block, properties)).defaultModel().properties(p -> p.stacksTo(1)).tag(ModTags.Items.FEASTS).build()
             .register();
 
     public static final BlockEntry<GlazedArachnidLimbsFeastBlock> GLAZED_ARACHNID_LIMBS = setupBlock("glazed_arachnid_limbs", GlazedArachnidLimbsFeastBlock::new, BlockBehaviour.Properties.copy(Blocks.CAKE))
@@ -93,8 +90,7 @@ public class MDBlocks {
                         .rotationY((((int) s.getValue(FeastBlock.FACING).toYRot() + 180))).build());
             })
             .loot(glazedArachnidLimbsTable())
-            .item().defaultModel().properties(p -> p.stacksTo(1)).build()
-            .tag(BlockTags.MINEABLE_WITH_AXE)
+            .item((block, properties) -> new PlaceableItem(block, properties)).defaultModel().properties(p -> p.stacksTo(1)).tag(ModTags.Items.FEASTS).build()
             .register();
 
     public static final BlockEntry<FlowerPotBlock> POTTED_GOSSYPIUM = setupBlock("potted_gossypium",
@@ -102,7 +98,6 @@ public class MDBlocks {
             BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY))
             .blockstate((ctx, p) -> p.getVariantBuilder(ctx.get()).forAllStates(s ->
                     ConfiguredModel.builder().modelFile(p.models().getExistingFile(path("block/potted_gossypium"))).build()))
-            .tag(BlockTags.FLOWER_POTS)
             .register();
 
     public static final BlockEntry<WildCaveCarrotBlock> WILD_CAVE_CARROTS = setupBlock("wild_cave_carrots", WildCaveCarrotBlock::new, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS))
@@ -114,8 +109,7 @@ public class MDBlocks {
                 ModelFile cross = p.models().withExistingParent(name, new ResourceLocation("block/cross")).texture("cross", path("block/" + name));
                 return ConfiguredModel.builder().modelFile(cross).build();
             }))
-            .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).tag(ModTags.WILD_CROPS_ITEM).build()
-            .tag(BlockTags.SMALL_FLOWERS, ModTags.WILD_CROPS, ModTags.COMPOST_ACTIVATORS)
+            .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).build()
             .addLayer(() -> RenderType::cutout)
             .register();
 
@@ -128,8 +122,7 @@ public class MDBlocks {
                 ModelFile cross = p.models().withExistingParent(name, new ResourceLocation("block/cross")).texture("cross", path("block/" + name));
                 return ConfiguredModel.builder().modelFile(cross).build();
             }))
-            .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).tag(ModTags.WILD_CROPS_ITEM).build()
-            .tag(BlockTags.SMALL_FLOWERS)
+            .item().model((ctx, prov) -> prov.blockSprite(ctx::getEntry)).build()
             .addLayer(() -> RenderType::cutout)
             .register();
 
@@ -139,7 +132,6 @@ public class MDBlocks {
                 ModelFile crop = p.models().withExistingParent(name, new ResourceLocation("block/crop")).texture("crop", path("block/" + name));
                 return ConfiguredModel.builder().modelFile(crop).build();
             }))
-            .tag(BlockTags.CROPS, MDTags.CAVE_CARROTS_CROP_BLOCK)
             .loot(caveCarrotTable())
             .addLayer(() -> RenderType::cutout)
             .register();
@@ -150,7 +142,6 @@ public class MDBlocks {
                 return ConfiguredModel.builder().modelFile(p.models().getExistingFile(path("block/" + name))).build();
             }))
             .simpleItem()
-            .tag(BlockTags.MINEABLE_WITH_AXE)
             .register();
 
     public static <T extends Block> BlockBuilder<T, Registrate> setupBlock(String name, NonNullFunction<BlockBehaviour.Properties, T> factory, BlockBehaviour.Properties properties) {
@@ -180,7 +171,7 @@ public class MDBlocks {
     public static <T extends FakeMeatloafFeastBlock> NonNullBiConsumer<RegistrateBlockLootTables, T> fakeMeatloafTable() {
         return (l, b) -> {
             LootTable.Builder builder = LootTable.lootTable();
-            LootPool.Builder fullBlock = LootPool.lootPool().when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(MDItems.FAKE_MEATLOAF_ITEM.get())
+            LootPool.Builder fullBlock = LootPool.lootPool().when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(MDBlocks.FAKE_MEATLOAF.get().asItem())
                     .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FakeMeatloafFeastBlock.SERVINGS, 4)))
                     .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
             LootPool.Builder bowl = LootPool.lootPool().when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(Items.BOWL)
@@ -193,7 +184,7 @@ public class MDBlocks {
     public static <T extends GlazedArachnidLimbsFeastBlock> NonNullBiConsumer<RegistrateBlockLootTables, T> glazedArachnidLimbsTable() {
         return (l, b) -> {
             LootTable.Builder builder = LootTable.lootTable();
-            LootPool.Builder fullBlock = LootPool.lootPool().when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(MDItems.GLAZED_ARACHNID_LIMBS_ITEM.get())
+            LootPool.Builder fullBlock = LootPool.lootPool().when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(MDBlocks.GLAZED_ARACHNID_LIMBS.get().asItem())
                     .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GlazedArachnidLimbsFeastBlock.SERVINGS, 4)))
                     .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))));
             LootPool.Builder bowl = LootPool.lootPool().when(ExplosionCondition.survivesExplosion()).add(LootItem.lootTableItem(Items.BOWL)

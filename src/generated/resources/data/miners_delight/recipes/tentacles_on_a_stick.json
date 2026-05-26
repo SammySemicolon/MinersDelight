@@ -1,10 +1,18 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "food",
+  "category": "misc",
   "ingredients": [
-    { "tag": "forge:tentacles" },
-    { "tag": "forge:tentacles" },
-    { "item": "minecraft:stick" }
+    {
+      "tag": "forge:rods/wooden"
+    },
+    {
+      "item": "miners_delight:baked_tentacles"
+    },
+    {
+      "item": "miners_delight:baked_tentacles"
+    }
   ],
-  "result": { "item": "miners_delight:tentacles_on_a_stick" }
+  "result": {
+    "item": "miners_delight:tentacles_on_a_stick"
+  }
 }

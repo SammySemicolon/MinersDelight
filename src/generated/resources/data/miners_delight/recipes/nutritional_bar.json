@@ -1,14 +1,31 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "food",
+  "category": "misc",
   "ingredients": [
-    { "item": "miners_delight:crunchy_bar" },
-    { "item": "miners_delight:crunchy_bar" },
-    { "item": "miners_delight:crunchy_bar" },
-    { "item": "miners_delight:crunchy_bar" },
-    { "item": "minecraft:wheat" },
-    { "item": "minecraft:wheat" },
-    { "item": "minecraft:honey_bottle" }
+    {
+      "item": "miners_delight:crunchy_bar"
+    },
+    {
+      "item": "miners_delight:crunchy_bar"
+    },
+    {
+      "item": "miners_delight:crunchy_bar"
+    },
+    {
+      "item": "miners_delight:crunchy_bar"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
   ],
-  "result": { "item": "miners_delight:nutritional_bar", "count": 4 }
+  "result": {
+    "count": 4,
+    "item": "miners_delight:nutritional_bar"
+  }
 }

@@ -1,2 +1,24 @@
-// 1.20.1	2023-12-15T22:43:44.4138971	MD Item Tags
+// 1.20.1	2026-05-26T16:48:56.0172477	MD Item Tags
+c2e57bacf1193bc59ad82534c01f6c78da61608e data/brewinandchewin/tags/items/raw_meats.json
+5c6465248c47fd86daf83ed45a064ef0e8b0aea9 data/farmersdelight/tags/items/meals.json
+b7682a223900f709e53eb42afec9f717edbd71b6 data/forge/tags/items/cooked_fishes.json
+67b2b2ad54f6927f53ab88f98b5ab8139f6e07ed data/forge/tags/items/crops.json
+67b2b2ad54f6927f53ab88f98b5ab8139f6e07ed data/forge/tags/items/crops/cave_carrot.json
+a96221e9beaa0fbbe2f6c9a1fa0b12189fa0ea67 data/forge/tags/items/foods/bat_wing.json
+312c44a1cee0c5a452165cfb22b70d7b232742e3 data/forge/tags/items/foods/cooked_squid.json
+40491a08a37abc6bda4fa64149a952bc6915f2da data/forge/tags/items/foods/glow_squid.json
+ae2d79af5d0278ad56f6c652cd8af21835822b91 data/forge/tags/items/foods/raw_squid.json
+098ff5fed5105ac58645db953532fdcc677f8f04 data/forge/tags/items/foods/squid.json
+31d4b22135f1939d7e0ea7b09577c97846427a01 data/forge/tags/items/foods/tentacles.json
+b3c91c8a105b29b2f56f81d5ba0c0b5c16604e91 data/forge/tags/items/milk.json
+b3c91c8a105b29b2f56f81d5ba0c0b5c16604e91 data/forge/tags/items/milk/milk.json
 e62415e96f1d8d3ece03f4b1c83f2a55a5af7a9b data/forge/tags/items/moss.json
+a2fbb7d4bab9df5dd81249fc796bd34cf9251436 data/forge/tags/items/raw_fishes.json
+148c2f662355ebffcc1161319a779846d69f2a81 data/forge/tags/items/raw_meat.json
+67b2b2ad54f6927f53ab88f98b5ab8139f6e07ed data/forge/tags/items/vegetables.json
+67b2b2ad54f6927f53ab88f98b5ab8139f6e07ed data/forge/tags/items/vegetables/cave_carrot.json
+098ff5fed5105ac58645db953532fdcc677f8f04 data/minecraft/tags/items/fishes.json
+df063ed7a37fe412ee4ba62e8030ea06751edd2d data/minecraft/tags/items/piglin_loved.json
+9b9ba6b01b52d12470666bd8ef333640a207ebd4 data/miners_delight/tags/items/baked_cave_carrot.json
+578ebb4238549207e99bf10d98a48b317b85f17f data/miners_delight/tags/items/cooked_insect_meat.json
+4ef9b0bc8fdd9c66c9965c73749e6f21af03cf78 data/miners_delight/tags/items/raw_insect_meat.json

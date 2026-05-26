@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:bread"
+    },
+    [
+      {
+        "tag": "forge:crops/onion"
+      },
+      {
+        "tag": "miners_delight:raw_insect_meat"
+      },
+      {
+        "tag": "miners_delight:cooked_insect_meat"
+      }
+    ],
+    {
+      "item": "miners_delight:crunchy_bar"
+    }
+  ],
+  "result": {
+    "item": "miners_delight:insect_wrap"
+  }
+}

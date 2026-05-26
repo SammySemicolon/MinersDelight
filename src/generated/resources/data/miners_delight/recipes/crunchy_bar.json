@@ -1,14 +1,36 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "food",
+  "category": "misc",
   "ingredients": [
-    { "item": "miners_delight:cooked_arthropod" },
-    { "item": "miners_delight:cooked_arthropod" },
-    { "item": "miners_delight:cooked_arthropod" },
-    { "item": "miners_delight:cooked_arthropod" },
-    { "item": "miners_delight:silverfish_eggs" },
-    { "item": "miners_delight:silverfish_eggs" },
-    { "item": "miners_delight:silverfish_eggs" }
+    {
+      "item": "miners_delight:cooked_arthropod"
+    },
+    {
+      "item": "miners_delight:cooked_arthropod"
+    },
+    {
+      "item": "miners_delight:cooked_arthropod"
+    },
+    [
+      {
+        "item": "miners_delight:cooked_arthropod"
+      },
+      {
+        "item": "miners_delight:silverfish_eggs"
+      }
+    ],
+    {
+      "item": "miners_delight:silverfish_eggs"
+    },
+    {
+      "item": "miners_delight:silverfish_eggs"
+    },
+    {
+      "item": "miners_delight:silverfish_eggs"
+    }
   ],
-  "result": { "item": "miners_delight:crunchy_bar", "count": 4 }
+  "result": {
+    "count": 4,
+    "item": "miners_delight:crunchy_bar"
+  }
 }

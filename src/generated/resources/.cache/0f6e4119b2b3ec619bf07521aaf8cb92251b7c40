@@ -1,1 +1,12 @@
-// 1.20.1	2023-12-15T22:42:24.809324	MD Block Tags
+// 1.20.1	2026-05-26T16:48:56.0212801	MD Block Tags
+98f28aa628f6517205021323b14b5557f48bda94 data/farmersdelight/tags/blocks/compost_activators.json
+d766a1ddea9c168a7cebc4c5a86abce00dfc4cb4 data/farmersdelight/tags/blocks/feasts.json
+d766a1ddea9c168a7cebc4c5a86abce00dfc4cb4 data/farmersdelight/tags/blocks/mineable/knife.json
+98f28aa628f6517205021323b14b5557f48bda94 data/farmersdelight/tags/blocks/wild_crops.json
+02851b0e4b4c9b431d1d379476780dc0f982aa1a data/forge/tags/blocks/crops/cave_carrot.json
+02851b0e4b4c9b431d1d379476780dc0f982aa1a data/minecraft/tags/blocks/crops.json
+87ad2b9752a01114371cc2421002d184c409f639 data/minecraft/tags/blocks/flower_pots.json
+ceb810d18dbaaab5fbb7706ebdf0a3770b05d143 data/minecraft/tags/blocks/mineable/axe.json
+6d27db8283babbf923031053483731812afdd860 data/minecraft/tags/blocks/mineable/pickaxe.json
+98f28aa628f6517205021323b14b5557f48bda94 data/minecraft/tags/blocks/small_flowers.json
+fd370137b6bc179c1debed48054f2287f5319b26 data/miners_delight/tags/blocks/infested_blocks.json

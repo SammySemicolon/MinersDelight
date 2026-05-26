@@ -18,7 +18,7 @@ public class FakeMeatloafFeastBlock extends FeastBlock {
     protected static final VoxelShape FEAST_SHAPE = Shapes.joinUnoptimized(TRAY_SHAPE, Block.box(5, 2, 5, 11, 5, 11), BooleanOp.OR);
 
     public FakeMeatloafFeastBlock(Properties properties) {
-        super(properties, MDItems.FAKE_MEATLOAF_ITEM::get, true);
+        super(properties, MDItems.PLATE_OF_FAKE_MEATLOAF::get, true);
     }
 
     @Override

@@ -5,9 +5,14 @@
     {
       "item": "minecraft:bowl"
     },
-    {
-      "item": "miners_delight:cooked_arthropod"
-    },
+    [
+      {
+        "item": "miners_delight:cooked_arthropod"
+      },
+      {
+        "item": "miners_delight:crunchy_bar"
+      }
+    ],
     {
       "item": "miners_delight:weird_caviar"
     }

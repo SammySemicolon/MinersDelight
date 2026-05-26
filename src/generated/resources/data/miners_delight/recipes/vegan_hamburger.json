@@ -12,10 +12,10 @@
       "tag": "forge:crops/cabbage"
     },
     {
-      "item": "farmersdelight:tomato"
+      "tag": "forge:crops/tomato"
     },
     {
-      "item": "farmersdelight:onion"
+      "tag": "forge:crops/onion"
     }
   ],
   "result": {

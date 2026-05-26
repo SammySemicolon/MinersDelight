@@ -114,7 +114,7 @@ public class CopperPotBlock extends BaseEntityBlock implements SimpleWaterlogged
 	}
 
 	private CookingPotSupport getTrayState(LevelAccessor level, BlockPos pos) {
-		if (level.getBlockState(pos.below()).is(ModTags.TRAY_HEAT_SOURCES)) {
+		if (level.getBlockState(pos.below()).is(ModTags.Blocks.TRAY_HEAT_SOURCES)) {
 			return CookingPotSupport.TRAY;
 		}
 		return CookingPotSupport.NONE;
@@ -159,13 +159,13 @@ public class CopperPotBlock extends BaseEntityBlock implements SimpleWaterlogged
 
 		if (!mealStack.isEmpty()) {
 			MutableComponent textServingsOf = mealStack.getCount() == 1
-					? TextUtils.getTranslation("tooltip.cooking_pot.single_serving")
-					: TextUtils.getTranslation("tooltip.cooking_pot.many_servings", mealStack.getCount());
+					? TextUtils.tooltip("cooking_pot.single_serving")
+					: TextUtils.tooltip("cooking_pot.many_servings", mealStack.getCount());
 			tooltip.add(textServingsOf.withStyle(ChatFormatting.GRAY));
 			MutableComponent textMealName = mealStack.getHoverName().copy();
 			tooltip.add(textMealName.withStyle(mealStack.getRarity().color));
 		} else {
-			MutableComponent textEmpty = TextUtils.getTranslation("tooltip.cooking_pot.empty");
+			MutableComponent textEmpty = TextUtils.tooltip("cooking_pot.empty");
 			tooltip.add(textEmpty.withStyle(ChatFormatting.GRAY));
 		}
 	}

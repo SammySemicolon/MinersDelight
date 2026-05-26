@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crunchy_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "miners_delight:crunchy_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "miners_delight:nutritional_bar"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_crunchy_bar",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "miners_delight:nutritional_bar"
+    ]
+  },
+  "sends_telemetry_event": false
+}

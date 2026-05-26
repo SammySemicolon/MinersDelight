@@ -1,12 +1,39 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "food",
+  "category": "misc",
   "ingredients": [
-    { "tag": "forge:bread" },
-    { "item": "miners_delight:vegan_patty" },
-    { "tag": "forge:vegetables/cave_carrot" },
-    { "item": "farmersdelight:onion" },
-    { "tag": "forge:salad_ingredients" }
+    {
+      "tag": "forge:bread"
+    },
+    [
+      {
+        "item": "miners_delight:crunchy_bar"
+      },
+      {
+        "item": "miners_delight:vegan_patty"
+      }
+    ],
+    {
+      "item": "miners_delight:smoked_bat_wing"
+    },
+    [
+      {
+        "item": "miners_delight:baked_tentacles"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      }
+    ],
+    [
+      {
+        "item": "miners_delight:baked_tentacles"
+      },
+      {
+        "item": "minecraft:brown_mushroom"
+      }
+    ]
   ],
-  "result": { "item": "miners_delight:cave_hamburger" }
+  "result": {
+    "item": "miners_delight:cave_hamburger"
+  }
 }

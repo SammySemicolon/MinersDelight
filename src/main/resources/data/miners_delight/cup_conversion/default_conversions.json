@@ -55,6 +55,10 @@
 		{
 			"bowl": "farmersdelight:bone_broth",
 			"cup": "miners_delight:bone_broth_cup"
+		},
+		{
+			"bowl": "farmersdelight:onion_soup",
+			"cup": "miners_delight:onion_soup_cup"
 		}
 	]
 }
