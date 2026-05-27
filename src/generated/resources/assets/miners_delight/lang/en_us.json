@@ -7,6 +7,7 @@
   "block.miners_delight.gossypium": "Gossypium",
   "block.miners_delight.potted_gossypium": "Potted Gossypium",
   "block.miners_delight.sticky_basket": "Sticky Basket",
+  "block.miners_delight.sticky_basket.too_sticky": "It's too sticky to put your hand in!",
   "block.miners_delight.stuffed_squid": "Stuffed Squid",
   "block.miners_delight.wild_cave_carrots": "Wild Cave Carrots",
   "item.minecraft.lingering_potion.effect.haste": "Lingering Potion of Haste",
@@ -95,5 +96,6 @@
   "item.miners_delight.water_cup": "Water Cup",
   "item.miners_delight.weird_caviar": "Weird Caviar",
   "itemGroup.miners_delight": "Miner's Delight",
-  "miners_delight.container.cooking_pot": "Copper Pot"
+  "miners_delight.container.cooking_pot": "Copper Pot",
+  "tooltip.minersdelight.honey_bar": "Soothing honey center!"
 }

@@ -2,6 +2,9 @@
   "itemGroup.miners_delight": "Miner's Delight",
   "miners_delight.container.cooking_pot": "Copper Pot",
 
+  "tooltip.minersdelight.honey_bar":  "Soothing honey center!",
+  "block.miners_delight.sticky_basket.too_sticky": "It's too sticky to put your hand in!",
+
   "item.minecraft.lingering_potion.effect.long_haste": "Lingering Potion of Haste",
   "item.minecraft.lingering_potion.effect.haste": "Lingering Potion of Haste",
   "item.minecraft.lingering_potion.effect.strong_haste": "Lingering Potion of Haste",

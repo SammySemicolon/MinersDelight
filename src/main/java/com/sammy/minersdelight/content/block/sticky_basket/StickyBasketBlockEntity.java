@@ -72,7 +72,7 @@ public class StickyBasketBlockEntity extends RandomizableContainerBlockEntity im
 
     @Override
     protected Component getDefaultName() {
-        return TextUtils.getTranslation("container.basket");
+        return TextUtils.container("basket");
     }
 
     public static boolean pullItems(Level level, Basket basket, int facingIndex) {

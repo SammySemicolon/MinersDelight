@@ -3,6 +3,7 @@ package com.sammy.minersdelight.content.block.sticky_basket;
 import com.google.common.collect.*;
 import com.sammy.minersdelight.setup.*;
 import net.minecraft.core.*;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.*;
@@ -71,7 +72,23 @@ public class StickyBasketBlock extends BaseEntityBlock implements SimpleWaterlog
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        return InteractionResult.PASS;
+        if (state.getValue(WATERLOGGED)) {
+            if (!level.isClientSide) {
+                BlockEntity tileEntity = level.getBlockEntity(pos);
+                if (tileEntity instanceof StickyBasketBlockEntity) {
+                    player.openMenu((StickyBasketBlockEntity) tileEntity);
+                }
+            }
+            return InteractionResult.SUCCESS;
+        } else {
+            if (level.isClientSide) {
+                player.displayClientMessage(
+                        Component.translatable("block.miners_delight.sticky_basket.too_sticky"),
+                        true
+                );
+            }
+            return InteractionResult.FAIL;
+        }
     }
 
     @Override
@@ -90,12 +107,11 @@ public class StickyBasketBlock extends BaseEntityBlock implements SimpleWaterlog
     @Override
     public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
         if (pEntity instanceof LivingEntity livingEntity) {
-            Vec3 motion = livingEntity.getDeltaMovement();
             if (livingEntity instanceof Player player && player.isCrouching()) {
                 return;
             }
             if (!pState.getValue(WATERLOGGED)) {
-                pEntity.setDeltaMovement(new Vec3(motion.x, -0.05f, motion.z));
+                pEntity.makeStuckInBlock(pState, new Vec3(0.25F, 0.05F,0.25F));
             }
         }
     }

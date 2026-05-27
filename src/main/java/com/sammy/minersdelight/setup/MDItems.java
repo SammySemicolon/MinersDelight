@@ -62,8 +62,8 @@ public class MDItems {
 
     // Insect bars
     public static final ItemEntry<Item> CRUNCHY_BAR = setupItem("crunchy_bar", MDFoodValues.CRUNCHY_BAR).register();
-    public static final ItemEntry<Item> NUTRITIONAL_BAR = setupItem("nutritional_bar", MDFoodValues.NUTRITIONAL_BAR).register();
-    public static final ItemEntry<Item> GOLDEN_NUTRITIONAL_BAR = setupItem("golden_nutritional_bar", MDFoodValues.GOLDEN_NUTRITIONAL_BAR).register();
+    public static final ItemEntry<HoneyBarItem> NUTRITIONAL_BAR = setupItem("nutritional_bar", MDFoodValues.NUTRITIONAL_BAR, HoneyBarItem::new).register();
+    public static final ItemEntry<HoneyBarItem> GOLDEN_NUTRITIONAL_BAR = setupItem("golden_nutritional_bar", MDFoodValues.GOLDEN_NUTRITIONAL_BAR, HoneyBarItem::new).register();
 
     // Squid additions
     public static final ItemEntry<Item> TENTACLES_ON_A_STICK = setupItem("tentacles_on_a_stick", MDFoodValues.TENTACLES_ON_A_STICK).register();
