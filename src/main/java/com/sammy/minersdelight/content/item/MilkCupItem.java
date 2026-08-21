@@ -37,4 +37,12 @@ public class MilkCupItem extends MilkBottleItem {
          tooltip.add(textEmpty.withStyle(ChatFormatting.BLUE));
       }
    }
+
+   @Override
+   public net.minecraftforge.common.capabilities.ICapabilityProvider initCapabilities(ItemStack stack, @org.jetbrains.annotations.Nullable net.minecraft.nbt.CompoundTag nbt) {
+      if (this.getClass() == MilkCupItem.class)
+         return new com.sammy.minersdelight.data.CopperCupContainer(stack);
+      else
+         return super.initCapabilities(stack, nbt);
+   }
 }
