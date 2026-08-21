@@ -190,7 +190,7 @@ public class CopperCupItem extends Item implements DispensibleContainerItem {
    @Override
    public net.minecraftforge.common.capabilities.ICapabilityProvider initCapabilities(ItemStack stack, @Nullable net.minecraft.nbt.CompoundTag nbt) {
       if (this.getClass() == CopperCupItem.class)
-         return new net.minecraftforge.fluids.capability.wrappers.FluidBucketWrapper(stack);
+         return new com.sammy.minersdelight.data.CopperCupContainer(stack);
       else
          return super.initCapabilities(stack, nbt);
    }
