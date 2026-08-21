@@ -60,6 +60,10 @@ public class CopperCupItem extends Item implements DispensibleContainerItem {
       this.content = pContent;
    }
 
+   public Fluid getFluid() {
+      return this.content;
+   }
+
    @Override
    public InteractionResult interactLivingEntity(ItemStack pStack, Player pPlayer, LivingEntity pInteractionTarget, InteractionHand pUsedHand) {
       if (content.equals(Fluids.EMPTY)) {
