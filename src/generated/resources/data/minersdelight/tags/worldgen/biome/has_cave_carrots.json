@@ -3,6 +3,7 @@
     "#c:is_hot",
     "#c:is_dry",
     "#c:is_plains",
-    "#c:is_forest"
+    "#c:is_forest",
+    "#nomansland:caves"
   ]
 }
